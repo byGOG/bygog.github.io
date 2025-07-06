@@ -1,55 +1,129 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Önder Göğ</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Önder GÖG | Teknoloji Meraklısı</title>
+  <link rel="icon" href="https://img.icons8.com/color/48/windows-10.png" type="image/png">
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("light");
+    }
+  </script>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #f1f5f9;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.light {
+      background: #f8fafc;
+      color: #1e293b;
     }
     .container {
       max-width: 800px;
-      margin: 50px auto;
-      background: white;
+      margin: 60px auto;
       padding: 40px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      background: #1e293b;
       border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.15);
+    }
+    body.light .container {
+      background: #ffffff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
     h1 {
       font-size: 2.5rem;
-      color: #1e88e5;
+      color: #38bdf8;
     }
-    p {
-      font-size: 1.2rem;
-      line-height: 1.6;
+    body.light h1 {
+      color: #1e40af;
+    }
+    .tagline {
+      font-style: italic;
+      color: #94a3b8;
+      margin-bottom: 20px;
     }
     .social a {
-      margin-right: 10px;
+      margin-right: 15px;
       text-decoration: none;
-      color: #1e88e5;
+      color: #38bdf8;
+      font-weight: 500;
+    }
+    body.light .social a {
+      color: #2563eb;
+    }
+    .social a:hover {
+      text-decoration: underline;
+    }
+    .icon-bar img {
+      height: 32px;
+      margin-right: 10px;
+    }
+    .projects {
+      margin-top: 30px;
+    }
+    .projects h2 {
+      color: #fbbf24;
+    }
+    body.light .projects h2 {
+      color: #d97706;
+    }
+    .qr {
+      margin-top: 30px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      background: #38bdf8;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    body.light button {
+      background: #2563eb;
+    }
+    button:hover {
+      opacity: 0.9;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Merhaba, ben Önder Göğ</h1>
-    <p>Uludağ Üniversitesi'nde eğitim aldım ve teknolojiyle ilgileniyorum.  
-    Özellikle Android, dijital araçlar ve internet teknolojileri üzerine içeriklerle ilgileniyorum.</p>
-    
-    <p>Bu sayfa, kendimi tanıtmak ve projelerimi paylaşmak için hazırlandı.</p>
+    <div class="icon-bar">
+      <img src="https://img.icons8.com/color/48/android-os.png" alt="Android"/>
+      <img src="https://img.icons8.com/color/48/windows-10.png" alt="Windows"/>
+    </div>
+    <h1>Merhaba, ben Önder GÖG</h1>
+    <p class="tagline">Android ve Windows tutkunu bir teknoloji meraklısıyım.</p>
+    <p>Yeni sistemleri kurcalar, dijital dünyayı keşfetmekten keyif alırım.  
+    Denerim, bozarım, öğrenirim. Bu sayfa da bu yolculuğun dijital vitrini.</p>
 
     <div class="social">
-      <p>
-        📧 Mail: <a href="mailto:email@ornek.com">email@ornek.com</a><br>
-        🔗 GitHub: <a href="https://github.com/ondergog" target="_blank">github.com/ondergog</a><br>
-        📱 Instagram: <a href="https://instagram.com/kullaniciadi" target="_blank">@kullaniciadi</a>
-      </p>
+      <a href="https://github.com/ondergog" target="_blank">GitHub</a>
+      <a href="mailto:onder@example.com">E-posta</a>
+      <a href="https://instagram.com/kullaniciadi" target="_blank">Instagram</a>
     </div>
+
+    <div class="projects">
+      <h2>💡 Küçük Projelerim</h2>
+      <ul>
+        <li><strong>ADB Toolkit:</strong> Android komut seti yardım aracı</li>
+        <li><strong>WinOptimizer Script:</strong> Windows için hızlı ayarlama betiği</li>
+        <li><strong>DNS Switcher:</strong> Tek tıkla DNS değiştirme çözümü</li>
+      </ul>
+    </div>
+
+    <div class="qr">
+      <p>📱 Web sitemi QR kodla paylaş:</p>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ondergog.github.io" alt="QR Kod">
+    </div>
+
+    <button onclick="toggleMode()">🌗 Tema Değiştir</button>
   </div>
 </body>
 </html>
