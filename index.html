@@ -2,128 +2,75 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Önder GÖG | Teknoloji Meraklısı</title>
-  <link rel="icon" href="https://img.icons8.com/color/48/windows-10.png" type="image/png">
-  <script>
-    function toggleMode() {
-      document.body.classList.toggle("light");
-    }
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Önder GÖG</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #0f172a;
-      color: #f1f5f9;
-      transition: background 0.3s, color 0.3s;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #121212;
+      color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+      text-align: center;
     }
-    body.light {
-      background: #f8fafc;
-      color: #1e293b;
-    }
-    .container {
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 40px;
-      background: #1e293b;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.15);
-    }
-    body.light .container {
-      background: #ffffff;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    .content {
+      max-width: 480px;
     }
     h1 {
+      margin-bottom: 0.5em;
+      font-weight: 700;
       font-size: 2.5rem;
-      color: #38bdf8;
+      color: #00adee;
     }
-    body.light h1 {
-      color: #1e40af;
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #bbb;
+      margin-bottom: 2em;
     }
-    .tagline {
-      font-style: italic;
-      color: #94a3b8;
-      margin-bottom: 20px;
+    .contacts {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
     }
-    .social a {
-      margin-right: 15px;
+    .contacts a {
+      color: #00adee;
       text-decoration: none;
-      color: #38bdf8;
-      font-weight: 500;
+      font-size: 1.5rem;
+      transition: color 0.3s;
     }
-    body.light .social a {
-      color: #2563eb;
+    .contacts a:hover {
+      color: #0080c0;
     }
-    .social a:hover {
-      text-decoration: underline;
-    }
-    .icon-bar img {
-      height: 32px;
-      margin-right: 10px;
-    }
-    .projects {
-      margin-top: 30px;
-    }
-    .projects h2 {
-      color: #fbbf24;
-    }
-    body.light .projects h2 {
-      color: #d97706;
-    }
-    .qr {
-      margin-top: 30px;
-    }
-    button {
-      margin-top: 20px;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 8px;
-      background: #38bdf8;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    body.light button {
-      background: #2563eb;
-    }
-    button:hover {
-      opacity: 0.9;
+    /* Basit ikonlar için */
+    .icon {
+      vertical-align: middle;
+      margin-right: 0.3em;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="icon-bar">
-      <img src="https://img.icons8.com/color/48/android-os.png" alt="Android"/>
-      <img src="https://img.icons8.com/color/48/windows-10.png" alt="Windows"/>
-    </div>
-    <h1>Merhaba, ben Önder GÖG</h1>
-    <p class="tagline">Android ve Windows tutkunu bir teknoloji meraklısıyım.</p>
-    <p>Yeni sistemleri kurcalar, dijital dünyayı keşfetmekten keyif alırım.  
-    Denerim, bozarım, öğrenirim. Bu sayfa da bu yolculuğun dijital vitrini.</p>
+  <div class="content">
+    <h1>Önder GÖG</h1>
+    <p>Android ve Windows tutkunu bir teknoloji meraklısıyım.<br>
+      Yeni sistemleri kurcalar, dijital dünyayı keşfetmekten keyif alırım.<br>
+      Denerim, bozarım, öğrenirim.</p>
 
-    <div class="social">
-      <a href="https://github.com/ondergog" target="_blank">GitHub</a>
-      <a href="mailto:onder@example.com">E-posta</a>
-      <a href="https://instagram.com/kullaniciadi" target="_blank">Instagram</a>
+    <div class="contacts">
+      <a href="https://instagram.com/kullaniciadi" target="_blank" aria-label="Instagram">
+        📸 Instagram
+      </a>
+      <a href="https://wa.me/905XXXXXXXXX" target="_blank" aria-label="WhatsApp">
+        💬 WhatsApp
+      </a>
+      <a href="mailto:onder@example.com" aria-label="Email">
+        📧 Mail
+      </a>
     </div>
-
-    <div class="projects">
-      <h2>💡 Küçük Projelerim</h2>
-      <ul>
-        <li><strong>ADB Toolkit:</strong> Android komut seti yardım aracı</li>
-        <li><strong>WinOptimizer Script:</strong> Windows için hızlı ayarlama betiği</li>
-        <li><strong>DNS Switcher:</strong> Tek tıkla DNS değiştirme çözümü</li>
-      </ul>
-    </div>
-
-    <div class="qr">
-      <p>📱 Web sitemi QR kodla paylaş:</p>
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ondergog.github.io" alt="QR Kod">
-    </div>
-
-    <button onclick="toggleMode()">🌗 Tema Değiştir</button>
   </div>
 </body>
 </html>
