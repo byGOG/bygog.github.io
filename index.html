@@ -2,74 +2,64 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Önder GÖG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ben Kimim?</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #121212;
-      color: #e0e0e0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      padding: 20px;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       text-align: center;
     }
-    .content {
-      max-width: 480px;
-    }
+
     h1 {
-      margin-bottom: 0.5em;
-      font-weight: 700;
-      font-size: 2.5rem;
-      color: #00adee;
+      margin-bottom: 10px;
+      color: #111;
     }
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #bbb;
-      margin-bottom: 2em;
+
+    p.bio {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 20px;
     }
-    .contacts {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-    .contacts a {
-      color: #00adee;
+
+    .links a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      border-radius: 8px;
       text-decoration: none;
-      font-size: 1.5rem;
-      transition: color 0.3s;
+      background: #007bff;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
     }
-    .contacts a:hover {
-      color: #0080c0;
-    }
-    /* Basit ikonlar için */
-    .icon {
-      vertical-align: middle;
-      margin-right: 0.3em;
+
+    .links a:hover {
+      background: #0056b3;
     }
   </style>
 </head>
 <body>
-  <div class="content">
-    <h1>Önder GÖG</h1>
-    <p>Android ve Windows tutkunu bir teknoloji meraklısıyım.<br>
-      Yeni sistemleri kurcalar, dijital dünyayı keşfetmekten keyif alırım.<br>
-      Denerim, bozarım, öğrenirim.</p>
+  <div class="container">
+    <h1>Önder Göğ</h1>
+    <p class="bio">Android ve Windows tutkunu bir teknoloji meraklısıyım. Yeni sistemleri kurcalar, dijital dünyayı keşfetmekten keyif alırım. Denerim, bozarım, öğrenirim.</p>
 
-    <div class="contacts">
-      <a href="https://instagram.com/kullaniciadi" target="_blank" aria-label="Instagram">
-        📸 Instagram
-      </a>
-      <a href="https://wa.me/905XXXXXXXXX" target="_blank" aria-label="WhatsApp">
-        💬 WhatsApp
-      </a>
-      <a href="mailto:onder@example.com" aria-label="Email">
-        📧 Mail
-      </a>
+    <div class="links">
+      <a href="https://instagram.com/kullaniciadiniz" target="_blank">Instagram</a>
+      <a href="https://wa.me/905xxxxxxxxx" target="_blank">WhatsApp</a>
+      <a href="mailto:epostaniz@example.com">Mail Gönder</a>
     </div>
   </div>
 </body>
