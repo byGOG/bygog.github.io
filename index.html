@@ -3,64 +3,183 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ben Kimim?</title>
+  <title>Önder GÖG | Kişisel Web Sitesi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --bg: #181a20;
+      --card-bg: rgba(35,38,47,0.85);
+      --card-blur: blur(16px);
+      --text: #f3f4f6;
+      --muted: #a1a1aa;
+      --radius: 28px;
+      --shadow: 0 8px 40px rgba(30,64,175,0.18);
+      --icon-bg: #23262f;
+      --icon-hover: #3b82f6;
+    }
+    * { box-sizing: border-box; }
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
+      font-family: 'Inter', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       margin: 0;
       padding: 0;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
     }
-
-    .container {
+    .bg-image {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      object-fit: cover;
+      z-index: 0;
+      filter: brightness(0.5) blur(2px);
+    }
+    .center-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2.5rem 2.5rem 2rem 2.5rem;
       max-width: 600px;
-      margin: 50px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      backdrop-filter: var(--card-blur);
+      -webkit-backdrop-filter: var(--card-blur);
+      border: 1.5px solid rgba(255,255,255,0.08);
+    }
+    .profile-img {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.2rem;
+      border: 4px solid var(--primary);
+      box-shadow: 0 2px 12px rgba(59,130,246,0.10);
+    }
+    h1 {
+      font-size: 2.1rem;
+      margin: 0 0 0.5rem 0;
+      font-weight: 700;
+      letter-spacing: -1px;
+      color: var(--text);
+    }
+    .bio {
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 2.2rem;
+      line-height: 1.6;
       text-align: center;
     }
-
-    h1 {
-      margin-bottom: 10px;
-      color: #111;
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      width: 100%;
+      margin-bottom: 2.2rem;
     }
-
-    p.bio {
-      font-size: 1rem;
-      color: #666;
-      margin-bottom: 20px;
+    .info-box {
+      background: rgba(24,26,32,0.7);
+      border-radius: 18px;
+      padding: 1.2rem 1rem;
+      color: var(--text);
+      box-shadow: 0 2px 8px rgba(30,64,175,0.08);
+      min-height: 110px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-
-    .links a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      border-radius: 8px;
+    .info-box h2 {
+      font-size: 1.1rem;
+      margin: 0 0 0.5rem 0;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .info-box p {
+      font-size: 0.98rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .icon-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--icon-bg);
+      color: #fff;
       text-decoration: none;
-      background: #007bff;
-      color: white;
-      font-weight: bold;
-      transition: 0.3s;
+      font-size: 1.5rem;
+      transition: background 0.2s, transform 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px rgba(59,130,246,0.13);
+      border: none;
     }
-
-    .links a:hover {
-      background: #0056b3;
+    .icon-btn:hover {
+      background: var(--icon-hover);
+      color: #fff;
+      transform: translateY(-3px) scale(1.07);
+    }
+    .icon-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+    @media (max-width: 800px) {
+      .card { max-width: 98vw; padding: 1.5rem 0.5rem 1.2rem 0.5rem; }
+      .info-grid { grid-template-columns: 1fr; gap: 1rem; }
+    }
+    @media (max-width: 480px) {
+      .profile-img { width: 72px; height: 72px; }
+      .card { padding: 1rem 0.2rem 1rem 0.2rem; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Önder Göğ</h1>
-    <p class="bio">Android ve Windows tutkunu bir teknoloji meraklısıyım. Yeni sistemleri kurcalar, dijital dünyayı keşfetmekten keyif alırım. Denerim, bozarım, öğrenirim.</p>
-
-    <div class="links">
-      <a href="https://instagram.com/kullaniciadiniz" target="_blank">Instagram</a>
-      <a href="https://wa.me/905xxxxxxxxx" target="_blank">WhatsApp</a>
-      <a href="mailto:epostaniz@example.com">Mail Gönder</a>
-    </div>
+  <img class="bg-image" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Arka Plan" />
+  <div class="center-container">
+    <main class="card">
+      <img src="https://avatars.githubusercontent.com/byGOG" alt="GitHub Profil Fotoğrafı" class="profile-img" />
+      <h1>Önder GÖG</h1>
+      <div class="bio">
+        Android ve Windows tutkunu bir teknoloji meraklısıyım. Yeni sistemleri kurcalar, dijital dünyayı keşfetmekten keyif alırım. Denerim, bozarım, öğrenirim.
+      </div>
+      <div class="links">
+        <a class="icon-btn" href="https://instagram.com/kullaniciadiniz" target="_blank" title="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm5.13.62a1.13 1.13 0 1 1-2.26 0a1.13 1.13 0 0 1 2.26 0z"/></svg>
+        </a>
+        <a class="icon-btn" href="https://wa.me/905xxxxxxxxx" target="_blank" title="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M12.004 2.003a9.99 9.99 0 0 0-8.66 15.07l-1.32 4.84a1 1 0 0 0 1.22 1.22l4.84-1.32a9.99 9.99 0 1 0 3.92-19.81zm0 1.5a8.5 8.5 0 1 1-3.34 16.34a.75.75 0 0 0-.47-.06l-3.98 1.09l1.09-3.98a.75.75 0 0 0-.06-.47A8.5 8.5 0 0 1 12.004 3.5zm-2.13 5.13c-.19-.42-.39-.43-.57-.44c-.15-.01-.33-.01-.51-.01c-.18 0-.47.07-.72.34c-.25.27-.97.95-.97 2.3c0 1.35.99 2.66 1.13 2.85c.14.19 1.92 3.06 4.7 4.17c2.78 1.11 2.78.74 3.28.7c.5-.04 1.62-.66 1.85-1.3c.23-.64.23-1.19.16-1.3c-.07-.11-.25-.18-.52-.32c-.27-.14-1.62-.8-1.87-.89c-.25-.09-.43-.14-.61.14c-.18.28-.7.89-.86 1.07c-.16.18-.32.2-.59.07c-.27-.13-1.13-.42-2.15-1.34c-.79-.7-1.32-1.56-1.48-1.83c-.16-.27-.02-.41.12-.54c.13-.13.29-.34.44-.51c.15-.17.19-.29.29-.48c.1-.19.05-.36-.02-.5c-.07-.14-.61-1.48-.86-2.1z"/></svg>
+        </a>
+        <a class="icon-btn" href="mailto:epostaniz@example.com" title="Mail Gönder">
+          <svg viewBox="0 0 24 24"><path d="M2.25 6.75A2.25 2.25 0 0 1 4.5 4.5h15a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 19.5 19.5h-15A2.25 2.25 0 0 1 2.25 17.25zm1.5 0v.638l8.25 5.775l8.25-5.775V6.75a.75.75 0 0 0-.75-.75h-15a.75.75 0 0 0-.75.75zm16.5 1.862l-7.7 5.4a.75.75 0 0 1-.85 0l-7.7-5.4V17.25c0 .414.336.75.75.75h15a.75.75 0 0 0 .75-.75z"/></svg>
+        </a>
+        <a class="icon-btn" href="https://linkedin.com" target="_blank" title="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76s1.75.79 1.75 1.76s-.78 1.76-1.75 1.76zm13.5 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07c-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.37-1.54 2.82-1.54c3.01 0 3.57 1.98 3.57 4.56v5.62z"/></svg>
+        </a>
+        <a class="icon-btn" href="https://x.com/kullaniciadiniz" target="_blank" title="X (Twitter)">
+          <svg viewBox="0 0 24 24"><path d="M17.53 2.47a2.75 2.75 0 0 1 3.88 3.88l-5.16 5.16l5.16 5.16a2.75 2.75 0 0 1-3.88 3.88l-5.16-5.16l-5.16 5.16a2.75 2.75 0 0 1-3.88-3.88l5.16-5.16l-5.16-5.16a2.75 2.75 0 0 1 3.88-3.88l5.16 5.16l5.16-5.16z"/></svg>
+        </a>
+      </div>
+    </main>
   </div>
 </body>
 </html>
