@@ -488,9 +488,10 @@
     <div class="bio">
       Android ve Windows ekosistemlerine ilgi duyan, teknolojik yenilikleri keşfetmeyi seven bir teknoloji meraklısıyım. Deneyimleyerek öğrenirim; bazen bozarım ama her seferinde daha fazlasını keşfederim. Dijital dünyanın sunduğu olanakları takip eder, kendi çözümlerimi üretmeye çalışırım. Gelişimle beslenir, paylaşarak çoğalırım. Şehir içinde motosikletimle özgürlüğü yaşarken, kışın snowboard yapıp dağların sessizliğine karışırım. Anadolu rock’un derin hikayeleriyle ruhumu besler, sakinliğimle insanları izlerim.
     </div>
-<div class="spotify-embed" style="position:fixed;top:24px;left:24px;z-index:1000;box-shadow:0 4px 32px #0005;border-radius:16px;overflow:hidden;background:rgba(16,23,42,0.92);backdrop-filter:blur(6px);max-width:420px;width:90vw;">
-  <iframe style="border-radius:12px;width:100%;background:#10172a;" src="https://open.spotify.com/embed/playlist/2D4nVMeiTwQkNPpfgGyL5s?utm_source=generator&theme=0" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-</div>
+    <!-- Spotify embed'i EN ALTA taşıyoruz -->
+    <div class="spotify-embed">
+      <iframe style="border-radius:12px;width:100%;background:#10172a;" src="https://open.spotify.com/embed/playlist/2D4nVMeiTwQkNPpfgGyL5s?utm_source=generator&theme=0" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <div class="actions">
       <a class="icon-btn" href="https://www.instagram.com/onder.gog/" target="_blank" title="Instagram" aria-label="Instagram">
@@ -544,12 +545,13 @@ function copyDiscord() {
   @media (max-width: 700px) {
     .spotify-embed {
       position: static !important;
-      margin: 1em auto !important;
+      margin: 1em auto 0 auto !important;
       max-width: 98vw !important;
       width: 100% !important;
       left: unset !important;
       top: unset !important;
       box-shadow: 0 2px 8px #0003;
+      order: 9999;
     }
     .spotify-embed iframe {
       height: 120px !important;
