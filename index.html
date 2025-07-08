@@ -149,11 +149,56 @@
       height: 32px;
       fill: currentColor;
     }
+    .about-card {
+      margin: 2.5em auto 0 auto;
+      max-width: 520px;
+      background: linear-gradient(120deg, rgba(34,43,58,0.55) 60%, rgba(16,23,42,0.38) 100%);
+      border-radius: 32px;
+      box-shadow: 0 6px 32px rgba(0,0,0,0.18);
+      padding: 2.2em 2.2em 1.7em 2.2em;
+      color: #fff;
+      font-family: 'Tektur', Arial, sans-serif;
+      font-size: 1.08em;
+      line-height: 1.7;
+      border: 1.5px solid rgba(255,255,255,0.13);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 3;
+      position: relative;
+    }
+    .about-title {
+      font-size: 1.35em;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 1.1em;
+      color: #7be86c;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.13);
+    }
+    .about-list {
+      padding-left: 1.2em;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7em;
+    }
+    .about-list li {
+      margin-bottom: 0.2em;
+      color: #e0e6ed;
+      font-size: 1em;
+      font-weight: 400;
+      letter-spacing: 0.1px;
+    }
     @media (max-width: 700px) {
       .name { font-size: 2em; }
       .profile-img { width: 80px; height: 80px; }
       .actions { flex-direction: column; gap: 1em; padding: 1em; }
       .icon-btn { width: 48px; height: 48px; font-size: 1.3rem; }
+      .about-card {
+        padding: 1.2em 0.7em 1em 0.7em;
+        max-width: 98vw;
+        font-size: 0.98em;
+      }
+      .about-title { font-size: 1.1em; }
     }
   </style>
 </head>
@@ -165,6 +210,15 @@
     <div class="name">Önder GÖG</div>
     <div class="bio">
       Android ve Windows ekosistemlerine ilgi duyan, teknolojik yenilikleri keşfetmeyi seven bir teknoloji meraklısıyım. Yeni sistemleri denemek, yazılım ve donanım dünyasını kurcalamak benim için bir tutku. Deneyimleyerek öğrenirim; bazen bozarım ama her seferinde daha fazlasını keşfederim. Dijital dünyanın sunduğu olanakları takip eder, kendi çözümlerimi üretmeye çalışırım.
+    </div>
+    <div class="about-card">
+      <div class="about-title">Hakkımda</div>
+      <ul class="about-list">
+        <li>Teknolojiye olan ilgim çocukluk yıllarımda başladı. Android ve Windows ekosistemlerinde yenilikleri takip etmeyi seviyorum.</li>
+        <li>Yeni sistemleri denemek, yazılım ve donanım dünyasını keşfetmek benim için bir tutku.</li>
+        <li>Bozarak, kurcalayarak ve deneyerek öğrenirim.</li>
+        <li>Sürekli gelişime ve paylaşmaya inanırım.</li>
+      </ul>
     </div>
     <div class="actions">
       <a class="icon-btn" href="https://www.instagram.com/onder.gog/" target="_blank" title="Instagram">
