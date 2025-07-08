@@ -64,6 +64,7 @@
       position: relative;
       z-index: 2;
       padding: 0 2vw;
+      gap: 0;
     }
     .main-content > * {
       opacity: 0;
@@ -84,12 +85,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 180px;
-      height: 204px;
+      width: 320px;
+      height: 364px;
       background: #fff;
       clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
       -webkit-clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
-      margin-bottom: 2.2rem;
+      margin-bottom: 0;
       box-shadow: 0 4px 32px rgba(0,0,0,0.18);
       transition: box-shadow 0.3s, filter 0.3s;
     }
@@ -98,8 +99,8 @@
       filter: brightness(1.08) drop-shadow(0 0 16px #7be86c88);
     }
     .profile-img {
-      width: 160px;
-      height: 184px;
+      width: 288px;
+      height: 328px;
       border-radius: 0;
       object-fit: cover;
       object-position: center top;
@@ -121,6 +122,8 @@
       color: #fff;
       text-align: center;
       margin-bottom: 1.2rem;
+      margin-top: 0;
+      padding-top: 0;
       letter-spacing: -1px;
       line-height: 1.1;
       background: linear-gradient(90deg, #7be86c 10%, #fff 50%, #7be86c 90%);
@@ -348,13 +351,13 @@
       }
     }
     @media (max-width: 700px) {
-      .name { font-size: 2em; }
+      .name { font-size: 2em; margin-top: 0; }
       .profile-img-hex {
-        width: 90px;
-        height: 102px;
-        margin-bottom: 1.2rem;
+        width: 180px;
+        height: 204px;
+        margin-bottom: 0;
       }
-      .profile-img { width: 80px; height: 92px; border-radius: 0; object-position: center top; clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); -webkit-clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); }
+      .profile-img { width: 160px; height: 184px; border-radius: 0; object-position: center top; clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); -webkit-clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); }
       .actions { flex-direction: column; gap: 1em; padding: 1em; }
       .icon-btn { width: 48px; height: 48px; font-size: 1.3rem; }
       .about-card {
@@ -417,7 +420,9 @@
     .profile-svg-anim { margin: 2.5em auto 0 auto; display: flex; justify-content: center; align-items: center; }
     @media (max-width: 700px) { .profile-svg-anim { margin: 1.2em auto 0 auto; } }
     .quote-card {
-      margin: 1.2em auto 0 auto;
+      margin: 0 auto 0 auto;
+      margin-bottom: 0;
+      padding-bottom: 0;
       min-width: 180px;
       max-width: 520px;
       width: fit-content;
@@ -483,15 +488,21 @@
     <div class="profile-img-hex">
       <img src="profil.jpg" alt="Profil Fotoğrafı" class="profile-img" />
     </div>
+    <div class="quote-card">
+      <svg class="quote-icon" viewBox="0 0 24 24"><path d="M7.17 6.17A5.97 5.97 0 0 0 2 12c0 3.31 2.69 6 6 6c.55 0 1-.45 1-1v-2c0-.55-.45-1-1-1c-1.1 0-2-.9-2-2c0-1.1.9-2 2-2c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1c-.36 0-.7.1-1 .17zm8 0A5.97 5.97 0 0 0 10 12c0 3.31 2.69 6 6 6c.55 0 1-.45 1-1v-2c0-.55-.45-1-1-1c-1.1 0-2-.9-2-2c0-1.1.9-2 2-2c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1c-.36 0-.7.1-1 .17z"/></svg>
+      <span class="quote-text" id="quote-text"></span>
+    </div>
     <div class="name">Önder GÖG</div>
     <div style="font-family: 'Tektur', Arial, sans-serif; font-size: 2.2em; font-weight: 800; color: var(--muted); text-align: center; letter-spacing: 2px; margin-bottom: 0.5em; margin-top: 1.2em; text-shadow: 0 2px 8px rgba(0,0,0,0.13);">ÖNDER GÖG</div>
     <div class="bio">
       Android ve Windows ekosistemlerine ilgi duyan, teknolojik yenilikleri keşfetmeyi seven bir teknoloji meraklısıyım. Deneyimleyerek öğrenirim; bazen bozarım ama her seferinde daha fazlasını keşfederim. Dijital dünyanın sunduğu olanakları takip eder, kendi çözümlerimi üretmeye çalışırım. Gelişimle beslenir, paylaşarak çoğalırım. Şehir içinde motosikletimle özgürlüğü yaşarken, kışın snowboard yapıp dağların sessizliğine karışırım. Anadolu rock’un derin hikayeleriyle ruhumu besler, sakinliğimle insanları izlerim.
     </div>
-    <!-- Spotify embed'i EN ALTA taşıyoruz -->
-    <div class="spotify-embed">
-      <iframe style="border-radius:12px;width:100%;background:#10172a;" src="https://open.spotify.com/embed/playlist/2D4nVMeiTwQkNPpfgGyL5s?utm_source=generator&theme=0" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
+  </div>
+  <!-- Spotify embed'i EN ALTA taşıyoruz -->
+</div>
+<div class="spotify-embed">
+  <iframe style="border-radius:12px;width:100%;background:#10172a;" src="https://open.spotify.com/embed/playlist/2D4nVMeiTwQkNPpfgGyL5s?utm_source=generator&theme=0" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <div class="actions">
       <a class="icon-btn" href="https://www.instagram.com/onder.gog/" target="_blank" title="Instagram" aria-label="Instagram">
@@ -542,20 +553,50 @@ function copyDiscord() {
   alert('Discord ID kopyalandı: 184764902743867392');
 }
   </script>
-  @media (max-width: 700px) {
+  <style>
     .spotify-embed {
-      position: static !important;
-      margin: 1em auto 0 auto !important;
-      max-width: 98vw !important;
-      width: 100% !important;
-      left: unset !important;
-      top: unset !important;
-      box-shadow: 0 2px 8px #0003;
-      order: 9999;
+      position: fixed;
+      top: 24px;
+      left: 24px;
+      z-index: 1000;
+      box-shadow: 0 4px 32px #0005;
+      border-radius: 16px;
+      overflow: hidden;
+      background: rgba(16,23,42,0.92);
+      backdrop-filter: blur(6px);
+      max-width: 420px;
+      width: 90vw;
+      display: block;
     }
     .spotify-embed iframe {
-      height: 120px !important;
+      border-radius: 12px;
+      width: 100%;
+      background: #10172a;
+      display: block;
     }
-  }
+    @media (max-width: 700px) {
+      .spotify-embed {
+        position: static !important;
+        margin: 1em auto 0 auto !important;
+        max-width: 98vw !important;
+        width: 100% !important;
+        left: unset !important;
+        top: unset !important;
+        box-shadow: 0 2px 8px #0003;
+        order: 9999;
+        display: block !important;
+        border-radius: 16px;
+        background: rgba(16,23,42,0.92);
+        z-index: 1000;
+      }
+      .spotify-embed iframe {
+        height: 120px !important;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+      }
+    }
+  </style>
 </body>
 </html>
