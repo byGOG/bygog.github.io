@@ -524,16 +524,20 @@
     }
     @media (max-width: 600px) {
       .spotify-fixed {
-        top: 8px;
-        left: 8px;
-        max-width: 99vw;
-        width: 99vw;
-        padding: 4px;
-        border-radius: 12px;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-width: 100vw;
+        width: 100vw;
+        padding: 0 0 2px 0;
+        border-radius: 0;
+        box-shadow: 0 -2px 16px 0 #7be86c33, 0 1.5px 8px 0 #7be86c22;
+        z-index: 1200;
       }
       .spotify-fixed iframe {
-        height: 120px !important;
-        border-radius: 8px;
+        height: 80px !important;
+        border-radius: 0;
       }
     }
     /* --- Mikro Animasyonlar ve Akıcı Geçişler --- */
