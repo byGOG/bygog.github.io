@@ -359,6 +359,7 @@
       }
       .profile-img { width: 160px; height: 184px; border-radius: 0; object-position: center top; clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); -webkit-clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); }
       .actions { flex-direction: column; gap: 1em; padding: 1em; }
+      .profile-row { flex-direction: column; gap: 1em; }
       .icon-btn { width: 48px; height: 48px; font-size: 1.3rem; }
       .about-card {
         padding: 1.2em 0.7em 1em 0.7em;
@@ -388,7 +389,8 @@
       }
       .name { font-size: 1.2em; }
       .bio { font-size: 0.85em; padding: 0 0.2em; }
-      .actions { flex-direction: row; gap: 0.5em; padding: 0.7em 0.2em; }
+      .actions { flex-direction: column; gap: 0.5em; padding: 0.7em 0.2em; }
+      .profile-row { flex-direction: column; gap: 0.5em; }
       .icon-btn { width: 32px; height: 32px; font-size: 0.9em; }
       .about-card, .social-feed-card, .quote-card {
         padding: 0.7em 0.3em 0.6em 0.3em;
@@ -521,9 +523,133 @@
         border-radius: 8px;
       }
     }
+    /* Hamburger Menü Stili */
+    .hamburger {
+      display: none;
+      position: fixed;
+      top: 22px;
+      right: 22px;
+      z-index: 2001;
+      width: 44px;
+      height: 44px;
+      background: rgba(34,43,58,0.92);
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px #0002;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .hamburger:active,
+    .hamburger:focus {
+      background: #7be86c;
+      outline: none;
+    }
+    .hamburger span,
+    .hamburger span::before,
+    .hamburger span::after {
+      display: block;
+      background: #fff;
+      height: 4px;
+      width: 28px;
+      border-radius: 2px;
+      position: absolute;
+      transition: 0.3s;
+      content: '';
+    }
+    .hamburger span {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+    .hamburger span::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 0;
+    }
+    .hamburger span::after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 0;
+    }
+    .hamburger.open span {
+      background: transparent;
+    }
+    .hamburger.open span::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+    .hamburger.open span::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+    /* Açılır Menü */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; right: 0; left: 0;
+      height: 100vh;
+      background: rgba(16,23,42,0.98);
+      z-index: 2000;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 80px;
+      animation: slideDown 0.3s cubic-bezier(.23,1.02,.32,1);
+    }
+    .mobile-menu.open {
+      display: flex;
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
+    .mobile-menu a {
+      color: #fff;
+      font-family: 'Tektur', Arial, sans-serif;
+      font-size: 1.3em;
+      font-weight: 700;
+      text-decoration: none;
+      margin: 1.2em 0;
+      transition: color 0.2s;
+      letter-spacing: 1px;
+    }
+    .mobile-menu a:hover {
+      color: #7be86c;
+    }
+    .mobile-menu .close-btn {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2em;
+      cursor: pointer;
+      z-index: 2002;
+    }
+    @media (max-width: 700px) {
+      .hamburger { display: flex; }
+    }
+    @media (min-width: 701px) {
+      .mobile-menu { display: none !important; }
+      .hamburger { display: none !important; }
+    }
   </style>
 </head>
 <body>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Menüyü Aç/Kapat">
+    <span></span>
+  </button>
+  <nav class="mobile-menu" id="mobileMenu">
+    <button class="close-btn" id="closeMenuBtn" aria-label="Menüyü Kapat">&times;</button>
+    <a href="#">Anasayfa</a>
+    <a href="#about">Hakkımda</a>
+    <a href="#contact">İletişim</a>
+  </nav>
   <img class="bg-image" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Arka Plan" />
   <div class="bg-pattern"></div>
   <div class="main-content">
@@ -563,5 +689,26 @@
     </div>
   </div>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script>
+    // Hamburger Menü Aç/Kapat
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    hamburgerBtn.addEventListener('click', function() {
+      hamburgerBtn.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    closeMenuBtn.addEventListener('click', function() {
+      hamburgerBtn.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+    // Menüden bir linke tıklanınca menüyü kapat
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        hamburgerBtn.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+  </script>
 </body>
 </html>
