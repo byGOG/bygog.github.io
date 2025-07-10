@@ -484,31 +484,6 @@
 <body>
   <img class="bg-image" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Arka Plan" />
   <div class="bg-pattern"></div>
-  <div id="info-widget" style="position:fixed;top:24px;right:24px;z-index:1200;background:rgba(16,23,42,0.92);color:#fff;padding:1em 1.5em;border-radius:18px;box-shadow:0 4px 24px #0005;font-family:'Tektur',Arial,sans-serif;display:flex;flex-direction:column;align-items:center;gap:0.3em;min-width:120px;backdrop-filter:blur(6px);">
-    <div id="live-clock" style="font-size:1.25em;font-weight:700;letter-spacing:1px;">--:--:--</div>
-    <div id="visitor-counter" style="font-size:1em;font-weight:500;color:#7be86c;">Ziyaretçi: ...</div>
-  </div>
-  <script>
-    // Canlı saat
-    function updateClock() {
-      const now = new Date();
-      const h = String(now.getHours()).padStart(2,'0');
-      const m = String(now.getMinutes()).padStart(2,'0');
-      const s = String(now.getSeconds()).padStart(2,'0');
-      document.getElementById('live-clock').textContent = `${h}:${m}:${s}`;
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
-    // Ziyaretçi sayacı (countapi.xyz)
-    fetch('https://api.countapi.xyz/hit/bygog.github.io/visits')
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById('visitor-counter').textContent = `Ziyaretçi: ${data.value}`;
-      })
-      .catch(() => {
-        document.getElementById('visitor-counter').textContent = 'Ziyaretçi: ?';
-      });
-  </script>
   <div class="main-content">
     <div class="profile-img-hex">
       <img src="profil.jpg" alt="Profil Fotoğrafı" class="profile-img" />
