@@ -484,26 +484,40 @@
 <body>
   <img class="bg-image" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Arka Plan" />
   <div class="bg-pattern"></div>
+  <div id="info-widget" style="position:fixed;top:24px;right:24px;z-index:1200;background:rgba(16,23,42,0.92);color:#fff;padding:1em 1.5em;border-radius:18px;box-shadow:0 4px 24px #0005;font-family:'Tektur',Arial,sans-serif;display:flex;flex-direction:column;align-items:center;gap:0.3em;min-width:120px;backdrop-filter:blur(6px);">
+    <div id="live-clock" style="font-size:1.25em;font-weight:700;letter-spacing:1px;">--:--:--</div>
+    <div id="visitor-counter" style="font-size:1em;font-weight:500;color:#7be86c;">Ziyaretçi: ...</div>
+  </div>
+  <script>
+    // Canlı saat
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2,'0');
+      const m = String(now.getMinutes()).padStart(2,'0');
+      const s = String(now.getSeconds()).padStart(2,'0');
+      document.getElementById('live-clock').textContent = `${h}:${m}:${s}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+    // Ziyaretçi sayacı (countapi.xyz)
+    fetch('https://api.countapi.xyz/hit/bygog.github.io/visits')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('visitor-counter').textContent = `Ziyaretçi: ${data.value}`;
+      })
+      .catch(() => {
+        document.getElementById('visitor-counter').textContent = 'Ziyaretçi: ?';
+      });
+  </script>
   <div class="main-content">
     <div class="profile-img-hex">
       <img src="profil.jpg" alt="Profil Fotoğrafı" class="profile-img" />
-    </div>
-    <div class="quote-card">
-      <svg class="quote-icon" viewBox="0 0 24 24"><path d="M7.17 6.17A5.97 5.97 0 0 0 2 12c0 3.31 2.69 6 6 6c.55 0 1-.45 1-1v-2c0-.55-.45-1-1-1c-1.1 0-2-.9-2-2c0-1.1.9-2 2-2c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1c-.36 0-.7.1-1 .17zm8 0A5.97 5.97 0 0 0 10 12c0 3.31 2.69 6 6 6c.55 0 1-.45 1-1v-2c0-.55-.45-1-1-1c-1.1 0-2-.9-2-2c0-1.1.9-2 2-2c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1c-.36 0-.7.1-1 .17z"/></svg>
-      <span class="quote-text" id="quote-text"></span>
     </div>
     <div class="name">Önder GÖG</div>
     <div style="font-family: 'Tektur', Arial, sans-serif; font-size: 2.2em; font-weight: 800; color: var(--muted); text-align: center; letter-spacing: 2px; margin-bottom: 0.5em; margin-top: 1.2em; text-shadow: 0 2px 8px rgba(0,0,0,0.13);">ÖNDER GÖG</div>
     <div class="bio">
       Android ve Windows ekosistemlerine ilgi duyan, teknolojik yenilikleri keşfetmeyi seven bir teknoloji meraklısıyım. Deneyimleyerek öğrenirim; bazen bozarım ama her seferinde daha fazlasını keşfederim. Dijital dünyanın sunduğu olanakları takip eder, kendi çözümlerimi üretmeye çalışırım. Gelişimle beslenir, paylaşarak çoğalırım. Şehir içinde motosikletimle özgürlüğü yaşarken, kışın snowboard yapıp dağların sessizliğine karışırım. Anadolu rock’un derin hikayeleriyle ruhumu besler, sakinliğimle insanları izlerim.
     </div>
-  </div>
-  <!-- Spotify embed'i EN ALTA taşıyoruz -->
-</div>
-<div class="spotify-embed">
-  <iframe style="border-radius:12px;width:100%;background:#10172a;" src="https://open.spotify.com/embed/playlist/2D4nVMeiTwQkNPpfgGyL5s?utm_source=generator&theme=0" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-</div>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <div class="actions">
       <a class="icon-btn" href="https://www.instagram.com/onder.gog/" target="_blank" title="Instagram" aria-label="Instagram">
         <svg viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 3.5zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm5.13.62a1.13 1.13 0 1 1-2.26 0a1.13 1.13 0 0 1 2.26 0z"/></svg>
@@ -514,12 +528,6 @@
       <a class="icon-btn" href="https://github.com/byGOG" target="_blank" title="GitHub" aria-label="GitHub">
         <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.339-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.987 1.029-2.687-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222v3.293c0 .322.218.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
       </a>
-      <a class="icon-btn" href="https://www.youtube.com/c/%C3%96nderG%C3%96G" target="_blank" title="YouTube" aria-label="YouTube">
-        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M21.8 8.001a2.75 2.75 0 0 0-1.94-1.94C18.2 6 12 6 12 6s-6.2 0-7.86.06a2.75 2.75 0 0 0-1.94 1.94A28.6 28.6 0 0 0 2 12a28.6 28.6 0 0 0 .2 3.999a2.75 2.75 0 0 0 1.94 1.94C5.8 18 12 18 12 18s6.2 0 7.86-.06a2.75 2.75 0 0 0 1.94-1.94A28.6 28.6 0 0 0 22 12a28.6 28.6 0 0 0-.2-3.999zM10 15.5v-7l6 3.5l-6 3.5z"/></svg>
-      </a>
-      <a class="icon-btn" href="https://www.linkedin.com/in/ondergog/" target="_blank" title="LinkedIn" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75s1.75.79 1.75 1.75s-.78 1.75-1.75 1.75zm13.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47c-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54c3.04 0 3.6 2 3.6 4.59v4.72z"/></svg>
-      </a>
       <a class="icon-btn" href="https://discord.com/users/184764902743867392" target="_blank" title="Discord" aria-label="Discord">
         <svg viewBox="0 0 24 24"><path fill="currentColor" d="M20.317 4.369A19.791 19.791 0 0 0 16.885 3.1a.074.074 0 0 0-.079.037c-.34.607-.719 1.396-.984 2.01a18.219 18.219 0 0 0-5.456 0a12.51 12.51 0 0 0-.997-2.01a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.369a.069.069 0 0 0-.03.027C1.577 7.648.293 10.822.076 13.952a.08.08 0 0 0 .028.061c2.104 1.553 4.144 2.497 6.152 3.13a.077.077 0 0 0 .084-.027c.472-.65.892-1.34 1.253-2.066a.076.076 0 0 0-.041-.104a11.72 11.72 0 0 1-1.664-.8a.077.077 0 0 1-.008-.128c.112-.084.224-.17.331-.256a.074.074 0 0 1 .077-.01c3.487 1.597 7.255 1.597 10.708 0a.075.075 0 0 1 .078.009c.107.087.219.173.332.257a.077.077 0 0 1-.006.128a11.578 11.578 0 0 1-1.665.799a.076.076 0 0 0-.04.105c.36.726.78 1.416 1.252 2.066a.076.076 0 0 0 .084.028c2.01-.633 4.05-1.577 6.153-3.13a.077.077 0 0 0 .028-.06c-.21-3.13-1.494-6.304-3.611-9.556a.061.061 0 0 0-.03-.028zM8.02 14.331c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.418 2.157-2.418c1.213 0 2.177 1.095 2.157 2.418c0 1.334-.955 2.419-2.157 2.419zm7.96 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.418 2.157-2.418c1.213 0 2.177 1.095 2.157 2.418c0 1.334-.955 2.419-2.157 2.419z"/></svg>
       </a>
@@ -528,31 +536,20 @@
       </a>
     </div>
   </div>
-  <script>
-    const quotes = [
-      "Başlamak için mükemmel olmak zorunda değilsin, ama mükemmel olmak için başlamak zorundasın.",
-      "Kod yazmak, geleceği şekillendirmektir.",
-      "Her hata, yeni bir öğrenme fırsatıdır.",
-      "Hayal et, dene, başar!",
-      "Teknoloji, hayal gücünün sınırlarını zorlar.",
-      "En iyi yol, denemeye devam etmektir.",
-      "Bugün bir satır kod, yarın bir dünya değiştirir.",
-      "Gelişim, konfor alanının dışında başlar.",
-      "Her gün yeni bir şey öğren!",
-      "Başarı, vazgeçmeyenlerin yoludur."
-    ];
-    function setRandomQuote() {
-      const q = quotes[Math.floor(Math.random() * quotes.length)];
-      document.getElementById('quote-text').textContent = q;
-    }
-    window.addEventListener('DOMContentLoaded', setRandomQuote);
-  </script>
-  <script>
-function copyDiscord() {
-  navigator.clipboard.writeText('184764902743867392');
-  alert('Discord ID kopyalandı: 184764902743867392');
-}
-  </script>
+  <!-- Spotify embed'i EN ALTA taşıyoruz -->
+  <div class="spotify-embed">
+    <iframe
+      style="border-radius:12px"
+      src="https://open.spotify.com/embed/playlist/5zrUCiiHSkBJJTkSJRH9AH?utm_source=generator&theme=0"
+      width="100%"
+      height="352"
+      frameborder="0"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
+  </div>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <style>
     .spotify-embed {
       position: fixed;
