@@ -100,7 +100,7 @@
       background: #fff;
       clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
       -webkit-clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
-      margin-bottom: 0;
+      margin: 0 auto;
       box-shadow: 0 4px 32px rgba(0,0,0,0.18);
       transition: box-shadow 0.3s, filter 0.3s;
     }
@@ -121,6 +121,16 @@
       border: none;
       box-shadow: none;
       margin-bottom: 0;
+    }
+    @media (max-width: 640px) {
+      .profile-img-hex {
+        width: min(85vw, 420px);
+        height: min(95vw, 480px);
+      }
+      .profile-img {
+        width: min(80vw, 400px);
+        height: min(90vw, 440px);
+      }
     }
     .profile-img:hover {
       box-shadow: none;
