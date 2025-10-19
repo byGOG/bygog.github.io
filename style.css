@@ -261,6 +261,71 @@ body {
   letter-spacing: -0.02em;
 }
 
+.section-subtitle {
+  margin: 2.5rem 0 1rem;
+  font-size: clamp(1.35rem, 3vw, 1.7rem);
+  font-weight: 600;
+}
+
+.github-projects {
+  margin-top: clamp(2rem, 5vw, 3rem);
+}
+
+.github-status {
+  margin: 0 0 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+}
+
+.github-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.github-item {
+  padding: 1rem 1.25rem;
+  background: rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+}
+
+.github-item a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.github-item a:hover,
+.github-item a:focus {
+  text-decoration: underline;
+}
+
+.github-item p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.github-fallback {
+  margin-top: 1.25rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.github-fallback a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.github-fallback a:hover,
+.github-fallback a:focus {
+  text-decoration: underline;
+}
+
 .card-grid {
   display: grid;
   gap: clamp(1.5rem, 3vw, 2.5rem);
@@ -304,6 +369,7 @@ body {
   margin: 0 0 1rem;
   color: var(--muted);
 }
+
 
 .skills-list,
 .timeline {
