@@ -65,32 +65,17 @@
 
     <section id="projects" class="card" aria-labelledby="projects-title">
       <h2 id="projects-title" class="section-title">Projeler ve Deneyimler</h2>
-      <div class="card-grid" role="list">
-        <article class="card card--nested" role="listitem">
-          <h3>PixelDex ROM Paketi</h3>
-          <p>
-            Pixel deneyimini giriş seviyesi cihazlara taşıyan kişisel ROM mod paketleri. Kararlı performans, hafif arayüz
-            ve özelleştirilebilir çekirdek modülleri sunuyor.
-          </p>
-        </article>
-        <article class="card card--nested" role="listitem">
-          <h3>Windows Tempo Profili</h3>
-          <p>
-            Profesyonel oyuncular ve içerik üreticileri için oluşturulan güç ayarları, kayıt defteri düzenlemeleri ve
-            betiklerle sisteme yeni bir hız kazandıran profil.
-          </p>
-        </article>
-        <article class="card card--nested" role="listitem">
-          <h3>Topluluk Rehberleri</h3>
-          <p>
-            Discord ve Reddit topluluklarında paylaşılan adım adım çözümler, ekran görüntülü anlatımlar ve yeni başlayanlar
-            için hızlı başlangıç kılavuzları.
-          </p>
-        </article>
-      </div>
       <div class="github-projects">
         <h3 class="section-subtitle">GitHub'dan Son Çalışmalar</h3>
-        <p class="github-status" data-github-status role="status">GitHub projeleri yükleniyor...</p>
+        <p
+          class="github-status"
+          data-github-status
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          GitHub projeleri yükleniyor...
+        </p>
         <ul class="github-list" data-github-projects aria-live="polite"></ul>
         <noscript>
           <p class="github-fallback">
