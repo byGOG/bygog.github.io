@@ -267,6 +267,45 @@ body {
   font-weight: 600;
 }
 
+.project-stream {
+  padding: clamp(1.75rem, 3vw, 2.25rem);
+  background: rgba(13, 20, 36, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  display: grid;
+  gap: 1.25rem;
+  box-shadow: 0 18px 38px rgba(6, 10, 24, 0.28);
+}
+
+.project-stream__header {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.project-stream__title {
+  margin: 0;
+  font-size: clamp(1.35rem, 3vw, 1.6rem);
+}
+
+.project-stream__meta {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+@media (min-width: 720px) {
+  .project-stream__header {
+    grid-template-columns: 1fr minmax(0, 320px);
+    align-items: start;
+    gap: 1.25rem;
+  }
+
+  .project-stream__meta {
+    text-align: right;
+  }
+}
+
 .github-projects {
   margin-top: clamp(2rem, 5vw, 3rem);
 }
@@ -371,8 +410,7 @@ body {
 }
 
 
-.skills-list,
-.timeline {
+.skills-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -380,19 +418,11 @@ body {
   gap: 0.75rem;
 }
 
-.skills-list li,
-.timeline li {
+.skills-list li {
   padding: 0.75rem 1rem;
   border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.timeline span {
-  display: block;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.55);
-  margin-bottom: 0.35rem;
 }
 
 .spotify-section iframe {
