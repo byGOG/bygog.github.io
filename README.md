@@ -1,9 +1,13 @@
 # Önder GÖG | Kişisel Web Sitesi
 
-Bu depo, Önder GÖG'ün GitHub Pages üzerinde yayınlanan kişisel tanıtım sayfasının kaynak dosyalarını içerir. Arayüz, modern bir tek sayfa tasarımıyla geliştirildi ve ziyaretçilere hızlıca iletişim kanallarına erişme, kısa özgeçmişi okuma ve sosyal hesaplara yönlenme imkânı sunar.
+Bu repo, Önder GÖG'ün GitHub Pages üzerinde yayınlanan kişisel tanıtım sayfasının kaynak dosyalarını içerir. Sayfa; sade,
+animasyonlu bir tasarım ile hem ziyaretçilerin hem de projeyi uyarlamak isteyenlerin ihtiyaçlarına cevap verecek şekilde
+düzenlenmiştir.
 
-- [Hızlı Bakış](#hızlı-bakış)
+- [Kimler İçin?](#kimler-için)
+- [Ziyaretçi Rehberi](#ziyaretçi-rehberi)
 - [Canlı Demo](#canlı-demo)
+- [Hızlı Bakış](#hızlı-bakış)
 - [Özellikler](#özellikler)
 - [Kurulum ve Yerel Geliştirme](#kurulum-ve-yerel-geliştirme)
 - [Proje Yapısı](#proje-yapısı)
@@ -16,6 +20,29 @@ Bu depo, Önder GÖG'ün GitHub Pages üzerinde yayınlanan kişisel tanıtım s
 - [Lisans](#lisans)
 - [İletişim](#iletişim)
 
+## Kimler İçin?
+- **Ziyaretçiler:** Önder GÖG hakkında hızlıca bilgi edinmek, iletişim kanallarına ulaşmak veya sosyal ağ profillerini incelemek
+  isteyenler.
+- **İşe alım uzmanları / iş ortakları:** Yetkinlikleri ve kısa geçmişi tek sayfada görüntüleyerek hızlı değerlendirme yapmak
+  isteyen profesyoneller.
+- **Kendi portföyünü hazırlamak isteyenler:** Basit bir HTML/CSS projesini düzenleyerek kişisel sitelerini yayınlamak isteyen
+  geliştiriciler ya da öğrenciler.
+
+## Ziyaretçi Rehberi
+1. **Karşılama (Hero) Alanı:** Açılışta dinamik bir isim animasyonu ve sosyal medya bağlantıları görürsünüz. İlgilendiğiniz platforma
+   tıklayarak doğrudan yönlenebilirsiniz.
+2. **Hakkımda Kartı:** Öne çıkan beceriler, kısa biyografi ve iletişim butonları burada yer alır. "E-posta" butonu yeni bir
+   e-posta taslağı açar.
+3. **Footer:** Telif bilgisi, ek linkler ve sosyal profillerin özetine buradan erişebilirsiniz.
+
+> 🔎 **İpucu:** Sayfa tek seferde yüklenen statik içerikten oluştuğu için bağlantılar anında çalışır; herhangi bir kayıt veya
+giriş gerekmez.
+
+## Canlı Demo
+GitHub Pages üzerinden son sürümü görüntülemek için aşağıdaki bağlantıyı kullanabilirsiniz:
+
+- **Site Adresi:** <https://bygog.github.io>
+
 ## Hızlı Bakış
 - 🔍 **Tür:** Statik kişisel portföy / özgeçmiş sitesi
 - 🚀 **Canlı Yayın:** GitHub Pages üzerinde otomatik olarak yayınlanır
@@ -23,11 +50,6 @@ Bu depo, Önder GÖG'ün GitHub Pages üzerinde yayınlanan kişisel tanıtım s
 - 🛠️ **Düzenleme Kolaylığı:** Tek dosya (index.html) üzerinden tüm içerik ve stil güncellenebilir
 - 📂 **Depo Sahibi:** [Önder GÖG](https://github.com/byGOG)
 - 📬 **Geri Bildirim:** Pull request veya issue açarak katkıda bulunabilirsiniz
-
-## Canlı Demo
-GitHub Pages üzerinden son sürümü görüntülemek için aşağıdaki bağlantıyı kullanabilirsiniz:
-
-- **Site Adresi:** <https://bygog.github.io>
 
 ## Özellikler
 - 🌌 **Animasyonlu arka plan** ile dikkat çeken, koyu temalı modern tasarım
@@ -39,7 +61,8 @@ GitHub Pages üzerinden son sürümü görüntülemek için aşağıdaki bağlan
 - 🌐 **SEO hazırlığı**: Başlık, açıklama ve Open Graph etiketleri kolayca güncellenebilir yapıdadır
 
 ## Kurulum ve Yerel Geliştirme
-Projeyi klonladıktan sonra statik bir HTML sayfası olduğu için ek bağımlılık gerektirmez. Ancak yerel geliştirme sırasında bir HTTP sunucusu üzerinden yayınlamak daha sağlıklı olacaktır.
+Projeyi klonladıktan sonra statik bir HTML sayfası olduğu için ek bağımlılık gerektirmez. Ancak yerel geliştirme sırasında bir HTTP
+sunucusu üzerinden yayınlamak daha sağlıklı olacaktır.
 
 ```bash
 # Depoyu klonlayın
@@ -69,16 +92,23 @@ Aşağıdaki liste, `index.html` dosyasındaki ana içerik bloklarının nasıl 
 | **Hakkımda Kartı** | Kısa biyografi, uzmanlık alanları ve iletişim butonlarının yer aldığı içerik. | `.about-card`, `.tag-list` |
 | **Footer** | Telif, sosyal medya ve ek bağlantılar için alan. | `footer`, `.footer-links` |
 
-Bu bölümleri güncellerken semantic HTML etiketlerinin korunmasına özen gösterin. Animasyonların ritmini değiştirmek isterseniz `@keyframes glow` ve `@keyframes float` tanımlarını düzenleyebilirsiniz.
+Bu bölümleri güncellerken semantic HTML etiketlerinin korunmasına özen gösterin. Animasyonların ritmini değiştirmek isterseniz
+`@keyframes glow` ve `@keyframes float` tanımlarını düzenleyebilirsiniz.
 
 ## Özelleştirme İpuçları
 - **Metin içerikleri:** `index.html` dosyasında ilgili başlık ve paragrafları güncelleyerek kişisel bilgilerinizle uyarlayabilirsiniz.
-- **Sosyal bağlantılar:** Sosyal ikonların URL'lerini `index.html` içerisinde bulunan `<a>` etiketlerinin `href` değerlerini değiştirerek düzenleyin.
-- **Profil görseli:** `profil.jpg` dosyasını kendi fotoğrafınızla değiştirin. Hexagon maskeleme için görselin yeterince geniş bir kırpma payına sahip olmasına dikkat edin.
-- **Tema renkleri:** Sayfanın renk paleti `index.html` dosyasının üst kısmındaki `:root` CSS değişkenleri üzerinden kontrol edilir. `--bg`, `--primary`, `--muted` gibi değişkenleri güncelleyerek temayı özelleştirebilirsiniz.
-- **Typography:** Google Fonts üzerinden içe aktarılan `Tektur` fontunu değiştirmek için `<link>` etiketindeki URL'yi yeni fontla değiştirin ve `font-family` kurallarını güncelleyin.
-- **SEO ayarları:** `<head>` bölümündeki `meta` etiketlerini güncel başlık ve açıklamalarla değiştirin. Paylaşım görseli için `og:image` alanına barındırılan bir görsel URL'si ekleyin.
-- **Analytics entegrasyonu:** Google Analytics veya benzeri araçlar eklemek isterseniz kapanış `</body>` etiketinden önce ilgili scriptleri yerleştirin.
+- **Sosyal bağlantılar:** Sosyal ikonların URL'lerini `index.html` içerisinde bulunan `<a>` etiketlerinin `href` değerlerini değiştirerek
+  düzenleyin.
+- **Profil görseli:** `profil.jpg` dosyasını kendi fotoğrafınızla değiştirin. Hexagon maskeleme için görselin yeterince geniş bir kırpma
+  payına sahip olmasına dikkat edin.
+- **Tema renkleri:** Sayfanın renk paleti `index.html` dosyasının üst kısmındaki `:root` CSS değişkenleri üzerinden kontrol edilir.
+  `--bg`, `--primary`, `--muted` gibi değişkenleri güncelleyerek temayı özelleştirebilirsiniz.
+- **Typography:** Google Fonts üzerinden içe aktarılan `Tektur` fontunu değiştirmek için `<link>` etiketindeki URL'yi yeni fontla
+  değiştirin ve `font-family` kurallarını güncelleyin.
+- **SEO ayarları:** `<head>` bölümündeki `meta` etiketlerini güncel başlık ve açıklamalarla değiştirin. Paylaşım görseli için
+  `og:image` alanına barındırılan bir görsel URL'si ekleyin.
+- **Analytics entegrasyonu:** Google Analytics veya benzeri araçlar eklemek isterseniz kapanış `</body>` etiketinden önce ilgili
+  scriptleri yerleştirin.
 - **Dağıtım:** Deponun `main` branch'ine yapılan her push, GitHub Pages yayınının otomatik olarak güncellenmesini tetikler.
 
 ## Kullanılan Teknolojiler
@@ -88,12 +118,16 @@ Bu bölümleri güncellerken semantic HTML etiketlerinin korunmasına özen gös
 
 ## Bakım ve Yayınlama
 - **Sürüm Takibi:** Önemli görsel veya içerik güncellemelerinde commit mesajlarında değişiklik kapsamını belirtin.
-- **Önbellek Temizliği:** GitHub Pages üzerinde değişiklikler bazen önbelleğe takılabilir. Tarayıcıda sert yenileme (Ctrl/Cmd + Shift + R) veya gizli sekme kullanarak yeni sürümü doğrulayın.
-- **Alan Adı (Opsiyonel):** Özel bir alan adı yönlendirmek için deponun kök dizinine `CNAME` dosyası ekleyin ve DNS ayarlarınızı güncelleyin.
-- **Erişilebilirlik Kontrolü:** Kontrast değerlerini ve alternatif metinleri (`alt` nitelikleri) düzenli olarak kontrol ederek erişilebilirliği artırın.
+- **Önbellek Temizliği:** GitHub Pages üzerinde değişiklikler bazen önbelleğe takılabilir. Tarayıcıda sert yenileme (Ctrl/Cmd + Shift + R)
+  veya gizli sekme kullanarak yeni sürümü doğrulayın.
+- **Alan Adı (Opsiyonel):** Özel bir alan adı yönlendirmek için deponun kök dizinine `CNAME` dosyası ekleyin ve DNS ayarlarınızı
+  güncelleyin.
+- **Erişilebilirlik Kontrolü:** Kontrast değerlerini ve alternatif metinleri (`alt` nitelikleri) düzenli olarak kontrol ederek erişilebilirliği
+  artırın.
 
 ## Katkıda Bulunma
-Hatalarla karşılaşırsanız veya yeni özellikler önermek isterseniz GitHub Issues üzerinden bildirebilir ya da pull request gönderebilirsiniz. Değişiklik yapmadan önce kısa bir açıklama eklemek, inceleme sürecini hızlandıracaktır.
+Hatalarla karşılaşırsanız veya yeni özellikler önermek isterseniz GitHub Issues üzerinden bildirebilir ya da pull request gönderebilirsiniz.
+Değişiklik yapmadan önce kısa bir açıklama eklemek, inceleme sürecini hızlandıracaktır.
 
 **Katkı Akışı Önerisi**
 1. Depoyu forklayın ve yerel ortamınıza klonlayın.
@@ -102,7 +136,8 @@ Hatalarla karşılaşırsanız veya yeni özellikler önermek isterseniz GitHub 
 4. Pull request açarken yaptığınız değişiklikleri özetleyen net bir açıklama ekleyin.
 
 ## Teşekkür ve İlham Kaynakları
-- Tasarımsal esin için [uiverse.io](https://uiverse.io/) ve [dribbble.com](https://dribbble.com/) üzerindeki modern portföy konseptlerinden yararlanıldı.
+- Tasarımsal esin için [uiverse.io](https://uiverse.io/) ve [dribbble.com](https://dribbble.com/) üzerindeki modern portföy konseptlerinden
+  yararlanıldı.
 - Sosyal ikonlar için [Font Awesome](https://fontawesome.com/) ikon seti temel alındı.
 
 ## Lisans
