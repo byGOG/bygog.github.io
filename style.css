@@ -1,14 +1,14 @@
 :root {
-  --bg:             #000000;
-  --surface:        rgba(255, 255, 255, 0.03);
-  --surface-raised: rgba(255, 255, 255, 0.06);
-  --border:         rgba(255, 255, 255, 0.06);
-  --border-mid:     rgba(255, 255, 255, 0.10);
-  --border-bright:  rgba(255, 255, 255, 0.22);
+  --bg:             #0a0a0a;
+  --surface:        rgba(255, 255, 255, 0.04);
+  --surface-raised: rgba(255, 255, 255, 0.07);
+  --border:         rgba(255, 255, 255, 0.08);
+  --border-mid:     rgba(255, 255, 255, 0.12);
+  --border-bright:  rgba(255, 255, 255, 0.28);
 
-  --text-1: #ffffff;
-  --text-2: #737373;
-  --text-3: #404040;
+  --text-1: #f5f5f5;
+  --text-2: #8a8a8a;
+  --text-3: #555555;
 
   --font-sm:     0.8125rem;
   --font-base:   clamp(0.9rem, 1.5vw, 1rem);
@@ -17,6 +17,7 @@
   --pad-section: clamp(4rem, 8vw, 7rem);
   --max-w:       1100px;
   --radius-pill: 999px;
+  --radius-card: 12px;
 
   --dur-fast: 120ms;
   --dur-mid:  260ms;
@@ -50,18 +51,14 @@ body {
   pointer-events: none;
 }
 
-/* çok soluk merkezi aydınlatma */
+/* nokta grid dokusu */
 .bg__orb--1 {
   position: absolute;
-  width: 900px;
-  height: 600px;
-  top: -200px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: radial-gradient(ellipse at 50% 0%,
-    rgba(255, 255, 255, 0.035) 0%,
-    transparent 65%
-  );
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 30px 30px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 0%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 0%, transparent 100%);
 }
 
 .bg__orb--2 { display: none; }
@@ -86,17 +83,17 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1.25rem clamp(1.5rem, 5vw, 4rem);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid transparent;
   transition:
     background var(--dur-mid) var(--ease),
     border-color var(--dur-mid);
 }
 
 .site-nav--scrolled {
-  background: rgba(0, 0, 0, 0.88);
+  background: rgba(10, 10, 10, 0.90);
   backdrop-filter: blur(28px) saturate(1.1);
   -webkit-backdrop-filter: blur(28px) saturate(1.1);
-  border-bottom-color: var(--border-mid);
+  border-bottom-color: var(--border);
 }
 
 .site-nav__logo {
@@ -114,7 +111,7 @@ body {
   gap: 2rem;
 }
 
-.site-nav__links a {
+.site-nav__link {
   color: var(--text-2);
   text-decoration: none;
   font-size: var(--font-sm);
@@ -123,8 +120,8 @@ body {
   transition: color var(--dur-fast);
 }
 
-.site-nav__links a:hover,
-.site-nav__links a:focus-visible {
+.site-nav__link:hover,
+.site-nav__link:focus-visible {
   color: var(--text-1);
 }
 
@@ -139,7 +136,6 @@ body {
   position: relative;
 }
 
-/* ince yatay çizgi - sayfanın alt sınırı */
 .section-hero::after {
   content: '';
   position: absolute;
@@ -160,7 +156,7 @@ body {
   margin: 0 auto;
   width: 100%;
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 220px 1fr;
   gap: 5rem;
   align-items: center;
 }
@@ -169,8 +165,8 @@ body {
 
 .hero__photo-wrap {
   position: relative;
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: 180px;
   margin: 0 auto;
   flex-shrink: 0;
 }
@@ -186,7 +182,7 @@ body {
   z-index: 1;
   display: block;
   transform: translateZ(0);
-  backface-visibility: hidden;
+  image-rendering: auto;
 }
 
 .hero__photo-ring {
@@ -195,11 +191,11 @@ body {
   border-radius: 50%;
   background: conic-gradient(
     from 0deg,
-    rgba(255, 255, 255, 0.8) 0%,
-    rgba(255, 255, 255, 0.15) 35%,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(255, 255, 255, 0.08) 38%,
     transparent 52%,
     transparent 62%,
-    rgba(255, 255, 255, 0.8) 100%
+    rgba(255, 255, 255, 0.7) 100%
   );
   animation: ring-spin 9s linear infinite;
   z-index: 0;
@@ -210,7 +206,7 @@ body {
   inset: -16px;
   border-radius: 50%;
   background: radial-gradient(circle,
-    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.05) 0%,
     transparent 65%
   );
   z-index: -1;
@@ -250,8 +246,33 @@ body {
   line-height: 1.9;
   color: var(--text-2);
   max-width: 44ch;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   font-weight: 400;
+}
+
+/* ── Tags ────────────────────────────────────────────── */
+
+.hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin-bottom: 2.5rem;
+}
+
+.hero__tags li {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--text-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 3px 10px;
+  transition: border-color var(--dur-fast), color var(--dur-fast);
+}
+
+.hero__tags li:hover {
+  border-color: var(--border-mid);
+  color: var(--text-2);
 }
 
 .hero__cta-row {
@@ -281,7 +302,7 @@ body {
 
 .btn--primary {
   background: var(--text-1);
-  color: #000000;
+  color: #0a0a0a;
   border-color: var(--text-1);
 }
 
@@ -338,6 +359,150 @@ body {
   fill: currentColor;
 }
 
+/* ── Section Layout ──────────────────────────────────── */
+
+.section-projects {
+  padding: var(--pad-section) clamp(1.5rem, 5vw, 4rem);
+}
+
+.section__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section__header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.section__title {
+  font-family: 'Tektur', sans-serif;
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-weight: 700;
+  color: var(--text-1);
+  letter-spacing: -0.02em;
+}
+
+.projects__status {
+  font-size: var(--font-sm);
+  color: var(--text-3);
+}
+
+/* ── Projects Grid ───────────────────────────────────── */
+
+.projects-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.github-item {
+  background: var(--surface);
+  padding: 1.5rem;
+  transition: background var(--dur-mid) var(--ease);
+  position: relative;
+}
+
+.github-item:hover {
+  background: var(--surface-raised);
+}
+
+.github-item__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.github-item__title {
+  font-family: 'Tektur', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-1);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color var(--dur-fast);
+}
+
+.github-item__title:hover { color: #fff; }
+
+.github-item__demo {
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 2px 8px;
+  white-space: nowrap;
+  transition: border-color var(--dur-fast), color var(--dur-fast);
+  flex-shrink: 0;
+}
+
+.github-item__demo:hover {
+  border-color: var(--border-mid);
+  color: var(--text-2);
+}
+
+.github-item__description {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--text-2);
+  margin-bottom: 1rem;
+}
+
+.github-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.github-topics li {
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  color: var(--text-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 2px 8px;
+}
+
+.github-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.github-meta__item {
+  font-size: 0.72rem;
+  color: var(--text-3);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.github-item--empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-card);
+  color: var(--text-3);
+  font-size: var(--font-sm);
+}
+
 /* ── Scroll Reveal ───────────────────────────────────── */
 
 [data-reveal] {
@@ -379,6 +544,7 @@ body {
     margin-right: auto;
   }
 
+  .hero__tags { justify-content: center; }
   .hero__cta-row { justify-content: center; }
   .hero__socials { justify-content: center; }
 }
@@ -387,8 +553,12 @@ body {
   .site-nav__links { gap: 1.25rem; }
 
   .hero__photo-wrap {
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -401,5 +571,5 @@ body {
 
   [data-reveal] { opacity: 1; transform: none; transition: none; }
 
-  .btn, .social-icon { transition: none; }
+  .btn, .social-icon, .github-item { transition: none; }
 }
