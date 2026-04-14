@@ -1,6 +1,6 @@
 const GITHUB_USERNAME = "byGOG";
 const MAX_REPOS = 6;
-const API_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=${MAX_REPOS * 2}`;
+const REPO_API_BASE = `https://api.github.com/repos/${GITHUB_USERNAME}`;
 
 const CACHE_KEY = "bygog_gh_cache";
 const CACHE_TTL = 3600 * 1000; // 1 saat
@@ -122,53 +122,34 @@ async function loadGitHubProjects() {
 
     if (cachedRepos) {
       repos = cachedRepos;
-      status.textContent = "GitHub'dan güncel projeler:";
     } else {
-      const response = await fetch(API_URL, {
-        headers: {
-          Accept: "application/vnd.github.mercy-preview+json",
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error(`GitHub API hatası: ${response.status}`);
-      }
-
-      const data = await response.json();
-      repos = data.filter((repo) => !repo.fork && !repo.private).slice(0, MAX_REPOS);
-      setCache(repos);
+      // PROJECT_OVERRIDES'daki repoları tek tek çek — pinned repo benzeri davranış
+      const names = Object.keys(PROJECT_OVERRIDES);
+      const results = await Promise.all(
+        names.map((name) =>
+          fetch(`${REPO_API_BASE}/${name}`, {
+            headers: { Accept: "application/vnd.github.mercy-preview+json" },
+          })
+            .then((r) => (r.ok ? r.json() : null))
+            .catch(() => null)
+        )
+      );
+      repos = results.filter((r) => r && !r.fork && !r.private);
+      if (repos.length) setCache(repos);
     }
 
     if (!repos.length) {
-      status.textContent =
-        "GitHub profilinde henüz öne çıkarılmış repo bulunmuyor. Öne çıkan seçkiyi keşfedin:";
+      status.textContent = "Öne çıkan projeler:";
       renderProjects(FALLBACK_PROJECTS, list);
       return;
     }
 
     const enriched = await Promise.all(repos.map(enrichRepository));
-
-    let combined = enriched;
-    let statusText = "GitHub'dan güncel projeler:";
-
-    if (enriched.length < MAX_REPOS) {
-      const missing = MAX_REPOS - enriched.length;
-      const fallbackAppend = FALLBACK_PROJECTS.filter(
-        (fallback) => !enriched.some((repo) => repo.name === fallback.name),
-      ).slice(0, missing);
-
-      if (fallbackAppend.length) {
-        combined = [...enriched, ...fallbackAppend];
-        statusText = "GitHub'dan güncel projeler ve seçilmiş ek çalışmalar:";
-      }
-    }
-
-    status.textContent = statusText;
-    renderProjects(combined, list);
+    status.textContent = "GitHub'dan güncel projeler:";
+    renderProjects(enriched, list);
   } catch (error) {
     console.error(error);
-    status.textContent =
-      "GitHub projeleri canlı olarak alınamadı. Öne çıkan çalışmaları aşağıda görebilirsiniz:";
+    status.textContent = "GitHub projeleri alınamadı. Öne çıkan çalışmalar:";
     renderProjects(FALLBACK_PROJECTS, list);
   }
 }
@@ -384,8 +365,10 @@ function renderProjects(projects, list) {
     return;
   }
 
-  projects.forEach((project) => {
-    list.appendChild(buildProjectItem(project));
+  projects.forEach((project, index) => {
+    const item = buildProjectItem(project);
+    item.style.setProperty("--i", index);
+    list.appendChild(item);
   });
 }
 
@@ -522,8 +505,53 @@ function createMetaItem({ icon, label, srLabel, title }) {
   return item;
 }
 
+function initContactForm() {
+  var form = document.getElementById("contact-form");
+  if (!form) return;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var btn = form.querySelector('[type="submit"]');
+    var sendText = btn.querySelector(".contact-form__send-text");
+    var result = form.querySelector(".contact-form__result");
+
+    btn.disabled = true;
+    sendText.textContent = "Gönderiliyor…";
+    result.textContent = "";
+    result.className = "contact-form__result";
+
+    fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" },
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data.success) {
+          result.textContent = "Mesajınız iletildi, teşekkürler!";
+          result.className = "contact-form__result contact-form__result--success";
+          form.reset();
+        } else {
+          throw new Error();
+        }
+      })
+      .catch(function () {
+        result.textContent = "Bir hata oluştu, lütfen tekrar deneyin.";
+        result.className = "contact-form__result contact-form__result--error";
+      })
+      .finally(function () {
+        btn.disabled = false;
+        sendText.textContent = "Gönder";
+      });
+  });
+}
+
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", loadGitHubProjects);
+  document.addEventListener("DOMContentLoaded", function () {
+    loadGitHubProjects();
+    initContactForm();
+  });
 } else {
   loadGitHubProjects();
+  initContactForm();
 }
