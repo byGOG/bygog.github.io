@@ -581,14 +581,44 @@ function initContactForm() {
   });
 }
 
+function initNavToggle() {
+  var nav = document.querySelector(".site-nav");
+  var toggle = document.querySelector(".nav-toggle");
+  if (!nav || !toggle) return;
+
+  toggle.addEventListener("click", function () {
+    var isOpen = nav.classList.toggle("site-nav--open");
+    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    toggle.setAttribute("aria-label", isOpen ? "Menüyü kapat" : "Menüyü aç");
+  });
+
+  nav.querySelectorAll(".site-nav__link").forEach(function (link) {
+    link.addEventListener("click", function () {
+      nav.classList.remove("site-nav--open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Menüyü aç");
+    });
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!nav.contains(e.target) && nav.classList.contains("site-nav--open")) {
+      nav.classList.remove("site-nav--open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Menüyü aç");
+    }
+  });
+}
+
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", function () {
     loadGitHubProjects();
     initContactForm();
     initLangToggle();
+    initNavToggle();
   });
 } else {
   loadGitHubProjects();
   initContactForm();
   initLangToggle();
+  initNavToggle();
 }

@@ -223,6 +223,63 @@ body {
   color: var(--text-1);
 }
 
+.site-nav__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ── Hamburger Toggle ────────────────────────────────── */
+
+.nav-toggle {
+  display: none;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-3);
+  cursor: pointer;
+  transition: all var(--dur-mid) var(--ease);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  border-color: var(--border-bright);
+  color: var(--text-1);
+}
+
+.nav-toggle svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  position: absolute;
+  transition: opacity var(--dur-fast), transform var(--dur-fast);
+}
+
+.nav-toggle__icon--close {
+  opacity: 0;
+  transform: rotate(-45deg);
+}
+
+.site-nav--open .nav-toggle__icon--close {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.site-nav--open .nav-toggle__icon--open {
+  opacity: 0;
+  transform: rotate(45deg);
+}
+
 /* ── Hero ────────────────────────────────────────────── */
 
 .section-hero {
@@ -647,9 +704,42 @@ body {
   .hero__socials { justify-content: center; }
 }
 
-@media (max-width: 600px) {
-  .site-nav__links { gap: 1.25rem; }
+@media (max-width: 720px) {
+  .nav-toggle { display: flex; }
 
+  .site-nav__links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    flex-direction: column;
+    padding: 0.5rem 0;
+    background: rgba(10, 10, 10, 0.97);
+    backdrop-filter: blur(28px) saturate(1.1);
+    -webkit-backdrop-filter: blur(28px) saturate(1.1);
+    border-bottom: 1px solid var(--border);
+    gap: 0;
+  }
+
+  [data-theme="light"] .site-nav__links {
+    background: rgba(245, 245, 245, 0.97);
+  }
+
+  .site-nav--open .site-nav__links {
+    display: flex;
+  }
+
+  .site-nav__link {
+    padding: 0.9rem clamp(1.5rem, 5vw, 4rem);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .site-nav__link:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 600px) {
   .hero__photo-wrap {
     width: 150px;
     height: 150px;
