@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <script>(function(){var s=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',s||'dark')})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <title>Notlar | byGOG</title>
+  <meta name="description" content="Önder GÖG'ün notları ve yazıları." />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon-180.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Tektur:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="bg" aria-hidden="true">
+    <div class="bg__orb bg__orb--1"></div>
+    <div class="bg__orb bg__orb--2"></div>
+    <div class="bg__noise"></div>
+  </div>
+
+  <nav class="site-nav site-nav--scrolled" aria-label="Ana gezinme">
+    <a class="site-nav__logo" href="/">byGOG</a>
+    <div class="site-nav__links">
+      <a class="site-nav__link" href="/#projeler" data-tr="Projeler" data-en="Projects">Projeler</a>
+      <a class="site-nav__link" href="/notlar.html" data-tr="Notlar" data-en="Notes">Notlar</a>
+      <a class="site-nav__link" href="/#iletisim" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+    <button class="lang-toggle" type="button" aria-label="Dili değiştir">
+      <span class="lang-toggle__text">EN</span>
+    </button>
+    <button class="theme-toggle" type="button" aria-label="Temayı değiştir">
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+  </nav>
+
+  <main class="section-notes">
+    <div class="section__inner">
+      <header class="section__header">
+        <h1 class="section__title" data-tr="Notlar" data-en="Notes">Notlar</h1>
+      </header>
+
+      <ul class="notes-list" id="notes-list" aria-live="polite"></ul>
+
+      <article class="note-reader" id="note-reader" hidden>
+        <a class="note-reader__back" href="/notlar.html"
+           data-tr="← Tüm notlar" data-en="← All notes">← Tüm notlar</a>
+        <div class="prose" id="note-content"></div>
+      </article>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    (function () {
+      // Theme toggle
+      var toggleBtn = document.querySelector('.theme-toggle');
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', function () {
+          var current = document.documentElement.getAttribute('data-theme');
+          var next = current === 'light' ? 'dark' : 'light';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+          var metaTheme = document.querySelector('meta[name="theme-color"]');
+          if (metaTheme) metaTheme.content = next === 'light' ? '#f5f5f5' : '#0a0a0a';
+        });
+      }
+
+      // Service Worker
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(function () {});
+      }
+
+      // Notes loader
+      var param = new URLSearchParams(location.search).get('p');
+      var lang = localStorage.getItem('lang') || 'tr';
+
+      if (param) {
+        document.getElementById('notes-list').hidden = true;
+        var reader = document.getElementById('note-reader');
+        reader.hidden = false;
+
+        fetch('posts/' + encodeURIComponent(param) + '.md')
+          .then(function (r) { return r.ok ? r.text() : null; })
+          .then(function (md) {
+            var content = document.getElementById('note-content');
+            if (!md) {
+              content.textContent = lang === 'en' ? 'Post not found.' : 'Yazı bulunamadı.';
+              return;
+            }
+            content.innerHTML = marked.parse(md);
+            var h1 = content.querySelector('h1');
+            if (h1) document.title = h1.textContent + ' | byGOG';
+          })
+          .catch(function () {
+            document.getElementById('note-content').textContent =
+              lang === 'en' ? 'Loading error.' : 'Yüklenirken hata oluştu.';
+          });
+      } else {
+        fetch('posts/index.json')
+          .then(function (r) { return r.json(); })
+          .then(function (posts) {
+            var list = document.getElementById('notes-list');
+            if (!posts.length) {
+              var empty = document.createElement('li');
+              empty.className = 'note-item note-item--empty';
+              empty.textContent = lang === 'en' ? 'No posts yet.' : 'Henüz yazı yok.';
+              list.appendChild(empty);
+              return;
+            }
+            posts.forEach(function (post) {
+              var li = document.createElement('li');
+              li.className = 'note-item';
+
+              var a = document.createElement('a');
+              a.className = 'note-item__link';
+              a.href = '/notlar.html?p=' + encodeURIComponent(post.slug);
+
+              var titleEl = document.createElement('span');
+              titleEl.className = 'note-item__title';
+              titleEl.textContent = post.title;
+
+              var dateEl = document.createElement('time');
+              dateEl.className = 'note-item__date';
+              dateEl.dateTime = post.date;
+              dateEl.textContent = new Date(post.date + 'T12:00:00').toLocaleDateString(
+                lang === 'en' ? 'en-GB' : 'tr-TR',
+                { year: 'numeric', month: 'long', day: 'numeric' }
+              );
+
+              a.appendChild(titleEl);
+              a.appendChild(dateEl);
+              li.appendChild(a);
+
+              if (post.excerpt) {
+                var excerpt = document.createElement('p');
+                excerpt.className = 'note-item__excerpt';
+                excerpt.textContent = post.excerpt;
+                li.appendChild(excerpt);
+              }
+
+              list.appendChild(li);
+            });
+          })
+          .catch(function () {
+            var list = document.getElementById('notes-list');
+            var empty = document.createElement('li');
+            empty.className = 'note-item note-item--empty';
+            empty.textContent = lang === 'en' ? 'Could not load posts.' : 'Yazılar yüklenemedi.';
+            list.appendChild(empty);
+          });
+      }
+    })();
+  </script>
+
+</body>
+
+</html>

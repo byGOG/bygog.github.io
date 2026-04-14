@@ -59,6 +59,29 @@
   background: rgba(245, 245, 245, 0.90);
 }
 
+/* ── Language Toggle ─────────────────────────────────── */
+
+.lang-toggle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--text-3);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all var(--dur-mid) var(--ease);
+  white-space: nowrap;
+}
+
+.lang-toggle:hover,
+.lang-toggle:focus-visible {
+  border-color: var(--border-bright);
+  color: var(--text-1);
+}
+
 /* ── Theme Toggle ────────────────────────────────────── */
 
 .theme-toggle {
@@ -636,6 +659,142 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ── Notes Page ──────────────────────────────────────── */
+
+.section-notes {
+  min-height: 100svh;
+  padding: calc(var(--pad-section) + 4rem) clamp(1.5rem, 5vw, 4rem) var(--pad-section);
+}
+
+.notes-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.note-item {
+  background: var(--surface);
+  transition: background var(--dur-mid) var(--ease);
+}
+
+.note-item:hover { background: var(--surface-raised); }
+
+.note-item__link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem 0.75rem;
+  text-decoration: none;
+  flex-wrap: wrap;
+}
+
+.note-item__title {
+  font-family: 'Tektur', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-1);
+  letter-spacing: 0.01em;
+}
+
+.note-item__date {
+  font-size: 0.72rem;
+  color: var(--text-3);
+  flex-shrink: 0;
+}
+
+.note-item__excerpt {
+  padding: 0 1.5rem 1.25rem;
+  font-size: 0.82rem;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+
+.note-item--empty {
+  padding: 3rem;
+  text-align: center;
+  color: var(--text-3);
+  font-size: var(--font-sm);
+}
+
+.note-reader__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: var(--font-sm);
+  color: var(--text-3);
+  text-decoration: none;
+  margin-bottom: 2.5rem;
+  transition: color var(--dur-fast);
+}
+
+.note-reader__back:hover { color: var(--text-1); }
+
+/* ── Prose (Markdown İçeriği) ────────────────────────── */
+
+.prose {
+  max-width: 68ch;
+  color: var(--text-2);
+  line-height: 1.85;
+  font-size: var(--font-base);
+}
+
+.prose h1, .prose h2, .prose h3 {
+  font-family: 'Tektur', sans-serif;
+  color: var(--text-1);
+  letter-spacing: -0.02em;
+  margin: 2em 0 0.75em;
+}
+
+.prose h1 { font-size: clamp(1.5rem, 4vw, 2.2rem); margin-top: 0; }
+.prose h2 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); }
+.prose h3 { font-size: 1rem; }
+
+.prose p { margin-bottom: 1.25em; }
+
+.prose a { color: var(--text-1); text-underline-offset: 3px; }
+.prose a:hover { opacity: 0.7; }
+
+.prose strong { color: var(--text-1); font-weight: 600; }
+
+.prose code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.875em;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+  color: var(--text-1);
+}
+
+.prose pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.5em;
+}
+
+.prose pre code { background: none; border: none; padding: 0; font-size: 0.85em; }
+
+.prose ul, .prose ol { padding-left: 1.5rem; margin-bottom: 1.25em; }
+.prose li { margin-bottom: 0.4em; }
+
+.prose blockquote {
+  border-left: 3px solid var(--border-mid);
+  padding-left: 1rem;
+  margin-left: 0;
+  color: var(--text-3);
+  font-style: italic;
+}
+
+.prose hr { border: none; border-top: 1px solid var(--border); margin: 2em 0; }
 
 /* ── Skeleton Loading ────────────────────────────────── */
 

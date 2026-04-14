@@ -505,6 +505,33 @@ function createMetaItem({ icon, label, srLabel, title }) {
   return item;
 }
 
+function applyLang(lang) {
+  document.querySelectorAll("[data-tr]").forEach(function (el) {
+    el.textContent = lang === "en" ? (el.dataset.en || el.dataset.tr) : el.dataset.tr;
+  });
+  document.querySelectorAll("[data-tr-placeholder]").forEach(function (el) {
+    el.placeholder = lang === "en"
+      ? (el.dataset.enPlaceholder || el.dataset.trPlaceholder)
+      : el.dataset.trPlaceholder;
+  });
+  document.documentElement.setAttribute("lang", lang === "en" ? "en" : "tr");
+  var langText = document.querySelector(".lang-toggle__text");
+  if (langText) langText.textContent = lang === "en" ? "TR" : "EN";
+}
+
+function initLangToggle() {
+  var saved = localStorage.getItem("lang") || "tr";
+  applyLang(saved);
+  var btn = document.querySelector(".lang-toggle");
+  if (!btn) return;
+  btn.addEventListener("click", function () {
+    var current = localStorage.getItem("lang") || "tr";
+    var next = current === "tr" ? "en" : "tr";
+    localStorage.setItem("lang", next);
+    applyLang(next);
+  });
+}
+
 function initContactForm() {
   var form = document.getElementById("contact-form");
   if (!form) return;
@@ -515,8 +542,16 @@ function initContactForm() {
     var sendText = btn.querySelector(".contact-form__send-text");
     var result = form.querySelector(".contact-form__result");
 
+    var lang = localStorage.getItem("lang") || "tr";
+    var msgs = {
+      sending: lang === "en" ? "Sending…" : "Gönderiliyor…",
+      success: lang === "en" ? "Your message has been sent, thank you!" : "Mesajınız iletildi, teşekkürler!",
+      error:   lang === "en" ? "Something went wrong, please try again." : "Bir hata oluştu, lütfen tekrar deneyin.",
+      send:    lang === "en" ? "Send" : "Gönder",
+    };
+
     btn.disabled = true;
-    sendText.textContent = "Gönderiliyor…";
+    sendText.textContent = msgs.sending;
     result.textContent = "";
     result.className = "contact-form__result";
 
@@ -528,7 +563,7 @@ function initContactForm() {
       .then(function (r) { return r.json(); })
       .then(function (data) {
         if (data.success) {
-          result.textContent = "Mesajınız iletildi, teşekkürler!";
+          result.textContent = msgs.success;
           result.className = "contact-form__result contact-form__result--success";
           form.reset();
         } else {
@@ -536,12 +571,12 @@ function initContactForm() {
         }
       })
       .catch(function () {
-        result.textContent = "Bir hata oluştu, lütfen tekrar deneyin.";
+        result.textContent = msgs.error;
         result.className = "contact-form__result contact-form__result--error";
       })
       .finally(function () {
         btn.disabled = false;
-        sendText.textContent = "Gönder";
+        sendText.textContent = msgs.send;
       });
   });
 }
@@ -550,8 +585,10 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", function () {
     loadGitHubProjects();
     initContactForm();
+    initLangToggle();
   });
 } else {
   loadGitHubProjects();
   initContactForm();
+  initLangToggle();
 }
