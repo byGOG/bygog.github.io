@@ -89,6 +89,21 @@ const relativeTimeFormatter =
     ? new Intl.RelativeTimeFormat("tr", { numeric: "auto" })
     : null;
 
+function renderSkeletons(list, count) {
+  list.innerHTML = "";
+  for (let i = 0; i < count; i++) {
+    const item = document.createElement("li");
+    item.className = "github-item github-item--skeleton";
+    item.setAttribute("aria-hidden", "true");
+    item.innerHTML =
+      '<div class="skeleton-line skeleton-line--title"></div>' +
+      '<div class="skeleton-line"></div>' +
+      '<div class="skeleton-line skeleton-line--short"></div>' +
+      '<div class="skeleton-line skeleton-line--meta"></div>';
+    list.appendChild(item);
+  }
+}
+
 async function loadGitHubProjects() {
   const list = document.querySelector("[data-github-projects]");
   const status = document.querySelector("[data-github-status]");
@@ -97,6 +112,7 @@ async function loadGitHubProjects() {
     return;
   }
 
+  renderSkeletons(list, MAX_REPOS);
   status.textContent = "GitHub projeleri yükleniyor...";
 
   try {
