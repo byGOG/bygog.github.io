@@ -705,9 +705,10 @@ body {
 }
 
 @media (max-width: 720px) {
-  .nav-toggle { display: flex; }
+  /* JS olmadan: hamburger gizli, linkler normal görünür */
+  html.js .nav-toggle { display: flex; }
 
-  .site-nav__links {
+  html.js .site-nav__links {
     display: none;
     position: absolute;
     top: 100%;
@@ -721,20 +722,20 @@ body {
     gap: 0;
   }
 
-  [data-theme="light"] .site-nav__links {
+  html[data-theme="light"].js .site-nav__links {
     background: rgba(245, 245, 245, 0.97);
   }
 
-  .site-nav--open .site-nav__links {
+  html.js .site-nav--open .site-nav__links {
     display: flex;
   }
 
-  .site-nav__link {
+  html.js .site-nav__link {
     padding: 0.9rem clamp(1.5rem, 5vw, 4rem);
     border-bottom: 1px solid var(--border);
   }
 
-  .site-nav__link:last-child {
+  html.js .site-nav__link:last-child {
     border-bottom: none;
   }
 }

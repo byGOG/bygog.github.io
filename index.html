@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="UTF-8" />
-  <!-- Erken tema uygulaması — FOUC'u önler -->
-  <script>(function(){var s=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',s||'dark')})();</script>
+  <!-- Erken tema uygulaması — FOUC'u önler; js sınıfı hamburger menüyü etkinleştirir -->
+  <script>(function(){var s=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',s||'dark');document.documentElement.classList.add('js')})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0a0a" />
   <title>Önder GÖG | Kişisel Web Sitesi</title>
