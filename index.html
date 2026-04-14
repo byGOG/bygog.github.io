@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Erken tema uygulaması — FOUC'u önler -->
-  <script>(function(){var s=localStorage.getItem('theme'),p=window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',s||p)})();</script>
+  <script>(function(){var s=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',s||'dark')})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0a0a" />
   <title>Önder GÖG | Kişisel Web Sitesi</title>
