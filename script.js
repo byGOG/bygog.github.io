@@ -2,6 +2,25 @@ const GITHUB_USERNAME = "byGOG";
 const MAX_REPOS = 6;
 const API_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=${MAX_REPOS * 2}`;
 
+const CACHE_KEY = "bygog_gh_cache";
+const CACHE_TTL = 3600 * 1000; // 1 saat
+
+function getCache() {
+  try {
+    const raw = localStorage.getItem(CACHE_KEY);
+    if (!raw) return null;
+    const { data, ts } = JSON.parse(raw);
+    if (Date.now() - ts > CACHE_TTL) return null;
+    return data;
+  } catch { return null; }
+}
+
+function setCache(data) {
+  try {
+    localStorage.setItem(CACHE_KEY, JSON.stringify({ data, ts: Date.now() }));
+  } catch {}
+}
+
 const PROJECT_OVERRIDES = {
   "bygog.github.io": {
     displayName: "Kişisel Site Kaynağı",
@@ -81,18 +100,28 @@ async function loadGitHubProjects() {
   status.textContent = "GitHub projeleri yükleniyor...";
 
   try {
-    const response = await fetch(API_URL, {
-      headers: {
-        Accept: "application/vnd.github.mercy-preview+json",
-      },
-    });
+    // Önce önbelleğe bak (1 saatlik TTL)
+    const cachedRepos = getCache();
+    let repos;
 
-    if (!response.ok) {
-      throw new Error(`GitHub API hatası: ${response.status}`);
+    if (cachedRepos) {
+      repos = cachedRepos;
+      status.textContent = "GitHub'dan güncel projeler:";
+    } else {
+      const response = await fetch(API_URL, {
+        headers: {
+          Accept: "application/vnd.github.mercy-preview+json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`GitHub API hatası: ${response.status}`);
+      }
+
+      const data = await response.json();
+      repos = data.filter((repo) => !repo.fork && !repo.private).slice(0, MAX_REPOS);
+      setCache(repos);
     }
-
-    const data = await response.json();
-    const repos = data.filter((repo) => !repo.fork && !repo.private).slice(0, MAX_REPOS);
 
     if (!repos.length) {
       status.textContent =
@@ -248,7 +277,7 @@ function extractSummary(markdown) {
 function sanitizeLine(line) {
   let sanitized = line;
 
-  sanitized = sanitized.replace(/<!-\-[\s\S]*?-\->/g, "");
+  sanitized = sanitized.replace(/<!--[\s\S]*?-->/g, "");
   sanitized = sanitized.replace(/!\[[^\]]*\]\([^\)]*\)/g, "");
   sanitized = sanitized.replace(/\[([^\]]+)\]\([^\)]+\)/g, "$1");
   sanitized = sanitized.replace(/`{1,3}([^`]+)`{1,3}/g, "$1");
