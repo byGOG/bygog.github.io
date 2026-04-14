@@ -3,10 +3,36 @@
 
 <head>
   <meta charset="UTF-8" />
+  <!-- Erken tema uygulaması — FOUC'u önler -->
+  <script>(function(){var s=localStorage.getItem('theme'),p=window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',s||p)})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0a0a" />
   <title>Önder GÖG | Kişisel Web Sitesi</title>
-  <meta name="description" content="Önder GÖG — Bursa'da yaşayan, teknoloji ve yazılımla ilgilenen biri." />
+  <meta name="description" content="Önder GÖG — Bursa'da yaşayan, teknoloji ve yazılımla ilgilenen biri. Android, Python, PowerShell ve daha fazlası." />
+  <meta name="author" content="Önder GÖG" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bygog.github.io/" />
+  <meta property="og:title" content="Önder GÖG | Kişisel Web Sitesi" />
+  <meta property="og:description" content="Önder GÖG — Bursa'da yaşayan, teknoloji ve yazılımla ilgilenen biri. Android, Python, PowerShell ve daha fazlası." />
+  <meta property="og:image" content="https://bygog.github.io/profil-opt.jpg" />
+  <meta property="og:locale" content="tr_TR" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@ondergog" />
+  <meta name="twitter:title" content="Önder GÖG | Kişisel Web Sitesi" />
+  <meta name="twitter:description" content="Önder GÖG — Bursa'da yaşayan, teknoloji ve yazılımla ilgilenen biri." />
+  <meta name="twitter:image" content="https://bygog.github.io/profil-opt.jpg" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon-180.png" />
+
+  <!-- Profil fotoğrafı ön yükleme -->
+  <link rel="preload" as="image" href="profil.webp" type="image/webp" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Tektur:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -28,6 +54,14 @@
     <div class="site-nav__links">
       <a class="site-nav__link" href="#projeler">Projeler</a>
     </div>
+    <button class="theme-toggle" type="button" aria-label="Temayı değiştir">
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
   </nav>
 
   <!-- Hero -->
@@ -35,7 +69,10 @@
     <div class="hero__inner">
 
       <div class="hero__photo-wrap">
-        <img class="hero__photo" src="profil.JPEG" alt="Önder GÖG profil fotoğrafı" />
+        <picture>
+          <source srcset="profil.webp" type="image/webp" />
+          <img class="hero__photo" src="profil-opt.jpg" alt="Önder GÖG profil fotoğrafı" fetchpriority="high" />
+        </picture>
         <div class="hero__photo-ring" aria-hidden="true"></div>
         <div class="hero__photo-glow" aria-hidden="true"></div>
       </div>
@@ -138,7 +175,48 @@
         });
       }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
       els.forEach(function (el) { obs.observe(el); });
+
+      // Tema toggle
+      var toggleBtn = document.querySelector('.theme-toggle');
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', function () {
+          var current = document.documentElement.getAttribute('data-theme');
+          var next = current === 'light' ? 'dark' : 'light';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+          var metaTheme = document.querySelector('meta[name="theme-color"]');
+          if (metaTheme) metaTheme.content = next === 'light' ? '#f5f5f5' : '#0a0a0a';
+        });
+      }
+
+      // Service Worker
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(function () {});
+      }
     })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Önder GÖG",
+    "url": "https://bygog.github.io",
+    "image": "https://bygog.github.io/profil-opt.jpg",
+    "sameAs": [
+      "https://x.com/ondergog",
+      "https://www.instagram.com/onder.gog/",
+      "https://github.com/byGOG",
+      "https://www.linkedin.com/in/ondergog/"
+    ],
+    "email": "ondergog@yahoo.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bursa",
+      "addressCountry": "TR"
+    },
+    "knowsAbout": ["Android", "Windows", "Python", "PowerShell", "HTML", "CSS", "Git"]
+  }
   </script>
 
 </body>
