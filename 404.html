@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <script>(function(){var s=localStorage.getItem('theme'),p=window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',s||p)})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <title>404 — Sayfa Bulunamadı | byGOG</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Tektur:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="bg" aria-hidden="true">
+    <div class="bg__orb bg__orb--1"></div>
+    <div class="bg__orb bg__orb--2"></div>
+    <div class="bg__noise"></div>
+  </div>
+
+  <nav class="site-nav site-nav--scrolled" aria-label="Ana gezinme">
+    <a class="site-nav__logo" href="/">byGOG</a>
+    <div class="site-nav__links"></div>
+    <button class="theme-toggle" type="button" aria-label="Temayı değiştir">
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+  </nav>
+
+  <main class="section-404" aria-label="Hata sayfası">
+    <div class="error-404">
+      <p class="error-404__code" aria-hidden="true">404</p>
+      <h1 class="error-404__title">Sayfa bulunamadı</h1>
+      <p class="error-404__desc">Aradığın sayfa taşınmış, silinmiş ya da hiç var olmamış olabilir.</p>
+      <a class="btn btn--primary" href="/">Ana sayfaya dön</a>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var toggleBtn = document.querySelector('.theme-toggle');
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', function () {
+          var current = document.documentElement.getAttribute('data-theme');
+          var next = current === 'light' ? 'dark' : 'light';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+          var metaTheme = document.querySelector('meta[name="theme-color"]');
+          if (metaTheme) metaTheme.content = next === 'light' ? '#f5f5f5' : '#0a0a0a';
+        });
+      }
+    })();
+  </script>
+
+</body>
+
+</html>

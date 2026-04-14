@@ -147,6 +147,17 @@
     </div>
   </section>
 
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <p class="footer__copy">© <span id="footer-year"></span> Önder GÖG</p>
+      <nav class="footer__links" aria-label="Footer bağlantıları">
+        <a href="https://github.com/byGOG" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:ondergog@yahoo.com">İletişim</a>
+      </nav>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
   <script>
     (function () {
@@ -188,6 +199,10 @@
           if (metaTheme) metaTheme.content = next === 'light' ? '#f5f5f5' : '#0a0a0a';
         });
       }
+
+      // Footer yılı
+      var yearEl = document.getElementById('footer-year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
 
       // Service Worker
       if ('serviceWorker' in navigator) {
