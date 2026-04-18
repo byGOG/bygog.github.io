@@ -138,6 +138,9 @@ body {
   background: var(--bg);
   color: var(--text-1);
   overflow-x: hidden;
+  transition:
+    background-color var(--dur-mid) var(--ease),
+    color var(--dur-mid) var(--ease);
 }
 
 /* ── Background ─────────────────────────────────────── */

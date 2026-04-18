@@ -581,6 +581,25 @@ function initContactForm() {
   });
 }
 
+function initThemeToggle() {
+  var btn = document.querySelector(".theme-toggle");
+  if (!btn) return;
+  btn.addEventListener("click", function () {
+    var current = document.documentElement.getAttribute("data-theme");
+    var next = current === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.content = next === "light" ? "#f5f5f5" : "#0a0a0a";
+  });
+}
+
+function registerServiceWorker() {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js").catch(function () {});
+  }
+}
+
 function initNavToggle() {
   var nav = document.querySelector(".site-nav");
   var toggle = document.querySelector(".nav-toggle");
@@ -609,16 +628,17 @@ function initNavToggle() {
   });
 }
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", function () {
-    loadGitHubProjects();
-    initContactForm();
-    initLangToggle();
-    initNavToggle();
-  });
-} else {
+function initAll() {
   loadGitHubProjects();
   initContactForm();
   initLangToggle();
   initNavToggle();
+  initThemeToggle();
+  registerServiceWorker();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initAll);
+} else {
+  initAll();
 }

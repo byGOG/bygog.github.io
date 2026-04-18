@@ -1,7 +1,8 @@
-const CACHE = 'bygog-v3';
+const ASSET_VERSION = 'v3';
+const CACHE = 'bygog-' + ASSET_VERSION;
 const STATIC = [
-  '/style.css',
-  '/script.js',
+  '/style.css?v=' + ASSET_VERSION.slice(1),
+  '/script.js?v=' + ASSET_VERSION.slice(1),
   '/profil.webp',
   '/profil-opt.jpg',
   '/manifest.json',
