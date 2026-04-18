@@ -104,6 +104,26 @@ function renderSkeletons(list, count) {
   }
 }
 
+async function fetchPinnedRepos() {
+  const names = Object.keys(PROJECT_OVERRIDES);
+  const results = await Promise.all(
+    names.map((name) =>
+      fetch(`${REPO_API_BASE}/${name}`, {
+        headers: { Accept: "application/vnd.github.mercy-preview+json" },
+      })
+        .then((r) => (r.ok ? r.json() : null))
+        .catch(() => null)
+    )
+  );
+  return results.filter((r) => r && !r.fork && !r.private);
+}
+
+async function renderRepos(repos, list, status) {
+  const enriched = await Promise.all(repos.map(enrichRepository));
+  status.textContent = "GitHub'dan güncel projeler:";
+  renderProjects(enriched, list);
+}
+
 async function loadGitHubProjects() {
   const list = document.querySelector("[data-github-projects]");
   const status = document.querySelector("[data-github-status]");
@@ -112,43 +132,34 @@ async function loadGitHubProjects() {
     return;
   }
 
+  // Stale-while-revalidate: cache varsa hemen göster, arkada güncelle
+  const cachedRepos = getCache();
+  if (cachedRepos && cachedRepos.length) {
+    await renderRepos(cachedRepos, list, status);
+    fetchPinnedRepos()
+      .then((repos) => {
+        if (repos.length) {
+          setCache(repos);
+          renderRepos(repos, list, status);
+        }
+      })
+      .catch(() => {});
+    return;
+  }
+
   renderSkeletons(list, MAX_REPOS);
   status.textContent = "GitHub projeleri yükleniyor...";
 
   try {
-    // Önce önbelleğe bak (1 saatlik TTL)
-    const cachedRepos = getCache();
-    let repos;
-
-    if (cachedRepos) {
-      repos = cachedRepos;
-    } else {
-      // PROJECT_OVERRIDES'daki repoları tek tek çek — pinned repo benzeri davranış
-      const names = Object.keys(PROJECT_OVERRIDES);
-      const results = await Promise.all(
-        names.map((name) =>
-          fetch(`${REPO_API_BASE}/${name}`, {
-            headers: { Accept: "application/vnd.github.mercy-preview+json" },
-          })
-            .then((r) => (r.ok ? r.json() : null))
-            .catch(() => null)
-        )
-      );
-      repos = results.filter((r) => r && !r.fork && !r.private);
-      if (repos.length) setCache(repos);
-    }
-
+    const repos = await fetchPinnedRepos();
     if (!repos.length) {
       status.textContent = "Öne çıkan projeler:";
       renderProjects(FALLBACK_PROJECTS, list);
       return;
     }
-
-    const enriched = await Promise.all(repos.map(enrichRepository));
-    status.textContent = "GitHub'dan güncel projeler:";
-    renderProjects(enriched, list);
-  } catch (error) {
-    console.error(error);
+    setCache(repos);
+    await renderRepos(repos, list, status);
+  } catch {
     status.textContent = "GitHub projeleri alınamadı. Öne çıkan çalışmalar:";
     renderProjects(FALLBACK_PROJECTS, list);
   }
@@ -209,8 +220,7 @@ async function fetchReadmeSummary(repo) {
 
     const markdown = await response.text();
     return extractSummary(markdown);
-  } catch (error) {
-    console.warn("README özetine ulaşılamadı:", error);
+  } catch {
     return null;
   }
 }
@@ -609,16 +619,52 @@ function initNavToggle() {
   });
 }
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", function () {
-    loadGitHubProjects();
-    initContactForm();
-    initLangToggle();
-    initNavToggle();
+function initThemeToggle() {
+  var btn = document.querySelector(".theme-toggle");
+  if (!btn) return;
+  btn.addEventListener("click", function () {
+    var current = document.documentElement.getAttribute("data-theme");
+    var next = current === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+    var metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (metaTheme) metaTheme.content = next === "light" ? "#f5f5f5" : "#0a0a0a";
   });
-} else {
+}
+
+function initFooterYear() {
+  var el = document.getElementById("footer-year");
+  if (el) el.textContent = new Date().getFullYear();
+}
+
+function initNavScrollState() {
+  var nav = document.querySelector(".site-nav");
+  var hero = document.getElementById("hero");
+  if (!nav || !hero || !("IntersectionObserver" in window)) return;
+  new IntersectionObserver(function (entries) {
+    nav.classList.toggle("site-nav--scrolled", !entries[0].isIntersecting);
+  }, { threshold: 0.1 }).observe(hero);
+}
+
+function initServiceWorker() {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js").catch(function () {});
+  }
+}
+
+function initAll() {
   loadGitHubProjects();
   initContactForm();
   initLangToggle();
   initNavToggle();
+  initThemeToggle();
+  initFooterYear();
+  initNavScrollState();
+  initServiceWorker();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initAll);
+} else {
+  initAll();
 }
