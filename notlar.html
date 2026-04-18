@@ -21,6 +21,17 @@
   <div class="bg" aria-hidden="true">
     <div class="bg__orb bg__orb--1"></div>
     <div class="bg__orb bg__orb--2"></div>
+    <div class="bg__shapes">
+      <span class="bg__shape bg__shape--ring"></span>
+      <span class="bg__shape bg__shape--square"></span>
+      <span class="bg__shape bg__shape--dot"></span>
+      <span class="bg__shape bg__shape--plus">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="4" x2="12" y2="20"/><line x1="4" y1="12" x2="20" y2="12"/></svg>
+      </span>
+      <span class="bg__shape bg__shape--triangle">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,3 21,20 3,20"/></svg>
+      </span>
+    </div>
     <div class="bg__noise"></div>
   </div>
 
@@ -57,7 +68,9 @@
   <main class="section-notes">
     <div class="section__inner">
       <header class="section__header">
+        <span class="section__num" aria-hidden="true">03</span>
         <h1 class="section__title" data-tr="Notlar" data-en="Notes">Notlar</h1>
+        <span class="section__line" aria-hidden="true"></span>
       </header>
 
       <ul class="notes-list" id="notes-list" aria-live="polite"></ul>
