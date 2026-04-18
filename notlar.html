@@ -3,11 +3,24 @@
 
 <head>
   <meta charset="UTF-8" />
-  <script>(function(){var s=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',s||'dark');document.documentElement.classList.add('js')})();</script>
+  <script>(function(){var s=localStorage.getItem('theme');if(!s){s=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';}document.documentElement.setAttribute('data-theme',s);document.documentElement.classList.add('js');var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=s==='light'?'#f5f5f5':'#0a0a0a';})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0a0a" />
   <title>Notlar | byGOG</title>
   <meta name="description" content="Önder GÖG'ün notları ve yazıları." />
+
+  <!-- Open Graph (yazıya özel değerler JS tarafından güncellenir) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bygog.github.io/notlar.html" />
+  <meta property="og:title" content="Notlar | byGOG" />
+  <meta property="og:description" content="Önder GÖG'ün notları ve yazıları." />
+  <meta property="og:image" content="https://bygog.github.io/profil-opt.jpg" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Notlar | byGOG" />
+  <meta name="twitter:description" content="Önder GÖG'ün notları ve yazıları." />
+  <meta name="twitter:image" content="https://bygog.github.io/profil-opt.jpg" />
+
   <link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="icon-180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -83,36 +96,75 @@
     </div>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
+  <!-- SRI hash çevrimiçi bir ortamda hesaplanıp `integrity="sha384-..."` olarak eklenmeli. -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"
+          crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
   <script src="script.js"></script>
+  <script src="app.js" defer></script>
   <script>
     (function () {
-      // Theme toggle
-      var toggleBtn = document.querySelector('.theme-toggle');
-      if (toggleBtn) {
-        toggleBtn.addEventListener('click', function () {
-          var current = document.documentElement.getAttribute('data-theme');
-          var next = current === 'light' ? 'dark' : 'light';
-          document.documentElement.setAttribute('data-theme', next);
-          localStorage.setItem('theme', next);
-          var metaTheme = document.querySelector('meta[name="theme-color"]');
-          if (metaTheme) metaTheme.content = next === 'light' ? '#f5f5f5' : '#0a0a0a';
-        });
+      function setMeta(selector, value) {
+        var el = document.querySelector(selector);
+        if (el) el.setAttribute('content', value);
+      }
+      function updatePostMeta(post, url) {
+        document.title = post.title + ' | byGOG';
+        var descMeta = document.querySelector('meta[name="description"]');
+        if (descMeta && post.excerpt) descMeta.content = post.excerpt;
+        setMeta('meta[property="og:title"]', post.title + ' | byGOG');
+        setMeta('meta[property="og:url"]', url);
+        setMeta('meta[property="og:type"]', 'article');
+        setMeta('meta[name="twitter:title"]', post.title + ' | byGOG');
+        if (post.excerpt) {
+          setMeta('meta[property="og:description"]', post.excerpt);
+          setMeta('meta[name="twitter:description"]', post.excerpt);
+        }
+        // BlogPosting JSON-LD
+        var ld = {
+          '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          headline: post.title,
+          datePublished: post.date,
+          dateModified: post.date,
+          author: { '@type': 'Person', name: 'Önder GÖG', url: 'https://bygog.github.io' },
+          mainEntityOfPage: url,
+          image: 'https://bygog.github.io/profil-opt.jpg',
+          description: post.excerpt || ''
+        };
+        var script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify(ld);
+        document.head.appendChild(script);
       }
 
-      // Service Worker
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(function () {});
-      }
-
-      // Notes loader
       var param = new URLSearchParams(location.search).get('p');
       var lang = localStorage.getItem('lang') || 'tr';
+
+      function waitForMarked(cb) {
+        if (typeof marked !== 'undefined') { cb(); return; }
+        var tries = 0;
+        var t = setInterval(function () {
+          if (typeof marked !== 'undefined' || ++tries > 60) {
+            clearInterval(t); cb();
+          }
+        }, 50);
+      }
 
       if (param) {
         document.getElementById('notes-list').hidden = true;
         var reader = document.getElementById('note-reader');
         reader.hidden = false;
+
+        var postUrl = 'https://bygog.github.io/notlar.html?p=' + encodeURIComponent(param);
+
+        // Meta/JSON-LD güncellemesi için index.json'dan yazı bilgisini çek
+        fetch('posts/index.json')
+          .then(function (r) { return r.ok ? r.json() : []; })
+          .then(function (posts) {
+            var post = (posts || []).find(function (p) { return p.slug === param; });
+            if (post) updatePostMeta(post, postUrl);
+          })
+          .catch(function () {});
 
         fetch('posts/' + encodeURIComponent(param) + '.md')
           .then(function (r) { return r.ok ? r.text() : null; })
@@ -122,9 +174,15 @@
               content.textContent = lang === 'en' ? 'Post not found.' : 'Yazı bulunamadı.';
               return;
             }
-            content.innerHTML = marked.parse(md);
-            var h1 = content.querySelector('h1');
-            if (h1) document.title = h1.textContent + ' | byGOG';
+            waitForMarked(function () {
+              if (typeof marked !== 'undefined') {
+                content.innerHTML = marked.parse(md);
+              } else {
+                content.textContent = md;
+              }
+              var h1 = content.querySelector('h1');
+              if (h1) document.title = h1.textContent + ' | byGOG';
+            });
           })
           .catch(function () {
             document.getElementById('note-content').textContent =
