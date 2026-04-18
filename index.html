@@ -45,6 +45,17 @@
   <div class="bg" aria-hidden="true">
     <div class="bg__orb bg__orb--1"></div>
     <div class="bg__orb bg__orb--2"></div>
+    <div class="bg__shapes">
+      <span class="bg__shape bg__shape--ring"></span>
+      <span class="bg__shape bg__shape--square"></span>
+      <span class="bg__shape bg__shape--dot"></span>
+      <span class="bg__shape bg__shape--plus">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="4" x2="12" y2="20"/><line x1="4" y1="12" x2="20" y2="12"/></svg>
+      </span>
+      <span class="bg__shape bg__shape--triangle">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,3 21,20 3,20"/></svg>
+      </span>
+    </div>
     <div class="bg__noise"></div>
   </div>
 
@@ -111,7 +122,7 @@
           <li>Git</li>
         </ul>
 
-        <div class="hero__socials" role="list" aria-label="Sosyal medya bağlantıları">
+        <div class="hero__socials" role="list" aria-label="Sosyal medya bağlantıları" data-reveal>
           <a class="social-icon" href="https://x.com/ondergog" target="_blank" rel="noopener" aria-label="X (Twitter)">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -145,13 +156,20 @@
         </div>
       </div>
     </div>
+
+    <a class="hero__scroll" href="#projeler" aria-label="Aşağı kaydır">
+      <span class="hero__scroll-line" aria-hidden="true"></span>
+      <span class="hero__scroll-text" data-tr="Kaydır" data-en="Scroll">Kaydır</span>
+    </a>
   </section>
 
   <!-- Projects -->
   <section class="section-projects" id="projeler" aria-labelledby="projects-heading">
     <div class="section__inner">
-      <header class="section__header">
+      <header class="section__header" data-reveal>
+        <span class="section__num" aria-hidden="true">01</span>
         <h2 class="section__title" id="projects-heading" data-tr="Projeler" data-en="Projects">Projeler</h2>
+        <span class="section__line" aria-hidden="true"></span>
         <p class="projects__status" data-github-status aria-live="polite"></p>
       </header>
       <ul class="projects-grid" data-github-projects></ul>
@@ -161,8 +179,10 @@
   <!-- Contact -->
   <section class="section-contact" id="iletisim" aria-labelledby="contact-heading">
     <div class="section__inner">
-      <header class="section__header">
+      <header class="section__header" data-reveal>
+        <span class="section__num" aria-hidden="true">02</span>
         <h2 class="section__title" id="contact-heading" data-tr="İletişim" data-en="Contact">İletişim</h2>
+        <span class="section__line" aria-hidden="true"></span>
       </header>
       <form class="contact-form" id="contact-form"
         action="https://api.web3forms.com/submit" method="POST">
