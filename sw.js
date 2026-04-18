@@ -38,8 +38,7 @@ self.addEventListener('fetch', e => {
     url.hostname.includes('githubusercontent.com') ||
     url.hostname.includes('googleapis.com') ||
     url.hostname.includes('gstatic.com') ||
-    url.hostname.includes('jsdelivr.net') ||
-    url.hostname.includes('web3forms.com')
+    url.hostname.includes('jsdelivr.net')
   ) {
     return;
   }

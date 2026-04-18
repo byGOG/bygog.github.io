@@ -542,55 +542,6 @@ function initLangToggle() {
   });
 }
 
-function initContactForm() {
-  var form = document.getElementById("contact-form");
-  if (!form) return;
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var btn = form.querySelector('[type="submit"]');
-    var sendText = btn.querySelector(".contact-form__send-text");
-    var result = form.querySelector(".contact-form__result");
-
-    var lang = localStorage.getItem("lang") || "tr";
-    var msgs = {
-      sending: lang === "en" ? "Sending…" : "Gönderiliyor…",
-      success: lang === "en" ? "Your message has been sent, thank you!" : "Mesajınız iletildi, teşekkürler!",
-      error:   lang === "en" ? "Something went wrong, please try again." : "Bir hata oluştu, lütfen tekrar deneyin.",
-      send:    lang === "en" ? "Send" : "Gönder",
-    };
-
-    btn.disabled = true;
-    sendText.textContent = msgs.sending;
-    result.textContent = "";
-    result.className = "contact-form__result";
-
-    fetch(form.action, {
-      method: "POST",
-      body: new FormData(form),
-      headers: { Accept: "application/json" },
-    })
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
-        if (data.success) {
-          result.textContent = msgs.success;
-          result.className = "contact-form__result contact-form__result--success";
-          form.reset();
-        } else {
-          throw new Error();
-        }
-      })
-      .catch(function () {
-        result.textContent = msgs.error;
-        result.className = "contact-form__result contact-form__result--error";
-      })
-      .finally(function () {
-        btn.disabled = false;
-        sendText.textContent = msgs.send;
-      });
-  });
-}
-
 function initNavToggle() {
   var nav = document.querySelector(".site-nav");
   var toggle = document.querySelector(".nav-toggle");
@@ -654,7 +605,6 @@ function initServiceWorker() {
 
 function initAll() {
   loadGitHubProjects();
-  initContactForm();
   initLangToggle();
   initNavToggle();
   initThemeToggle();
