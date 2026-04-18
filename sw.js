@@ -1,8 +1,9 @@
-const CACHE = 'bygog-v2';
+const CACHE = 'bygog-v3';
 const STATIC = [
   '/',
   '/style.css',
   '/script.js',
+  '/app.js',
   '/profil.webp',
   '/profil-opt.jpg',
   '/manifest.json',
@@ -21,8 +22,18 @@ self.addEventListener('activate', e => {
   );
 });
 
+// posts/index.json ve posts/*.md için stale-while-revalidate
+function isPostAsset(url) {
+  return url.origin === self.location.origin && (
+    url.pathname === '/posts/index.json' ||
+    (url.pathname.startsWith('/posts/') && url.pathname.endsWith('.md'))
+  );
+}
+
 self.addEventListener('fetch', e => {
+  if (e.request.method !== 'GET') return;
   const url = new URL(e.request.url);
+
   // API ve font isteklerini atla
   if (
     url.hostname.includes('github.com') ||
@@ -32,6 +43,23 @@ self.addEventListener('fetch', e => {
   ) {
     return;
   }
+
+  if (isPostAsset(url)) {
+    // stale-while-revalidate: önbellekten hızlıca sun, arka planda güncelle
+    e.respondWith(
+      caches.open(CACHE).then(cache =>
+        cache.match(e.request).then(cached => {
+          const networked = fetch(e.request).then(res => {
+            if (res && res.ok) cache.put(e.request, res.clone());
+            return res;
+          }).catch(() => cached);
+          return cached || networked;
+        })
+      )
+    );
+    return;
+  }
+
   // Cache-first strateji
   e.respondWith(
     caches.match(e.request).then(cached => cached || fetch(e.request))
