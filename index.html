@@ -30,6 +30,10 @@
   <link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="icon-180.png" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png" />
+
   <!-- Profil fotoğrafı ön yükleme -->
   <link rel="preload" as="image" href="profil.webp" type="image/webp" />
 
@@ -40,6 +44,9 @@
 </head>
 
 <body>
+
+  <!-- Skip to content -->
+  <a class="skip-link" href="#main" data-tr="İçeriğe geç" data-en="Skip to content">İçeriğe geç</a>
 
   <!-- Background -->
   <div class="bg" aria-hidden="true">
@@ -90,6 +97,8 @@
     </div>
   </nav>
 
+  <main id="main">
+
   <!-- Hero -->
   <section class="section-hero" id="hero" aria-label="Giriş">
     <div class="hero__inner">
@@ -104,23 +113,38 @@
       </div>
 
       <div class="hero__content">
-        <p class="hero__eyebrow" data-tr="Merhaba, ben" data-en="Hi, I'm">Merhaba, ben</p>
+        <p class="hero__eyebrow" data-tr="Developer · Bursa, TR" data-en="Developer · Bursa, TR">Developer · Bursa, TR</p>
         <h1 class="hero__name">Önder<br><span class="hero__name--accent">GÖG</span></h1>
 
         <p class="hero__bio"
-           data-tr="Bursa'da yaşayan, teknoloji ve yazılımla ilgilenen; doğayı, snowboard'u ve motosiklet sürmeyi seven biri. Techno ve Anadolu rock dinler, dijital araçlar ve internet kültürüyle uğraşır."
-           data-en="Based in Bursa, Turkey. Into technology and software; loves nature, snowboarding and motorcycles. Listens to techno and Anatolian rock, enjoys digital tools and internet culture.">
-          Bursa'da yaşayan, teknoloji ve yazılımla ilgilenen; doğayı, snowboard'u ve motosiklet sürmeyi seven biri. Techno ve Anadolu rock dinler, dijital araçlar ve internet kültürüyle uğraşır.
+           data-tr="Android, Python ve PowerShell ile küçük otomasyon araçları ve kişisel projeler geliştiriyorum."
+           data-en="I build small automation tools and personal projects with Android, Python and PowerShell.">
+          Android, Python ve PowerShell ile küçük otomasyon araçları ve kişisel projeler geliştiriyorum.
+        </p>
+        <p class="hero__bio hero__bio--secondary"
+           data-tr="İş dışında snowboard, motosiklet, doğa; kulağımda techno ve Anadolu rock."
+           data-en="Outside of work: snowboarding, motorcycles and nature — with techno and Anatolian rock on repeat.">
+          İş dışında snowboard, motosiklet, doğa; kulağımda techno ve Anadolu rock.
         </p>
 
-        <ul class="hero__tags" aria-label="Teknolojiler">
-          <li>Android</li>
-          <li>Windows</li>
-          <li>Python</li>
-          <li>PowerShell</li>
-          <li>HTML / CSS</li>
-          <li>Git</li>
-        </ul>
+        <div class="hero__tag-groups" aria-label="Teknolojiler">
+          <div class="hero__tag-group">
+            <span class="hero__tag-label" data-tr="Platform" data-en="Platforms">Platform</span>
+            <ul class="hero__tags">
+              <li>Android</li>
+              <li>Windows</li>
+            </ul>
+          </div>
+          <div class="hero__tag-group">
+            <span class="hero__tag-label" data-tr="Araçlar" data-en="Tools">Araçlar</span>
+            <ul class="hero__tags">
+              <li>Python</li>
+              <li>PowerShell</li>
+              <li>HTML / CSS</li>
+              <li>Git</li>
+            </ul>
+          </div>
+        </div>
 
         <div class="hero__socials" role="list" aria-label="Sosyal medya bağlantıları" data-reveal>
           <a class="social-icon" href="https://x.com/ondergog" target="_blank" rel="noopener" aria-label="X (Twitter)">
@@ -143,31 +167,65 @@
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
             </svg>
           </a>
-          <a class="social-icon" href="mailto:ondergog@yahoo.com" aria-label="Yahoo E-posta" title="ondergog@yahoo.com">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-            </svg>
+          <a class="social-icon social-icon--text" href="mailto:ondergog@yahoo.com" aria-label="Yahoo E-posta" title="ondergog@yahoo.com">
+            <span class="social-icon__label" aria-hidden="true">@y</span>
           </a>
-          <a class="social-icon" href="mailto:ond3rkor@gmail.com" aria-label="Gmail E-posta" title="ond3rkor@gmail.com">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-            </svg>
+          <a class="social-icon social-icon--text" href="mailto:ond3rkor@gmail.com" aria-label="Gmail E-posta" title="ond3rkor@gmail.com">
+            <span class="social-icon__label" aria-hidden="true">@g</span>
           </a>
         </div>
       </div>
     </div>
 
-    <a class="hero__scroll" href="#projeler" aria-label="Aşağı kaydır">
+    <a class="hero__scroll" href="#simdi" aria-label="Aşağı kaydır">
       <span class="hero__scroll-line" aria-hidden="true"></span>
       <span class="hero__scroll-text" data-tr="Kaydır" data-en="Scroll">Kaydır</span>
     </a>
+  </section>
+
+  <!-- Now -->
+  <section class="section-now" id="simdi" aria-labelledby="now-heading">
+    <div class="section__inner">
+      <header class="section__header" data-reveal>
+        <span class="section__num" aria-hidden="true">01</span>
+        <h2 class="section__title" id="now-heading" data-tr="Şu Sıra" data-en="Right Now">Şu Sıra</h2>
+        <span class="section__line" aria-hidden="true"></span>
+      </header>
+      <ul class="now-list" data-reveal>
+        <li class="now-item">
+          <span class="now-item__dot" aria-hidden="true"></span>
+          <p data-tr="Kişisel siteyi iteratif olarak iyileştiriyorum — şu sıra erişilebilirlik ve içerik üzerine."
+             data-en="Iterating on this personal site — currently focused on accessibility and content.">
+            Kişisel siteyi iteratif olarak iyileştiriyorum — şu sıra erişilebilirlik ve içerik üzerine.
+          </p>
+        </li>
+        <li class="now-item">
+          <span class="now-item__dot" aria-hidden="true"></span>
+          <p data-tr="Android ve Windows için küçük otomasyon betikleri yazıyorum."
+             data-en="Writing small automation scripts for Android and Windows.">
+            Android ve Windows için küçük otomasyon betikleri yazıyorum.
+          </p>
+        </li>
+        <li class="now-item">
+          <span class="now-item__dot" aria-hidden="true"></span>
+          <p data-tr="Snowboard sezonu kapandı, motosiklet sezonu başladı."
+             data-en="Snowboard season is over, motorcycle season has begun.">
+            Snowboard sezonu kapandı, motosiklet sezonu başladı.
+          </p>
+        </li>
+      </ul>
+      <p class="now-updated" data-reveal>
+        <span data-tr="Son güncelleme" data-en="Last updated">Son güncelleme</span>:
+        <time datetime="2026-04-18">18.04.2026</time>
+      </p>
+    </div>
   </section>
 
   <!-- Projects -->
   <section class="section-projects" id="projeler" aria-labelledby="projects-heading">
     <div class="section__inner">
       <header class="section__header" data-reveal>
-        <span class="section__num" aria-hidden="true">01</span>
+        <span class="section__num" aria-hidden="true">02</span>
         <h2 class="section__title" id="projects-heading" data-tr="Projeler" data-en="Projects">Projeler</h2>
         <span class="section__line" aria-hidden="true"></span>
         <p class="projects__status" data-github-status aria-live="polite"></p>
@@ -180,7 +238,7 @@
   <section class="section-contact" id="iletisim" aria-labelledby="contact-heading">
     <div class="section__inner">
       <header class="section__header" data-reveal>
-        <span class="section__num" aria-hidden="true">02</span>
+        <span class="section__num" aria-hidden="true">03</span>
         <h2 class="section__title" id="contact-heading" data-tr="İletişim" data-en="Contact">İletişim</h2>
         <span class="section__line" aria-hidden="true"></span>
       </header>
@@ -222,6 +280,8 @@
       </form>
     </div>
   </section>
+
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer">
