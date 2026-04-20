@@ -2,7 +2,7 @@ const GITHUB_USERNAME = "byGOG";
 const MAX_REPOS = 6;
 const REPO_API_BASE = `https://api.github.com/repos/${GITHUB_USERNAME}`;
 
-const CACHE_KEY = "bygog_gh_cache";
+const CACHE_KEY = "bygog_gh_cache_v2";
 const CACHE_TTL = 3600 * 1000; // 1 saat
 
 function getCache() {
@@ -22,6 +22,18 @@ function setCache(data) {
 }
 
 const PROJECT_OVERRIDES = {
+  "StashZero": {
+    displayName: "StashZero",
+    description: "Modern ve hızlı uygulama kütüphanesi. Tauri, React 19 ve Rust kullanılarak geliştirilmiştir.",
+    topics: ["Tauri", "React", "Rust", "Desktop"],
+    language: "Rust",
+  },
+  "Bibata-Cursor-Installer": {
+    displayName: "Bibata Cursor Installer",
+    description: "Windows için Bibata Modern Ice imleç temasının tek tıkla otomatik kurulumunu sağlayan araç.",
+    topics: ["PowerShell", "Windows", "UI", "Theme"],
+    language: "PowerShell",
+  },
   "bygog.github.io": {
     displayName: "Kişisel Site Kaynağı",
     description: "Bu GitHub Pages deposu kişisel portföyümün tasarımını, animasyonlarını ve bileşenlerini barındırır.",
@@ -35,26 +47,16 @@ const PROJECT_OVERRIDES = {
     homepage: "https://bygog.github.io/byGOG-Lab/",
     topics: ["PWA", "Windows", "Bağlantı Koleksiyonu"],
   },
-  "byGOG-OnlineInstaller": {
-    displayName: "Online Installer",
-    description: "PowerShell ve cURL kullanarak popüler yazılımları hızlıca indirip kuran menü tabanlı otomasyon betiği.",
-    topics: ["PowerShell", "cURL", "Otomasyon"],
-  },
   "ZTE-H3601P": {
     displayName: "ZTE H3601P Otomasyonu",
     description: "ZTE H3601P modemini belirli aralıklarla yeniden başlatıp IP değişimini kontrol eden Python uygulaması.",
     topics: ["Python", "Ağ", "Otomasyon"],
     language: "Python",
   },
-  GOGon: {
+  "GOGon": {
     displayName: "GOGon Yükleyici",
     description: "PySide6 arayüzüyle yazılım kategorilerini listeler, tek tıklamayla indirme ve kurulum akışı sunar.",
     topics: ["PySide6", "Masaüstü Uygulaması", "Yükleyici"],
-  },
-  "byGOG-OnlineWarez": {
-    displayName: "Online Warez",
-    description: "PowerShell ile popüler yazılımları ve araçları tek komutta indirmeye odaklanan otomasyon betikleri.",
-    topics: ["PowerShell", "Script", "İndirme"],
   },
 };
 
@@ -76,11 +78,11 @@ function createFallbackProject(name, url, language) {
 }
 
 const FALLBACK_PROJECTS = [
+  createFallbackProject("StashZero", "https://github.com/byGOG/StashZero", "Rust"),
+  createFallbackProject("Bibata-Cursor-Installer", "https://github.com/byGOG/Bibata-Cursor-Installer", "PowerShell"),
   createFallbackProject("byGOG-Lab", "https://github.com/byGOG/byGOG-Lab", "JavaScript"),
-  createFallbackProject("byGOG-OnlineInstaller", "https://github.com/byGOG/byGOG-OnlineInstaller", "PowerShell"),
   createFallbackProject("ZTE-H3601P", "https://github.com/byGOG/ZTE-H3601P", "Python"),
   createFallbackProject("GOGon", "https://github.com/byGOG/GOGon", "Python"),
-  createFallbackProject("byGOG-OnlineWarez", "https://github.com/byGOG/byGOG-OnlineWarez", "PowerShell"),
   createFallbackProject("bygog.github.io", "https://github.com/byGOG/bygog.github.io", "CSS"),
 ];
 
@@ -532,54 +534,7 @@ function initLangToggle() {
   });
 }
 
-function initContactForm() {
-  var form = document.getElementById("contact-form");
-  if (!form) return;
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var btn = form.querySelector('[type="submit"]');
-    var sendText = btn.querySelector(".contact-form__send-text");
-    var result = form.querySelector(".contact-form__result");
-
-    var lang = localStorage.getItem("lang") || "tr";
-    var msgs = {
-      sending: lang === "en" ? "Sending…" : "Gönderiliyor…",
-      success: lang === "en" ? "Your message has been sent, thank you!" : "Mesajınız iletildi, teşekkürler!",
-      error:   lang === "en" ? "Something went wrong, please try again." : "Bir hata oluştu, lütfen tekrar deneyin.",
-      send:    lang === "en" ? "Send" : "Gönder",
-    };
-
-    btn.disabled = true;
-    sendText.textContent = msgs.sending;
-    result.textContent = "";
-    result.className = "contact-form__result";
-
-    fetch(form.action, {
-      method: "POST",
-      body: new FormData(form),
-      headers: { Accept: "application/json" },
-    })
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
-        if (data.success) {
-          result.textContent = msgs.success;
-          result.className = "contact-form__result contact-form__result--success";
-          form.reset();
-        } else {
-          throw new Error();
-        }
-      })
-      .catch(function () {
-        result.textContent = msgs.error;
-        result.className = "contact-form__result contact-form__result--error";
-      })
-      .finally(function () {
-        btn.disabled = false;
-        sendText.textContent = msgs.send;
-      });
-  });
-}
 
 function initNavToggle() {
   var nav = document.querySelector(".site-nav");
@@ -612,13 +567,13 @@ function initNavToggle() {
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", function () {
     loadGitHubProjects();
-    initContactForm();
+
     initLangToggle();
     initNavToggle();
   });
 } else {
   loadGitHubProjects();
-  initContactForm();
+
   initLangToggle();
   initNavToggle();
 }

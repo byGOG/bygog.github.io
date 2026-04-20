@@ -1,5 +1,11 @@
 [
   {
+    "slug": "jdownloader",
+    "title": "JDownloader: İndirme İşlerinin Tartışmasız Kralı",
+    "date": "2026-04-20",
+    "excerpt": "İnternetten dosya indirmek hiç bu kadar kolay olmamıştı. JDownloader'ı neden herkesin kullanması gerektiğini anlatıyorum."
+  },
+  {
     "slug": "zen-browser",
     "title": "Zen Browser: Tarayıcı Böyle Olmalı",
     "date": "2026-04-14",
