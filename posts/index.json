@@ -1,5 +1,17 @@
 [
   {
+    "slug": "nextdns",
+    "title": "NextDNS: İnternet Deneyiminizi DNS Seviyesinde Özelleştirin ve Güvenli Hale Getirin",
+    "date": "2026-04-28",
+    "excerpt": "Reklamları, takipçileri ve zararlı içerikleri ağınızdan uzak tutun. NextDNS ile bulut tabanlı, kişiselleştirilebilir ve güvenli bir DNS deneyimi yaşayın."
+  },
+  {
+    "slug": "firefox-relay",
+    "title": "Firefox Relay: Gerçek E-posta Adresinizi Maskeleyerek Gizliliğinizi Koruyun",
+    "date": "2026-04-28",
+    "excerpt": "E-posta adresinizi gizli tutun ve spam'den kurtulun. Firefox Relay ile internet sitelerine maskelenmiş takma adlarla üye olun ve gizliliğinizi kontrol altına alın."
+  },
+  {
     "slug": "atlasos",
     "title": "AtlasOS: Oyun ve Performans Odaklı Açık Kaynaklı Windows Optimizasyonu",
     "date": "2026-04-28",
