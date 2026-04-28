@@ -1,5 +1,11 @@
 [
   {
+    "slug": "wiresock-wgcf",
+    "title": "Wiresock ve wgcf: Cloudflare WARP'ı Windows'ta Özgürleştirin",
+    "date": "2026-04-29",
+    "excerpt": "Resmi WARP istemcisinin kısıtlamalarından kurtulun. Wiresock ve wgcf ile yüksek performanslı, uygulama bazlı tünelleme destekli VPN deneyimini keşfedin."
+  },
+  {
     "slug": "browser-extensions",
     "title": "İnternet Deneyiminizi Seviye Atlatacak En İyi Tarayıcı Eklentileri",
     "date": "2026-04-28",
