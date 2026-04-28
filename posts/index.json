@@ -1,5 +1,23 @@
 [
   {
+    "slug": "sharex",
+    "title": "ShareX: Ekran Görüntüsü Almanın En İyi Yolu",
+    "date": "2026-04-28",
+    "excerpt": "Windows'un dahili araçları yetmiyorsa, ShareX ile ekran görüntüsü alma, kayıt ve paylaşım deneyiminizi tamamen değiştirin."
+  },
+  {
+    "slug": "unigetui",
+    "title": "UniGetUI: Windows Paket Yöneticisi İçin Harika Bir Arayüz",
+    "date": "2026-04-28",
+    "excerpt": "Windows'ta yazılım kurmak ve güncellemek için neden komut satırı paket yöneticilerini modern bir arayüzle buluşturan UniGetUI'ı kullanmalısınız?"
+  },
+  {
+    "slug": "jellyfin",
+    "title": "Jellyfin: Kendi Medya Evreninizi Yaratın",
+    "date": "2026-04-28",
+    "excerpt": "Abonelik ücretlerine ve veri gizliliği sorunlarına son. Neden herkesin kendi Jellyfin sunucusunu kurması gerektiğini açıklıyorum."
+  },
+  {
     "slug": "jdownloader",
     "title": "JDownloader: İndirme İşlerinin Tartışmasız Kralı",
     "date": "2026-04-20",
