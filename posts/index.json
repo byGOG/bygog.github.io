@@ -1,5 +1,35 @@
 [
   {
+    "slug": "rufus",
+    "title": "Rufus: Önyüklenebilir USB Sürücüler Oluşturmanın En Güvenilir ve Hızlı Yolu",
+    "date": "2026-04-28",
+    "excerpt": "Format atmak veya yeni sistem kurmak hiç bu kadar kolay olmamıştı. Rufus ile Windows 11 kısıtlamalarını aşın ve saniyeler içinde bootable USB hazırlayın."
+  },
+  {
+    "slug": "microsoft-activation-scripts",
+    "title": "Microsoft Activation Scripts (MAS): Windows ve Office Etkinleştirmenin En Temiz Yolu",
+    "date": "2026-04-28",
+    "excerpt": "Windows ve Office aktivasyonu için en güvenilir ve açık kaynaklı yöntem. MAS ile saniyeler içinde kalıcı aktivasyon sağlayın."
+  },
+  {
+    "slug": "flowlauncher",
+    "title": "Flow Launcher: Windows İçin En Güçlü ve Hızlı Uygulama Başlatıcı",
+    "date": "2026-04-28",
+    "excerpt": "Windows arama çubuğundan sıkıldınız mı? Flow Launcher ile uygulamalara, dosyalara ve internete saniyeler içinde erişin."
+  },
+  {
+    "slug": "qbittorrent",
+    "title": "qBittorrent: Reklamsız ve Açık Kaynaklı Torrent Deneyimi",
+    "date": "2026-04-28",
+    "excerpt": "uTorrent reklamlarından bıktınız mı? qBittorrent ile hafif, hızlı ve tamamen açık kaynaklı torrent deneyimine geçiş yapın."
+  },
+  {
+    "slug": "bitwarden",
+    "title": "Bitwarden: Şifrelerinizi Güvende Tutmanın En Akıllı Yolu",
+    "date": "2026-04-28",
+    "excerpt": "Açık kaynaklı, ücretsiz ve uçtan uca şifreli — Bitwarden ile tüm şifrelerinizi güvenle yönetin."
+  },
+  {
     "slug": "sharex",
     "title": "ShareX: Ekran Görüntüsü Almanın En İyi Yolu",
     "date": "2026-04-28",
