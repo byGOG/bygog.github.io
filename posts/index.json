@@ -1,5 +1,11 @@
 [
   {
+    "slug": "pwa",
+    "title": "Progressive Web App (PWA): Web Deneyimini Uygulama Konforuyla Birleştirin",
+    "date": "2026-04-28",
+    "excerpt": "Web sitelerini uygulama gibi kullanmanın en modern yolu. PWA teknolojisinin avantajlarını ve kurulum adımlarını bu dökümanda bulabilirsiniz."
+  },
+  {
     "slug": "rufus",
     "title": "Rufus: Önyüklenebilir USB Sürücüler Oluşturmanın En Güvenilir ve Hızlı Yolu",
     "date": "2026-04-28",
