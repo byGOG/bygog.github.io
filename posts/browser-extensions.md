@@ -28,7 +28,7 @@ Günümüzde vaktimizin büyük bir kısmını tarayıcı başında geçiriyoruz
 **Neden Kullanmalısınız?** YouTube'un her videoda kaliteyi düşürmesinden veya hızı manuel ayarlamaktan yorulanlar için idealdir. Videoların her zaman tercih ettiğiniz kalitede (örneğin 4K veya 1080p) ve hızda başlamasını sağlar.
 - **GitHub Sayfası:** [avi12/youtube-auto-hd](https://github.com/avi12/youtube-auto-hd)
 
-## <img src="https://greasyfork.org/vite/assets/blacklogo96-CxYTSM_T.png" width="32" height="32" style="vertical-align: middle; margin-right: 8px;"> 7. Greasy Fork ve Userscripts
+## <img src="https://raw.githubusercontent.com/denilsonsa/denilsonsa.github.io/master/icons/GreasyFork.svg" width="32" height="32" style="vertical-align: middle; margin-right: 8px;"> 7. Greasy Fork ve Userscripts
 **Neden Kullanmalısınız?** Eğer tarayıcınıza özel fonksiyonlar eklemek istiyorsanız, bir "Userscript" yöneticisi (Violentmonkey veya Tampermonkey gibi) kurup Greasy Fork üzerinden binlerce hazır betiğe erişebilirsiniz. Web sitelerinin davranışlarını tamamen değiştirebilir, gizli özellikleri açabilir veya can sıkıcı kısıtlamaları kaldırabilirsiniz.
 - **Web Sitesi:** [greasyfork.org](https://greasyfork.org/tr)
 
