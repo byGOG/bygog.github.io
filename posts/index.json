@@ -1,5 +1,125 @@
 [
   {
+    "slug": "atlasos",
+    "title": "AtlasOS: Oyun ve Performans Odaklı Açık Kaynaklı Windows Optimizasyonu",
+    "date": "2026-04-28",
+    "excerpt": "Windows'u oyuncular ve güç kullanıcıları için optimize edin. AtlasOS ile sistem gecikmesini düşürün, gizliliğinizi artırın ve boşta kaynak kullanımını minimize edin."
+  },
+  {
+    "slug": "revi",
+    "title": "ReviOS: Performans ve Gizlilik Odaklı Windows Modifikasyonu",
+    "date": "2026-04-28",
+    "excerpt": "Windows'u oyun ve performans için optimize edin. ReviOS ile gereksiz servislerden kurtulun, gizliliğinizi artırın ve sistem gecikmesini minimize edin."
+  },
+  {
+    "slug": "bufferbloat",
+    "title": "Waveform Bufferbloat Test: İnternet Bağlantınızın Gerçek Kalitesini Ölçün",
+    "date": "2026-04-28",
+    "excerpt": "Hızınız yüksek ama pinginiz mi fırlıyor? İnternet bağlantınızın yük altındaki performansını ölçün ve bufferbloat sorununu nasıl çözeceğinizi öğrenin."
+  },
+  {
+    "slug": "winutil",
+    "title": "Chris Titus Tech Windows Utility (Winutil): Windows'u Optimize Etmenin En Kolay Yolu",
+    "date": "2026-04-28",
+    "excerpt": "Windows'u hızlandırmak, gereksiz uygulamalardan kurtulmak ve gizlilik ayarlarını tek tıkla yapmak için hepsi bir arada PowerShell aracı."
+  },
+  {
+    "slug": "beatstats",
+    "title": "BeatStats: Beatport Analiz ve Sıralama Platformu",
+    "date": "2026-04-28",
+    "excerpt": "Beatport üzerindeki en popüler sanatçıları, parçaları ve plak şirketlerini keşfedin. EDM dünyasının performans verilerini ve tür bazlı trendlerini takip etmenin en iyi yolu."
+  },
+  {
+    "slug": "dns-speed-test",
+    "title": "DNS Speed Test: Tarayıcınızdan En Hızlı DNS Sunucusunu Keşfedin",
+    "date": "2026-04-28",
+    "excerpt": "Hiçbir uygulama yüklemeden, tarayıcınız üzerinden 28+ DNS-over-HTTPS sunucusunu test edin. Konumunuz için en hızlı ve güvenli DNS sağlayıcısını saniyeler içinde bulun."
+  },
+  {
+    "slug": "uupdump",
+    "title": "UUP Dump: Microsoft Sunucularından Kendi Windows ISO'nuzu Oluşturun",
+    "date": "2026-04-28",
+    "excerpt": "Resmi Windows Update sunucularından en güncel ISO dosyalarını, Insider yapılarını ve ARM64 sürümlerini indirip hazırlamanın en güvenilir yolu."
+  },
+  {
+    "slug": "subloader",
+    "title": "Subloader: Video Dosyalarınız İçin En Hızlı Altyazı Bulucu",
+    "date": "2026-04-28",
+    "excerpt": "Filmleriniz ve dizileriniz için altyazı arama derdine son. Subloader ile tek tıkla OpenSubtitles üzerinden en uyumlu altyazıları saniyeler içinde indirin."
+  },
+  {
+    "slug": "onepace-tr",
+    "title": "One Pace Türkçe: One Piece Deneyimini Manga Tadında Yaşayın",
+    "date": "2026-04-28",
+    "excerpt": "One Piece anime serisindeki gereksiz dolgu sahnelerini (filler) temizleyerek mangaya sadık kalan One Pace projesinin Türkçe altyazılı versiyonunu keşfedin."
+  },
+  {
+    "slug": "fmhy",
+    "title": "FMHY: İnternetin En Büyük Ücretsiz Kaynak Arşivi",
+    "date": "2026-04-28",
+    "excerpt": "Her türlü dijital içerik, yazılım, oyun ve yapay zeka aracı için devasa bir topluluk rehberi. İnternetin en büyük 'ücretsiz her şey' arşivini keşfedin."
+  },
+  {
+    "slug": "arena-ai",
+    "title": "Arena AI Leaderboard: Yapay Zeka Modellerinin Şeffaf ve Tarafsız Sıralaması",
+    "date": "2026-04-28",
+    "excerpt": "En iyi yapay zeka modelleri hangileri? Chatbot Arena üzerinden gerçek kullanıcı oylarıyla belirlenen tarafsız liderlik tablolarını ve Elo sıralamalarını keşfedin."
+  },
+  {
+    "slug": "streamed-pk",
+    "title": "Streamed.pk: Canlı Spor Karşılaşmalarına Hızlı ve Kolay Erişim",
+    "date": "2026-04-28",
+    "excerpt": "Dünyanın dört bir yanından canlı spor yayınlarını ve güncel maç takvimlerini keşfedin. Futboldan basketbola, tüm heyecan tek bir platformda."
+  },
+  {
+    "slug": "seriesgraph",
+    "title": "SeriesGraph: Dizilerin ve Filmlerin IMDb Puanlarını Görselleştirin",
+    "date": "2026-04-28",
+    "excerpt": "Dizilerin ve film serilerinin IMDb puanlarını etkileyici grafiklerle görselleştirin. Hangi sezonun daha iyi olduğunu veya dizinin nerede düşüşe geçtiğini saniyeler içinde keşfedin."
+  },
+  {
+    "slug": "yts",
+    "title": "YTS.MX (YIFY): Küçük Boyut, Yüksek Kalite Film Deneyimi",
+    "date": "2026-04-28",
+    "excerpt": "Düşük dosya boyutlarında bile 720p, 1080p ve 4K kalitesinden ödün vermeyen YTS'nin resmi adresini ve neden tercih edildiğini keşfedin."
+  },
+  {
+    "slug": "hattrick-abc-tactics",
+    "title": "Hattrick: Taktiklerin ABC'si - Maç Motorunu Anlamak",
+    "date": "2026-04-28",
+    "excerpt": "Hattrick'te sadece iyi oyunculara sahip olmak yetmez. Kontratak, Pres ve Hücum yönlendirmeleri gibi temel taktiklerin mantığını kavrayarak galibiyete ulaşın."
+  },
+  {
+    "slug": "apple-mobile-drivers-installer",
+    "title": "Apple Mobile Drivers Installer: iTunes Olmadan iOS Sürücülerini Yüklemenin En Hafif Yolu",
+    "date": "2026-04-28",
+    "excerpt": "Bilgisayarınıza iTunes kurmadan iPhone veya iPad'inizi tanıyacak sürücüleri yüklemek ister misiniz? Bu PowerShell betiği ile sadece gerekli sürücüleri saniyeler içinde kurun."
+  },
+  {
+    "slug": "impactor",
+    "title": "Impactor: iOS Sideloading Uygulamalarının Yeni Nesil ve Açık Kaynaklı Yüzü",
+    "date": "2026-04-28",
+    "excerpt": "iOS cihazınıza uygulama yüklemek hiç bu kadar kolay ve güvenli olmamıştı. Impactor ile açık kaynaklı, hızlı ve modern bir sideloading deneyimine hazır olun."
+  },
+  {
+    "slug": "neofreebird",
+    "title": "NeoFreeBird: iOS İçin Gelişmiş Twitter Deneyimi",
+    "date": "2026-04-28",
+    "excerpt": "X logosundan kurtulun ve klasik Twitter kuşuna geri dönün. NeoFreeBird ile iOS'ta reklamsız, gizlilik odaklı ve özelleştirilebilir bir Twitter deneyimi yaşayın."
+  },
+  {
+    "slug": "regram",
+    "title": "Regram: Instagram Deneyiminizi Özgürleştiren Hepsi Bir Arada Mod",
+    "date": "2026-04-28",
+    "excerpt": "Instagram uygulamasını daha güçlü ve gizli hale getirin. Hikayeleri gizlice izleme, medya indirme ve gelişmiş analiz özellikleriyle tanışın."
+  },
+  {
+    "slug": "fitgirl",
+    "title": "FitGirl Repacks: Oyun Dünyasının Sıkıştırma Sanatçısı",
+    "date": "2026-04-28",
+    "excerpt": "İnternet kotanız ve depolama alanınız kıymetliyse, FitGirl'ün sıkıştırma sihrine göz atmalısınız. Neden resmi siteden şaşmamanız gerektiğini anlatıyorum."
+  },
+  {
     "slug": "hattrick",
     "title": "Hattrick: Futbol Menajerliğinin Yaşayan Efsanesi",
     "date": "2026-04-28",
