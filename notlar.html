@@ -51,14 +51,12 @@
   <nav class="site-nav site-nav--scrolled" aria-label="Ana gezinme">
     <a class="site-nav__logo" href="/">byGOG</a>
     <div class="site-nav__links">
-      <a class="site-nav__link" href="/#projeler" data-tr="Projeler" data-en="Projects">Projeler</a>
-      <a class="site-nav__link" href="/notlar.html" data-tr="Notlar" data-en="Notes">Notlar</a>
+      <a class="site-nav__link" href="/#projeler">Projeler</a>
+      <a class="site-nav__link" href="/notlar.html">Notlar</a>
 
     </div>
     <div class="site-nav__controls">
-      <button class="lang-toggle" type="button" aria-label="Dili değiştir">
-        <span class="lang-toggle__text">EN</span>
-      </button>
+
       <button class="theme-toggle" type="button" aria-label="Temayı değiştir">
         <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
@@ -82,15 +80,14 @@
     <div class="section__inner">
       <header class="section__header">
         <span class="section__num" aria-hidden="true">03</span>
-        <h1 class="section__title" data-tr="Notlar" data-en="Notes">Notlar</h1>
+        <h1 class="section__title">Notlar</h1>
         <span class="section__line" aria-hidden="true"></span>
       </header>
 
       <ul class="notes-list" id="notes-list" aria-live="polite"></ul>
 
       <article class="note-reader" id="note-reader" hidden>
-        <a class="note-reader__back" href="/notlar.html"
-           data-tr="← Tüm notlar" data-en="← All notes">← Tüm notlar</a>
+        <a class="note-reader__back" href="/notlar.html">← Tüm notlar</a>
         <div class="prose" id="note-content"></div>
       </article>
     </div>
@@ -138,7 +135,7 @@
       }
 
       var param = new URLSearchParams(location.search).get('p');
-      var lang = localStorage.getItem('lang') || 'tr';
+
 
       function waitForMarked(cb) {
         if (typeof marked !== 'undefined') { cb(); return; }
@@ -171,7 +168,7 @@
           .then(function (md) {
             var content = document.getElementById('note-content');
             if (!md) {
-              content.textContent = lang === 'en' ? 'Post not found.' : 'Yazı bulunamadı.';
+              content.textContent = 'Yazı bulunamadı.';
               return;
             }
             waitForMarked(function () {
@@ -186,7 +183,7 @@
           })
           .catch(function () {
             document.getElementById('note-content').textContent =
-              lang === 'en' ? 'Loading error.' : 'Yüklenirken hata oluştu.';
+              'Yüklenirken hata oluştu.';
           });
       } else {
         fetch('posts/index.json')
@@ -196,7 +193,7 @@
             if (!posts.length) {
               var empty = document.createElement('li');
               empty.className = 'note-item note-item--empty';
-              empty.textContent = lang === 'en' ? 'No posts yet.' : 'Henüz yazı yok.';
+              empty.textContent = 'Henüz yazı yok.';
               list.appendChild(empty);
               return;
             }
@@ -216,7 +213,7 @@
               dateEl.className = 'note-item__date';
               dateEl.dateTime = post.date;
               dateEl.textContent = new Date(post.date + 'T12:00:00').toLocaleDateString(
-                lang === 'en' ? 'en-GB' : 'tr-TR',
+                'tr-TR',
                 { year: 'numeric', month: 'long', day: 'numeric' }
               );
 
@@ -238,7 +235,7 @@
             var list = document.getElementById('notes-list');
             var empty = document.createElement('li');
             empty.className = 'note-item note-item--empty';
-            empty.textContent = lang === 'en' ? 'Could not load posts.' : 'Yazılar yüklenemedi.';
+            empty.textContent = 'Yazılar yüklenemedi.';
             list.appendChild(empty);
           });
       }

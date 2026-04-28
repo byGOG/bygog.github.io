@@ -507,32 +507,7 @@ function createMetaItem({ icon, label, srLabel, title }) {
   return item;
 }
 
-function applyLang(lang) {
-  document.querySelectorAll("[data-tr]").forEach(function (el) {
-    el.textContent = lang === "en" ? (el.dataset.en || el.dataset.tr) : el.dataset.tr;
-  });
-  document.querySelectorAll("[data-tr-placeholder]").forEach(function (el) {
-    el.placeholder = lang === "en"
-      ? (el.dataset.enPlaceholder || el.dataset.trPlaceholder)
-      : el.dataset.trPlaceholder;
-  });
-  document.documentElement.setAttribute("lang", lang === "en" ? "en" : "tr");
-  var langText = document.querySelector(".lang-toggle__text");
-  if (langText) langText.textContent = lang === "en" ? "TR" : "EN";
-}
 
-function initLangToggle() {
-  var saved = localStorage.getItem("lang") || "tr";
-  applyLang(saved);
-  var btn = document.querySelector(".lang-toggle");
-  if (!btn) return;
-  btn.addEventListener("click", function () {
-    var current = localStorage.getItem("lang") || "tr";
-    var next = current === "tr" ? "en" : "tr";
-    localStorage.setItem("lang", next);
-    applyLang(next);
-  });
-}
 
 
 
@@ -568,12 +543,12 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", function () {
     loadGitHubProjects();
 
-    initLangToggle();
+
     initNavToggle();
   });
 } else {
   loadGitHubProjects();
 
-  initLangToggle();
+
   initNavToggle();
 }

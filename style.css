@@ -59,28 +59,6 @@
   background: rgba(245, 245, 245, 0.90);
 }
 
-/* ── Language Toggle ─────────────────────────────────── */
-
-.lang-toggle {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  color: var(--text-3);
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
-  padding: 5px 10px;
-  cursor: pointer;
-  transition: all var(--dur-mid) var(--ease);
-  white-space: nowrap;
-}
-
-.lang-toggle:hover,
-.lang-toggle:focus-visible {
-  border-color: var(--border-bright);
-  color: var(--text-1);
-}
 
 /* ── Theme Toggle ────────────────────────────────────── */
 
