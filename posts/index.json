@@ -1,5 +1,53 @@
 [
   {
+    "slug": "portableapps",
+    "title": "PortableApps.com: Yazılımlarınızı Her Yere Yanınızda Taşıyın",
+    "date": "2026-04-28",
+    "excerpt": "Bilgisayara kurulum yapmadan yüzlerce uygulamayı yanınızda taşıyın. PortableApps.com platformu ve taşınabilir yazılım ekosistemine genel bir bakış."
+  },
+  {
+    "slug": "cybermania",
+    "title": "Cybermania: Geniş Yazılım ve Eklenti Arşivi",
+    "date": "2026-04-28",
+    "excerpt": "Profesyonel yazılımlardan web eklentilerine kadar geniş bir yelpazede dijital içerik sunan Cybermania platformuna genel bir bakış."
+  },
+  {
+    "slug": "katilimsiz-yazilim",
+    "title": "Katılımsız Yazılım Dünyası: SolidShare ve SilentAll",
+    "date": "2026-04-28",
+    "excerpt": "Windows kurulumu sonrası zaman kazandıran katılımsız (unattended) yazılım platformları SolidShare ve SilentAll'a genel bir bakış."
+  },
+  {
+    "slug": "packagepicker",
+    "title": "PackagePicker: Paket Yöneticileri ile Toplu Yazılım Kurulumu",
+    "date": "2026-04-28",
+    "excerpt": "Ninite mantığını modern paket yöneticileriyle (Winget, Chocolatey, Scoop) birleştirin. Uygulamalarınızı seçin ve tek bir komutla hepsini kurun."
+  },
+  {
+    "slug": "ninite",
+    "title": "Ninite: Windows Yazılımlarını Toplu ve Zahmetsizce Kurun",
+    "date": "2026-04-28",
+    "excerpt": "Bilgisayarınızı yeni mi kurdunuz? Ninite ile en popüler uygulamaları tek bir tıklamayla, reklam yazılımları olmadan otomatik olarak yükleyin."
+  },
+  {
+    "slug": "winget",
+    "title": "Winget (Windows Package Manager): Windows'ta Yazılım Yönetiminin Modern Yolu",
+    "date": "2026-04-28",
+    "excerpt": "Windows'ta uygulama kurmanın, güncellemenin ve kaldırmanın en hızlı yolu. Komut satırı üzerinden binlerce yazılıma anında erişin."
+  },
+  {
+    "slug": "rottentomatoes",
+    "title": "Rotten Tomatoes: Film ve Dizi Dünyasının Eleştiri Pusulası",
+    "date": "2026-04-28",
+    "excerpt": "Hangi filmi izlemeli? Eleştirmenlerin ve izleyicilerin ortak noktada buluştuğu veya ayrıştığı yapımları keşfedin. Rotten Tomatoes'un Tomatometer ve Audience Score dünyasına giriş yapın."
+  },
+  {
+    "slug": "sordum",
+    "title": "Sordum: Windows Kullanıcıları İçin Küçük Ama Dev Yazılımlar",
+    "date": "2026-04-28",
+    "excerpt": "Bilgisayar deneyiminizi iyileştiren, Windows kısıtlamalarını kaldıran ve sistemi optimize eden taşınabilir ve ücretsiz Sordum araçlarını yakından tanıyın."
+  },
+  {
     "slug": "fotmob-vs-sofascore",
     "title": "FotMob vs SofaScore: Hangi Canlı Skor Uygulaması Daha İyi?",
     "date": "2026-04-28",
