@@ -1,5 +1,17 @@
 [
   {
+    "slug": "vmware",
+    "title": "VMware Workstation Pro: Sanallaştırmanın Zirvesi Artık Ücretsiz",
+    "date": "2026-04-29",
+    "excerpt": "Sanallaştırma dünyasının lideri VMware Workstation Pro artık herkes için ücretsiz. Kurulumdan özelliklere, bu dev yazılımın sunduğu imkanları keşfedin."
+  },
+  {
+    "slug": "ai-comparison",
+    "title": "Google Gemini vs ChatGPT vs Claude: Yapay Zeka Devlerinin Karşılaştırması",
+    "date": "2026-04-29",
+    "excerpt": "Yapay zeka dünyasının üç devi karşı karşıya. GPT-5.5, Claude 4.7 ve Gemini 3.1 Pro arasındaki farkları, güçlü yanlarını ve hangi kullanım senaryosu için hangisinin daha uygun olduğunu keşfedin."
+  },
+  {
     "slug": "wiresock-wgcf",
     "title": "Wiresock ve wgcf: Cloudflare WARP'ı Windows'ta Özgürleştirin",
     "date": "2026-04-29",
