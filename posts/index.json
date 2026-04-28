@@ -1,5 +1,17 @@
 [
   {
+    "slug": "hattrick",
+    "title": "Hattrick: Futbol Menajerliğinin Yaşayan Efsanesi",
+    "date": "2026-04-28",
+    "excerpt": "Dünyanın en eski ve en derinlikli futbol menajerlik simülasyonuna genel bir bakış. Sabır, strateji ve gerçek bir topluluk deneyimi."
+  },
+  {
+    "slug": "ventoy",
+    "title": "Ventoy: ISO Dosyalarını Doğrudan USB'den Boot Etmenin En Modern Yolu",
+    "date": "2026-04-28",
+    "excerpt": "Her format için USB'yi sıfırlamaya son. Ventoy ile ISO dosyalarını sürükle-bırak yöntemiyle USB'ye atın ve doğrudan boot edin."
+  },
+  {
     "slug": "pwa",
     "title": "Progressive Web App (PWA): Web Deneyimini Uygulama Konforuyla Birleştirin",
     "date": "2026-04-28",
