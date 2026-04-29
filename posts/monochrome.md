@@ -2,7 +2,6 @@
 
 Müzik dinleme deneyimini karmaşık arayüzlerden ve reklamlardan arındırmayı hedefleyen **Monochrome**, açık kaynaklı ve gizlilik odaklı bir müzik platformudur.
 
-![Monochrome Logo](https://monochrome.tf/apple-touch-icon.png)
 
 ## Monochrome Nedir?
 
