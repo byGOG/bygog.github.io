@@ -2,7 +2,6 @@
 
 Windows'un varsayılan imleçlerinden sıkıldınız mı? Modern, şık ve materyal tasarım çizgilerine sahip bir imleç seti arıyorsanız, **Bibata Modern Ice** tam size göre. Ancak bu temayı Windows'a manuel olarak kurmak, dosyaları kopyalamak ve ayarları yapmak bazen zahmetli olabilir. İşte bu noktada **Bibata Cursor Installer**, tüm bu süreci tek bir komutla hallederek hayatınızı kolaylaştırıyor.
 
-![Bibata Cursor](https://raw.githubusercontent.com/ful1e5/Bibata_Cursor/master/art/preview.png)
 
 ## Bibata Cursor Installer Nedir?
 
