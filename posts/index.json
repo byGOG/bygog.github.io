@@ -1,5 +1,125 @@
 [
   {
+    "slug": "powertoys",
+    "title": "Microsoft PowerToys",
+    "date": "2026-04-29",
+    "excerpt": "Windows deneyiminizi bir üst seviyeye taşıyan; FancyZones, PowerRun ve Text Extractor gibi 20'den fazla gelişmiş araç içeren resmi ve açık kaynaklı yardımcı programlar seti."
+  },
+  {
+    "slug": "bleachbit",
+    "title": "BleachBit: Açık Kaynaklı Sistem Temizleyici ve Gizlilik Aracı",
+    "date": "2026-04-29",
+    "excerpt": "Bilgisayarınızdaki gereksiz dosyaları temizleyen, gizliliğinizi koruyan ve disk alanı kazanan tamamen ücretsiz ve açık kaynaklı bir sistem temizleme aracı."
+  },
+  {
+    "slug": "sysinternals",
+    "title": "Microsoft Sysinternals: Windows İçin İleri Düzey Sistem ve Sorun Giderme Araçları",
+    "date": "2026-04-29",
+    "excerpt": "Windows'un arka planındaki her şeyi görün. Process Explorer, Autoruns ve Procmon gibi 70'den fazla profesyonel araçla sisteminizi derinlemesine analiz edin ve sorunları giderin."
+  },
+  {
+    "slug": "oo-appbuster",
+    "title": "O&O AppBuster: Windows'un Gereksiz Uygulamalarından (Bloatware) Kurtulun",
+    "date": "2026-04-29",
+    "excerpt": "Windows ile ön yüklü gelen ve normal yollarla kaldırılmayan gereksiz uygulamaları (bloatware) tek tıkla temizleyin, gizliliğinizi koruyun ve disk alanı kazanın."
+  },
+  {
+    "slug": "bcuninstaller",
+    "title": "Bulk Crap Uninstaller (BCU): Windows İçin En Güçlü Yazılım Kaldırma ve Temizlik Aracı",
+    "date": "2026-04-29",
+    "excerpt": "Sisteminizi şişiren gereksiz yazılımları (bloatware) toplu halde, kalıntısız ve sessizce kaldırmak için geliştirilmiş, açık kaynaklı ve profesyonel bir program kaldırma aracı."
+  },
+  {
+    "slug": "windows11-download",
+    "title": "Windows 11 İndirme Rehberi: ISO, USB ve Yükseltme Seçenekleri",
+    "date": "2026-04-29",
+    "excerpt": "Microsoft'un resmi kanalları üzerinden Windows 11 25H2 sürümünü indirmenin tüm yolları. Yükleme Yardımcısı, Medya Oluşturma Aracı ve ISO dosyası indirme seçeneklerinin detaylı incelemesi."
+  },
+  {
+    "slug": "hwinfo",
+    "title": "HWiNFO: Kapsamlı Donanım Bilgisi ve Gerçek Zamanlı İzleme Aracı",
+    "date": "2026-04-29",
+    "excerpt": "Windows ve DOS için profesyonel düzeyde donanım analizi, gerçek zamanlı sensör izleme ve v8.00+ ile gelen dahili OSD desteği sunan, en güncel donanım mimarilerini destekleyen güvenilir sistem aracı."
+  },
+  {
+    "slug": "driverstore-explorer",
+    "title": "DriverStore Explorer (RAPR): Windows Sürücü Mağazasını Yönetmenin En Kolay Yolu",
+    "date": "2026-04-29",
+    "excerpt": "Windows DriverStore'daki eski ve kullanılmayan sürücüleri temizleyerek disk alanı kazanan, sürücüleri yedekleyen ve yöneten açık kaynaklı güçlü bir sistem aracı."
+  },
+  {
+    "slug": "wiztree",
+    "title": "WizTree: Dünyanın En Hızlı Disk Alanı Analiz Aracı",
+    "date": "2026-04-29",
+    "excerpt": "NTFS MFT teknolojisini kullanarak diskinizdeki büyük dosya ve klasörleri saniyeler içinde bulan, görsel treemap desteği sunan dünyanın en hızlı disk analiz yazılımı."
+  },
+  {
+    "slug": "openhashtab",
+    "title": "OpenHashTab: Windows İçin Açık Kaynaklı ve Hızlı Dosya Doğrulama Aracı",
+    "date": "2026-04-29",
+    "excerpt": "Windows Dosya Gezgini'ne entegre olan, 28 farklı algoritma, VirusTotal sorgulama ve yüksek performanslı hash hesaplama desteği sunan açık kaynaklı dosya doğrulama aracı."
+  },
+  {
+    "slug": "onecommander",
+    "title": "OneCommander: Windows İçin Modern ve Güçlü Dosya Yöneticisi",
+    "date": "2026-04-29",
+    "excerpt": "Windows Explorer'a yüksek performanslı, DirectX hızlandırmalı ve Miller sütunları destekli modern bir alternatif. Profesyonel dosya yönetimi için hepsi bir arada çözüm."
+  },
+  {
+    "slug": "idm",
+    "title": "Internet Download Manager: Hızlı ve Akıllı Dosya İndirme Yöneticisi",
+    "date": "2026-04-29",
+    "excerpt": "İnternet üzerinden dosya indirme hızınızı 5 kata kadar artıran, indirmeleri duraklatıp devam ettirebilen ve tarayıcı entegrasyonu ile indirme yönetimini kolaylaştıran dünyanın en popüler indirme yöneticisi."
+  },
+  {
+    "slug": "anydesk",
+    "title": "AnyDesk: Hızlı ve Güvenli Uzaktan Masaüstü Yazılımı",
+    "date": "2026-04-29",
+    "excerpt": "Düşük gecikme süresi, yüksek kare hızı ve askeri düzeyde şifreleme ile her yerden her cihaza anında erişim sağlayan dünyanın en hızlı uzaktan masaüstü kontrol yazılımı."
+  },
+  {
+    "slug": "emsisoft-emergency-kit",
+    "title": "Emsisoft Emergency Kit: Ücretsiz ve Taşınabilir Zararlı Yazılım Temizleyici",
+    "date": "2026-04-29",
+    "excerpt": "Kurulum gerektirmeyen, USB üzerinden çalışabilen ve çift tarama motoruyla bilgisayarınızdaki virüsleri, truva atlarını ve casus yazılımları temizleyen güçlü bir acil durum güvenlik aracı."
+  },
+  {
+    "slug": "sandboxie-plus",
+    "title": "Sandboxie-Plus: Gelişmiş Sandbox ve Sistem İzole Etme Yazılımı",
+    "date": "2026-04-29",
+    "excerpt": "Windows için açık kaynaklı, güvenli ve izole bir çalışma ortamı sunan, sisteminizi istenmeyen değişikliklerden koruyan güçlü bir sandbox aracı."
+  },
+  {
+    "slug": "zen-adblocker",
+    "title": "Zen Adblocker: Sistem Genelinde Reklam ve Takipçi Engelleme",
+    "date": "2026-04-29",
+    "excerpt": "Windows, macOS ve Linux için geliştirilmiş, ağ seviyesinde çalışan ücretsiz ve açık kaynaklı bir reklam engelleyici ve gizlilik koruması."
+  },
+  {
+    "slug": "windows-defender-remover",
+    "title": "Windows Defender Remover: Windows Güvenliğini Tamamen Kontrol Altına Alın",
+    "date": "2026-04-29",
+    "excerpt": "Windows 8.x, 10 ve 11 sistemlerinden Windows Defender ve Windows Security bileşenlerini tamamen kaldırmak için geliştirilmiş açık kaynaklı ve güçlü bir araç."
+  },
+  {
+    "slug": "shutup10",
+    "title": "O&O ShutUp10++: Windows 10 ve 11 İçin En Popüler Gizlilik Aracı",
+    "date": "2026-04-29",
+    "excerpt": "Windows'un veri toplama özelliklerini kontrol altına alın. Kurulum gerektirmeyen, kullanımı kolay ve etkili gizlilik aracı O&O ShutUp10++ ile sisteminizi optimize edin."
+  },
+  {
+    "slug": "privacysexy",
+    "title": "privacy.sexy: İşletim Sisteminizi Gizlilik ve Güvenlik İçin Optimize Edin",
+    "date": "2026-04-29",
+    "excerpt": "Windows, macOS ve Linux sistemlerinizi gizlilik, güvenlik ve performans odaklı olarak optimize etmenize olanak tanıyan, açık kaynaklı ve güçlü bir araç."
+  },
+  {
+    "slug": "goodbyedpi",
+    "title": "GoodbyeDPI ve GoodbyeDPI UI: İnternet Engellerini Aşmanın En Hafif Yolu",
+    "date": "2026-04-29",
+    "excerpt": "İnternet servis sağlayıcılarının uyguladığı DPI engellerini VPN veya proxy kullanmadan, paket manipülasyonu ile aşmanızı sağlayan açık kaynaklı araçlar."
+  },
+  {
     "slug": "adguard",
     "title": "AdGuard: Reklamsız ve Güvenli İnternet İçin Hepsi Bir Arada Çözüm",
     "date": "2026-04-29",
