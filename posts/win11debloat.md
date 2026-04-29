@@ -2,7 +2,6 @@
 
 Windows 10 veya 11 işletim sisteminizi kurduktan sonra gelen gereksiz uygulamalardan, telemetri servislerinden ve arayüz kalabalığından kurtulmak mı istiyorsunuz? **Win11Debloat**, sisteminizi hızlıca temizlemek ve kişiselleştirmek için geliştirilmiş hafif ve kullanımı kolay bir PowerShell scriptidir.
 
-![Win11Debloat](https://raw.githubusercontent.com/Raphire/Win11Debloat/master/Assets/Header.png)
 
 ## Win11Debloat Nedir?
 
