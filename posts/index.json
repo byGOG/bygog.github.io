@@ -1,5 +1,65 @@
 [
   {
+    "slug": "adguard",
+    "title": "AdGuard: Reklamsız ve Güvenli İnternet İçin Hepsi Bir Arada Çözüm",
+    "date": "2026-04-29",
+    "excerpt": "İnternet deneyiminizi reklamlar, takipçiler ve zararlı içeriklerden arındıran; tarayıcı eklentilerinin ötesinde, sistem genelinde koruma sağlayan dünyanın en gelişmiş içerik engelleme servisi."
+  },
+  {
+    "slug": "protonvpn",
+    "title": "Proton VPN: Gizlilik ve Güvenlik Odaklı Yüksek Hızlı VPN",
+    "date": "2026-04-29",
+    "excerpt": "Proton Mail ekibi tarafından İsviçre merkezli geliştirilen, açık kaynaklı ve denetlenebilir yapısıyla öne çıkan, gizlilik odaklı yüksek hızlı VPN hizmeti."
+  },
+  {
+    "slug": "softpedia",
+    "title": "Softpedia: Güvenilir Yazılım Arşivi ve Teknoloji Portalı",
+    "date": "2026-04-29",
+    "excerpt": "Dünyanın en büyük yazılım ve sürücü arşivlerinden biri. '100% Clean' sertifikası ile güvenli indirme, editör incelemeleri ve güncel teknoloji haberleri sunan platform."
+  },
+  {
+    "slug": "techspot",
+    "title": "TechSpot: Teknoloji Tutkunları ve Donanım Meraklıları İçin Bilgi Kaynağı",
+    "date": "2026-04-29",
+    "excerpt": "1998'den beri yayın hayatına devam eden, derinlemesine donanım incelemeleri, teknoloji haberleri ve yazılım rehberleri sunan güvenilir platform."
+  },
+  {
+    "slug": "extto",
+    "title": "EXT.to: Modern ve Hızlı Torrent Arama Motoru",
+    "date": "2026-04-29",
+    "excerpt": "Milyonlarca içeriğe tek bir noktadan erişin. Reklamsız, hızlı ve minimalist bir torrent arama deneyimi sunan EXT.to platformuna genel bakış."
+  },
+  {
+    "slug": "monochrome",
+    "title": "Monochrome.tf: Minimalist ve Gizlilik Odaklı Müzik Deneyimi",
+    "date": "2026-04-29",
+    "excerpt": "Açık kaynaklı, reklamsız ve yüksek kaliteli müzik deneyimi sunan Monochrome platformuna genel bir bakış ve güncel durumu."
+  },
+  {
+    "slug": "officetoolplus",
+    "title": "Office Tool Plus: Office Dağıtımı İçin Güçlü ve Kullanışlı Bir Araç",
+    "date": "2026-04-29",
+    "excerpt": "Microsoft Office kurulumlarını yönetmek, özelleştirmek ve etkinleştirmek için hepsi bir arada çözüm. Ücretsiz, reklamsız ve tamamen özelleştirilebilir."
+  },
+  {
+    "slug": "win11debloat",
+    "title": "Win11Debloat: Windows 10 ve 11 İçin Basit ve Etkili Debloat Aracı",
+    "date": "2026-04-29",
+    "excerpt": "Windows'u temizlemek, telemetriyi kapatmak ve kişiselleştirmek için geliştirilmiş hafif PowerShell scripti. Basit menüsüyle her seviyeden kullanıcıya hitap eder."
+  },
+  {
+    "slug": "sophia-script",
+    "title": "Sophia Script for Windows: Windows 10 & 11 İçin En Güçlü İnce Ayar Aracı",
+    "date": "2026-04-29",
+    "excerpt": "Windows'u tamamen kontrol altına alın. Gizlilik, güvenlik ve performans için 150'den fazla fonksiyon sunan en popüler PowerShell tweaker aracı."
+  },
+  {
+    "slug": "bibata-cursor-installer",
+    "title": "Bibata Cursor Installer: Windows için Tek Tıkla Cursor Teması Kurulumu",
+    "date": "2026-04-29",
+    "excerpt": "Windows'un standart imleçlerinden sıkılanlar için Bibata Modern Ice temasını tek bir komutla, otomatik olarak kuran ve uygulayan akıllı yükleyici."
+  },
+  {
     "slug": "copyq",
     "title": "CopyQ: Gelişmiş Pano Yöneticisi ve Verimlilik Aracı",
     "date": "2026-04-29",
