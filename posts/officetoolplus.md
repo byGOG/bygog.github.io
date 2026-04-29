@@ -2,7 +2,6 @@
 
 Microsoft Office kurulumlarını yönetmek, özelleştirmek ve etkinleştirmek bazen karmaşık olabilir. **Office Tool Plus**, bu süreci basitleştiren, tamamen ücretsiz ve güçlü bir dağıtım aracıdır.
 
-![Office Tool Plus Logo](https://www.officetool.plus/logo.png)
 
 ## Office Tool Plus Nedir?
 
