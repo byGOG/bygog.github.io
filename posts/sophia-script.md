@@ -2,7 +2,6 @@
 
 Windows işletim sisteminizi tam olarak istediğiniz gibi kontrol etmek, gereksiz servislerden kurtulmak ve gizliliğinizi en üst düzeye çıkarmak mı istiyorsunuz? GitHub'daki en popüler ve güçlü Windows tweaker projesi olan **Sophia Script for Windows**, Microsoft'un resmi dökümanlarına sadık kalarak sisteminizi optimize etmenizi sağlar.
 
-![Sophia Script](https://raw.githubusercontent.com/farag2/Sophia-Script-for-Windows/main/img/sophia_script.png)
 
 ## Sophia Script for Windows Nedir?
 
