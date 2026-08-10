@@ -751,7 +751,7 @@ function initSignalSystem() {
     }).format(new Date());
     clock.textContent = time + " / TR";
     document.querySelectorAll("[data-telemetry-time]").forEach(function (item) {
-      item.textContent = time + " TRT";
+      item.textContent = time;
       item.dateTime = new Date().toISOString();
     });
   }
