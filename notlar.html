@@ -101,16 +101,29 @@
 
       <article class="note-reader" id="note-reader" hidden>
         <a class="note-reader__back" href="/notlar.html">← Tüm notlar</a>
+        <p class="note-reader__meta" id="note-reader-meta"></p>
+        <nav class="note-toc" id="note-toc" aria-label="İçindekiler" hidden>
+          <strong data-i18n="notes.toc">İçindekiler</strong>
+          <ol></ol>
+        </nav>
         <div class="prose" id="note-content"></div>
+        <div class="note-share" id="note-share" hidden>
+          <span data-i18n="notes.share">Paylaş</span>
+          <button type="button" data-share-native data-i18n="notes.share">Paylaş</button>
+          <button type="button" data-share-copy data-i18n="notes.copy">Bağlantıyı kopyala</button>
+          <a data-share-whatsapp target="_blank" rel="noopener">WhatsApp</a>
+          <a data-share-x target="_blank" rel="noopener">X</a>
+          <a data-share-linkedin target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <nav class="note-pagination" id="note-pagination" aria-label="Diğer notlar"></nav>
+        <a class="note-back-top" href="#" data-i18n="notes.backTop">↑ Başa dön</a>
       </article>
     </div>
   </main>
 
-  <!-- SRI hash çevrimiçi bir ortamda hesaplanıp `integrity="sha384-..."` olarak eklenmeli. -->
-  <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"
-          crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script src="vendor/marked.min.js" defer></script>
   <script src="script.js"></script>
-  <script src="app.js?v=1.4" defer></script>
+  <script src="app.js?v=1.5" defer></script>
   <script>
     (function () {
       function setMeta(selector, value) {
@@ -160,6 +173,59 @@
         }, 50);
       }
 
+      function slugifyHeading(text) {
+        return text.toLocaleLowerCase('tr-TR').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+          .replace(/[^a-z0-9çğıöşü\s-]/g, '').trim().replace(/\s+/g, '-');
+      }
+
+      function enhanceReader(slug, markdown, content) {
+        function readerText(key, fallback) { return window.siteText ? window.siteText(key, fallback) : fallback; }
+        var words = markdown.trim().split(/\s+/).length;
+        document.getElementById('note-reader-meta').textContent = readerText('notes.readTime', '{count} dk okuma').replace('{count}', Math.max(1, Math.ceil(words / 220)));
+
+        var headings = Array.from(content.querySelectorAll('h2, h3'));
+        var toc = document.getElementById('note-toc');
+        var tocList = toc.querySelector('ol');
+        headings.forEach(function (heading, index) {
+          heading.id = heading.id || slugifyHeading(heading.textContent) || ('bolum-' + index);
+          var item = document.createElement('li');
+          if (heading.tagName === 'H3') item.className = 'note-toc__sub';
+          var link = document.createElement('a');
+          link.href = '#' + heading.id;
+          link.textContent = heading.textContent;
+          item.appendChild(link);
+          tocList.appendChild(item);
+        });
+        toc.hidden = headings.length < 2;
+
+        var share = document.getElementById('note-share');
+        var shareUrl = location.href;
+        var shareTitle = document.title;
+        share.hidden = false;
+        share.querySelector('[data-share-whatsapp]').href = 'https://wa.me/?text=' + encodeURIComponent(shareTitle + ' ' + shareUrl);
+        share.querySelector('[data-share-x]').href = 'https://x.com/intent/post?text=' + encodeURIComponent(shareTitle) + '&url=' + encodeURIComponent(shareUrl);
+        share.querySelector('[data-share-linkedin]').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl);
+        var nativeButton = share.querySelector('[data-share-native]');
+        nativeButton.hidden = !navigator.share;
+        nativeButton.addEventListener('click', function () { navigator.share({ title: shareTitle, url: shareUrl }).catch(function () {}); });
+        share.querySelector('[data-share-copy]').addEventListener('click', function (event) {
+          navigator.clipboard.writeText(shareUrl).then(function () { event.currentTarget.textContent = readerText('notes.copied', 'Kopyalandı'); });
+        });
+
+        fetch('posts/index.json').then(function (r) { return r.json(); }).then(function (posts) {
+          var index = posts.findIndex(function (post) { return post.slug === slug; });
+          var pagination = document.getElementById('note-pagination');
+          [[readerText('notes.previous', '← Önceki'), posts[index + 1]], [readerText('notes.next', 'Sonraki →'), posts[index - 1]]].forEach(function (entry) {
+            if (!entry[1]) return;
+            var link = document.createElement('a');
+            link.href = '/notlar.html?p=' + encodeURIComponent(entry[1].slug);
+            var label = document.createElement('span'); label.textContent = entry[0];
+            var title = document.createElement('strong'); title.textContent = entry[1].title;
+            link.append(label, title); pagination.appendChild(link);
+          });
+        }).catch(function () {});
+      }
+
       if (param) {
         document.getElementById('notes-tools').hidden = true;
         document.getElementById('notes-list').hidden = true;
@@ -193,6 +259,7 @@
               }
               var h1 = content.querySelector('h1');
               if (h1) document.title = h1.textContent + ' | byGOG';
+              enhanceReader(param, md, content);
             });
           })
           .catch(function () {
@@ -242,7 +309,7 @@
               list.appendChild(empty);
               return;
             }
-            posts.forEach(function (post) { post.category = categoryFor(post); });
+            posts.forEach(function (post) { post.category = post.category || categoryFor(post); });
             var search = document.getElementById('notes-search');
             var filters = document.getElementById('notes-filters');
             var results = document.getElementById('notes-results');

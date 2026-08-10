@@ -1,0 +1,36 @@
+name: Site quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: JavaScript syntax
+        run: |
+          node --check app.js
+          node --check script.js
+      - name: Content and file validation
+        run: node scripts/validate-site.mjs
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Lighthouse CI
+        run: npm install --global @lhci/cli@0.14.0
+      - name: Run Lighthouse CI
+        run: lhci autorun

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en" data-default-language="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -7,44 +7,44 @@
   <script>(function(){var s=localStorage.getItem('theme');if(!s){s=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';}document.documentElement.setAttribute('data-theme',s);document.documentElement.classList.add('js');var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=s==='light'?'#f5f5f5':'#0a0a0a';})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0a0a" />
-  <title>Önder GÖG | Kişisel Web Sitesi</title>
-  <meta name="description" content="Önder GÖG — Bursa'da yaşayan, teknoloji ve yazılımla ilgilenen biri. iOS, Python, PowerShell ve daha fazlası." />
+  <title>Önder GÖG | Personal Website</title>
+  <meta name="description" content="Önder GÖG — technology enthusiast and software maker based in Bursa, working with Windows, Python, PowerShell and the web." />
   <meta name="author" content="Önder GÖG" />
-  <link rel="canonical" href="https://bygog.github.io/" />
+  <link rel="canonical" href="https://bygog.github.io/en/" />
   <link rel="alternate" hreflang="tr" href="https://bygog.github.io/" />
   <link rel="alternate" hreflang="en" href="https://bygog.github.io/en/" />
   <link rel="alternate" hreflang="x-default" href="https://bygog.github.io/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://bygog.github.io/" />
-  <meta property="og:title" content="Önder GÖG | Kişisel Web Sitesi" />
-  <meta property="og:description" content="Önder GÖG — Bursa'da yaşayan, teknoloji ve yazılımla ilgilenen biri. iOS, Python, PowerShell ve daha fazlası." />
+  <meta property="og:url" content="https://bygog.github.io/en/" />
+  <meta property="og:title" content="Önder GÖG | Personal Website" />
+  <meta property="og:description" content="Önder GÖG — technology enthusiast and software maker based in Bursa." />
   <meta property="og:image" content="https://bygog.github.io/profil-opt.jpg" />
   <meta property="og:locale" content="tr_TR" />
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@ondergog" />
-  <meta name="twitter:title" content="Önder GÖG | Kişisel Web Sitesi" />
-  <meta name="twitter:description" content="Önder GÖG — Bursa'da yaşayan, teknoloji ve yazılımla ilgilenen biri." />
+  <meta name="twitter:title" content="Önder GÖG | Personal Website" />
+  <meta name="twitter:description" content="Önder GÖG — technology enthusiast and software maker based in Bursa." />
   <meta name="twitter:image" content="https://bygog.github.io/profil-opt.jpg" />
 
   <!-- PWA -->
-  <link rel="manifest" href="manifest.json" />
-  <link rel="apple-touch-icon" href="icon-180.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/icon-180.png" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
 
   <!-- Profil fotoğrafı ön yükleme -->
-  <link rel="preload" as="image" href="profil.webp" type="image/webp" />
+  <link rel="preload" as="image" href="/profil.webp" type="image/webp" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Tektur:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=1.1" />
+  <link rel="stylesheet" href="/style.css?v=1.1" />
 </head>
 
 <body>
@@ -74,8 +74,8 @@
   <nav class="site-nav" aria-label="Ana gezinme">
     <a class="site-nav__logo" href="#hero">byGOG</a>
     <div class="site-nav__links">
-      <a class="site-nav__link" href="#projeler" data-i18n="nav.projects">Projeler</a>
-      <a class="site-nav__link" href="/notlar.html" data-i18n="nav.notes">Notlar</a>
+      <a class="site-nav__link" href="#projeler" data-i18n="nav.projects">Projects</a>
+      <a class="site-nav__link" href="/notlar.html" data-i18n="nav.notes">Notes</a>
 
     </div>
     <div class="site-nav__controls">
@@ -109,19 +109,19 @@
 
       <div class="hero__photo-wrap">
         <picture>
-          <source srcset="profil.webp" type="image/webp" />
-          <img class="hero__photo" src="profil-opt.jpg" alt="Önder GÖG profil fotoğrafı" fetchpriority="high" />
+          <source srcset="/profil.webp" type="image/webp" />
+          <img class="hero__photo" src="/profil-opt.jpg" alt="Önder GÖG profil fotoğrafı" fetchpriority="high" />
         </picture>
         <div class="hero__photo-ring" aria-hidden="true"></div>
         <div class="hero__photo-glow" aria-hidden="true"></div>
       </div>
 
       <div class="hero__content">
-        <p class="hero__eyebrow" data-i18n="hero.eyebrow">Merhaba, ben</p>
+        <p class="hero__eyebrow" data-i18n="hero.eyebrow">Hi, I'm</p>
         <h1 class="hero__name">Önder<br><span class="hero__name--accent">GÖG</span></h1>
 
         <p class="hero__bio" data-i18n="hero.bio">
-          Bursa'da yaşayan, teknoloji ve yazılımla ilgilenen; doğayı, snowboard'u ve motosiklet sürmeyi seven biri. Techno ve Anadolu rock dinler, dijital araçlar ve internet kültürüyle uğraşır.
+          Based in Bursa and interested in technology and software. I enjoy nature, snowboarding and motorcycles, listen to techno and Anatolian rock, and explore digital tools and internet culture.
         </p>
 
         <div class="hero__tag-groups" aria-label="Teknolojiler">
@@ -146,14 +146,14 @@
 
         <div class="hero__cta-row">
           <div class="contact-profile-card">
-            <img class="contact-profile-card__photo" src="profil.webp" alt="" width="52" height="52" />
+            <img class="contact-profile-card__photo" src="/profil.webp" alt="" width="52" height="52" />
             <div class="contact-profile-card__info">
               <span class="contact-profile-card__name"><i aria-hidden="true"></i>Önder GÖG</span>
               <a class="contact-profile-card__phone" href="tel:+905385076848">+90 538 507 68 48</a>
             </div>
             <a class="contact-profile-card__save" href="/onder-gog.vcf" download="Onder-GOG.vcf" aria-label="Önder GÖG iletişim kartını kaydet">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14"/></svg>
-              <span data-i18n="contact.save">Rehbere ekle</span>
+              <span data-i18n="contact.save">Add to contacts</span>
             </a>
           </div>
         </div>
@@ -191,7 +191,7 @@
 
     <a class="hero__scroll" href="#simdi" aria-label="Aşağı kaydır">
       <span class="hero__scroll-line" aria-hidden="true"></span>
-      <span class="hero__scroll-text" data-i18n="hero.scroll">Kaydır</span>
+      <span class="hero__scroll-text" data-i18n="hero.scroll">Scroll</span>
     </a>
   </section>
 
@@ -200,31 +200,31 @@
     <div class="section__inner">
       <header class="section__header" data-reveal>
         <span class="section__num" aria-hidden="true">01</span>
-        <h2 class="section__title" id="now-heading" data-i18n="now.title">Şu Sıra</h2>
+        <h2 class="section__title" id="now-heading" data-i18n="now.title">Currently</h2>
         <span class="section__line" aria-hidden="true"></span>
       </header>
       <ul class="now-list" data-reveal>
         <li class="now-item">
           <span class="now-item__dot" aria-hidden="true"></span>
           <p data-i18n="now.one">
-            Son günlerde aklıma gelen fikirleri ChatGPT ve Codex ile konuşup küçük, işe yarayan dijital araçlara dönüştürüyorum. Bazen kişisel sitemi yeniliyor, bazen günlük işlerimi kolaylaştıracak çözümler hazırlıyorum.
+            Lately, I have been turning ideas discussed with ChatGPT and Codex into small, useful digital tools—sometimes refreshing my personal site, sometimes building solutions that simplify everyday tasks.
           </p>
         </li>
         <li class="now-item">
           <span class="now-item__dot" aria-hidden="true"></span>
           <p data-i18n="now.two">
-            Yeni bir cihaz ya da bilgisayar parçası ilgimi çektiğinde ayrıntılarını araştırmadan duramıyorum. Şimdilerde mobil cihazlardan bilgisayar sağlığına kadar öğrendiğim faydalı bilgileri bir araya getiriyorum.
+            Whenever a new device or computer component catches my attention, I dive into the details. Right now, I am collecting useful notes ranging from mobile devices to computer health.
           </p>
         </li>
         <li class="now-item">
           <span class="now-item__dot" aria-hidden="true"></span>
           <p data-i18n="now.three">
-            Kullanmadığım ürünlere yeni bir sahip bulmak için anlaşılır ilanlar hazırlıyorum. Bu sırada elimde neler olduğunu düzenliyor ve dijital envanterimi adım adım güncelliyorum.
+            I prepare clear listings to help unused products find new owners. Along the way, I organize what I have and keep my digital inventory up to date.
           </p>
         </li>
       </ul>
       <p class="now-updated" data-reveal>
-        <span data-i18n="now.updated">Son güncelleme</span>:
+        <span data-i18n="now.updated">Last updated</span>:
         <time datetime="2026-08-10">10.08.2026</time>
       </p>
     </div>
@@ -235,9 +235,9 @@
     <div class="section__inner">
       <header class="section__header" data-reveal>
         <span class="section__num" aria-hidden="true">02</span>
-        <h2 class="section__title" id="latest-notes-heading" data-i18n="latest.title">Son Eklenen Notlar</h2>
+        <h2 class="section__title" id="latest-notes-heading" data-i18n="latest.title">Latest Notes</h2>
         <span class="section__line" aria-hidden="true"></span>
-        <a class="latest-notes__all" href="/notlar.html" data-i18n="latest.all">Tüm notlar →</a>
+        <a class="latest-notes__all" href="/notlar.html" data-i18n="latest.all">View all notes →</a>
       </header>
       <ul class="latest-notes-grid" data-latest-notes aria-live="polite">
         <li class="latest-note latest-note--loading" aria-hidden="true"></li>
@@ -252,11 +252,11 @@
     <div class="section__inner">
       <header class="section__header" data-reveal>
         <span class="section__num" aria-hidden="true">03</span>
-        <h2 class="section__title" id="projects-heading" data-i18n="projects.title">Projeler</h2>
+        <h2 class="section__title" id="projects-heading" data-i18n="projects.title">Projects</h2>
         <span class="section__line" aria-hidden="true"></span>
         <p class="projects__status" data-github-status aria-live="polite"></p>
       </header>
-      <div class="project-filters" data-project-filters role="group" aria-label="Projeleri teknolojiye göre filtrele"></div>
+      <div class="project-filters" data-project-filters role="group" aria-label="Filter projects by technology"></div>
       <p class="project-filter__result" data-project-filter-result aria-live="polite"></p>
       <ul class="projects-grid" data-github-projects></ul>
     </div>
@@ -291,8 +291,8 @@
     </div>
   </footer>
 
-  <script src="script.js?v=1.8"></script>
-  <script src="app.js?v=1.5" defer></script>
+  <script src="/script.js?v=1.8"></script>
+  <script src="/app.js?v=1.5" defer></script>
 
   <script type="application/ld+json">
   {

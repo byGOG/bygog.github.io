@@ -596,7 +596,7 @@ async function loadLatestNotes() {
   if (!list) return;
 
   try {
-    const response = await fetch("posts/index.json");
+    const response = await fetch("/posts/index.json");
     if (!response.ok) throw new Error("Not listesi alınamadı");
     const posts = await response.json();
     const latest = [...posts]

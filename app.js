@@ -13,7 +13,7 @@
       'now.updated': 'Son güncelleme', 'latest.title': 'Son Eklenen Notlar', 'latest.all': 'Tüm notlar →',
       'projects.title': 'Projeler', 'projects.all': 'Tümü', 'projects.details': 'Ayrıntılar',
       'projects.count': '{count} proje gösteriliyor', 'projects.github': "GitHub'da aç", 'projects.loading': 'GitHub projeleri yükleniyor…', 'projects.current': "GitHub'dan güncel projeler:", 'projects.fallback': 'Öne çıkan projeler:', 'projects.error': 'GitHub projeleri alınamadı. Öne çıkan çalışmalar:', 'latest.read': 'Notu oku →',
-      'notes.search': 'Notlarda ara…', 'notes.all': 'Tümü', 'notes.security': 'Güvenlik', 'notes.internet': 'İnternet', 'notes.other': 'Diğer', 'notes.ai': 'Yapay Zekâ', 'notes.media': 'Medya', 'notes.count': '{count} not gösteriliyor', 'notes.empty': 'Aramana uygun bir not bulunamadı.'
+      'notes.search': 'Notlarda ara…', 'notes.all': 'Tümü', 'notes.security': 'Güvenlik', 'notes.internet': 'İnternet', 'notes.other': 'Diğer', 'notes.ai': 'Yapay Zekâ', 'notes.media': 'Medya', 'notes.count': '{count} not gösteriliyor', 'notes.empty': 'Aramana uygun bir not bulunamadı.', 'notes.toc': 'İçindekiler', 'notes.share': 'Paylaş', 'notes.copy': 'Bağlantıyı kopyala', 'notes.copied': 'Kopyalandı', 'notes.previous': '← Önceki', 'notes.next': 'Sonraki →', 'notes.backTop': '↑ Başa dön', 'notes.readTime': '{count} dk okuma'
     },
     en: {
       'nav.projects': 'Projects', 'nav.notes': 'Notes',
@@ -27,11 +27,13 @@
       'now.updated': 'Last updated', 'latest.title': 'Latest Notes', 'latest.all': 'View all notes →',
       'projects.title': 'Projects', 'projects.all': 'All', 'projects.details': 'Details',
       'projects.count': '{count} projects shown', 'projects.github': 'Open on GitHub', 'projects.loading': 'Loading GitHub projects…', 'projects.current': 'Latest projects from GitHub:', 'projects.fallback': 'Featured projects:', 'projects.error': 'GitHub projects could not be loaded. Featured work:', 'latest.read': 'Read note →',
-      'notes.search': 'Search notes…', 'notes.all': 'All', 'notes.security': 'Security', 'notes.internet': 'Internet', 'notes.other': 'Other', 'notes.ai': 'Artificial Intelligence', 'notes.media': 'Media', 'notes.count': '{count} notes shown', 'notes.empty': 'No notes match your search.'
+      'notes.search': 'Search notes…', 'notes.all': 'All', 'notes.security': 'Security', 'notes.internet': 'Internet', 'notes.other': 'Other', 'notes.ai': 'Artificial Intelligence', 'notes.media': 'Media', 'notes.count': '{count} notes shown', 'notes.empty': 'No notes match your search.', 'notes.toc': 'Contents', 'notes.share': 'Share', 'notes.copy': 'Copy link', 'notes.copied': 'Copied', 'notes.previous': '← Previous', 'notes.next': 'Next →', 'notes.backTop': '↑ Back to top', 'notes.readTime': '{count} min read'
     }
   };
 
-  var currentLanguage = localStorage.getItem('language') === 'en' ? 'en' : 'tr';
+  var storedLanguage = localStorage.getItem('language');
+  var defaultLanguage = document.documentElement.dataset.defaultLanguage === 'en' ? 'en' : 'tr';
+  var currentLanguage = storedLanguage === 'en' || storedLanguage === 'tr' ? storedLanguage : defaultLanguage;
   window.siteLanguage = currentLanguage;
   window.siteText = function (key, fallback) {
     return (translations[window.siteLanguage] && translations[window.siteLanguage][key]) || fallback || key;
@@ -57,7 +59,12 @@
     button.addEventListener('click', function () {
       var next = window.siteLanguage === 'tr' ? 'en' : 'tr';
       localStorage.setItem('language', next);
-      applyLanguage(next);
+      var target = next === 'en' ? '/en/' : '/';
+      if (location.pathname === '/' || location.pathname === '/index.html' || location.pathname === '/en/' || location.pathname === '/en/index.html') {
+        location.href = target + location.hash;
+      } else {
+        applyLanguage(next);
+      }
     });
   });
   applyLanguage(currentLanguage);
@@ -95,9 +102,38 @@
   var yearEl = document.getElementById('footer-year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Service Worker
+  // Service Worker ve yeni sürüm bildirimi
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').catch(function () {});
+    var refreshing = false;
+    function showUpdateNotice(worker) {
+      if (document.querySelector('.update-notice')) return;
+      var notice = document.createElement('aside');
+      notice.className = 'update-notice';
+      notice.setAttribute('role', 'status');
+      notice.innerHTML = '<span>Yeni site sürümü hazır.</span><button type="button">Yenile</button>';
+      notice.querySelector('button').addEventListener('click', function () {
+        worker.postMessage({ type: 'SKIP_WAITING' });
+      });
+      document.body.appendChild(notice);
+      requestAnimationFrame(function () { notice.classList.add('is-visible'); });
+    }
+
+    navigator.serviceWorker.register('/sw.js').then(function (registration) {
+      if (registration.waiting && navigator.serviceWorker.controller) showUpdateNotice(registration.waiting);
+      registration.addEventListener('updatefound', function () {
+        var worker = registration.installing;
+        if (!worker) return;
+        worker.addEventListener('statechange', function () {
+          if (worker.state === 'installed' && navigator.serviceWorker.controller) showUpdateNotice(worker);
+        });
+      });
+    }).catch(function () {});
+
+    navigator.serviceWorker.addEventListener('controllerchange', function () {
+      if (refreshing) return;
+      refreshing = true;
+      window.location.reload();
+    });
   }
 
   // Nav scroll state (yalnızca hero varsa)

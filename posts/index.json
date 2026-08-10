@@ -3,492 +3,801 @@
     "slug": "powertoys",
     "title": "Microsoft PowerToys",
     "date": "2026-04-29",
-    "excerpt": "Windows deneyiminizi bir üst seviyeye taşıyan; FancyZones, PowerRun ve Text Extractor gibi 20'den fazla gelişmiş araç içeren resmi ve açık kaynaklı yardımcı programlar seti."
+    "excerpt": "Windows deneyiminizi bir üst seviyeye taşıyan; FancyZones, PowerRun ve Text Extractor gibi 20'den fazla gelişmiş araç içeren resmi ve açık kaynaklı yardımcı programlar seti.",
+    "category": "Windows",
+    "tags": [
+      "Windows",
+      "Açık Kaynak"
+    ]
   },
   {
     "slug": "bleachbit",
     "title": "BleachBit: Açık Kaynaklı Sistem Temizleyici ve Gizlilik Aracı",
     "date": "2026-04-29",
-    "excerpt": "Bilgisayarınızdaki gereksiz dosyaları temizleyen, gizliliğinizi koruyan ve disk alanı kazanan tamamen ücretsiz ve açık kaynaklı bir sistem temizleme aracı."
+    "excerpt": "Bilgisayarınızdaki gereksiz dosyaları temizleyen, gizliliğinizi koruyan ve disk alanı kazanan tamamen ücretsiz ve açık kaynaklı bir sistem temizleme aracı.",
+    "category": "Güvenlik",
+    "tags": [
+      "Açık Kaynak",
+      "Gizlilik"
+    ]
   },
   {
     "slug": "sysinternals",
     "title": "Microsoft Sysinternals: Windows İçin İleri Düzey Sistem ve Sorun Giderme Araçları",
     "date": "2026-04-29",
-    "excerpt": "Windows'un arka planındaki her şeyi görün. Process Explorer, Autoruns ve Procmon gibi 70'den fazla profesyonel araçla sisteminizi derinlemesine analiz edin ve sorunları giderin."
+    "excerpt": "Windows'un arka planındaki her şeyi görün. Process Explorer, Autoruns ve Procmon gibi 70'den fazla profesyonel araçla sisteminizi derinlemesine analiz edin ve sorunları giderin.",
+    "category": "Windows",
+    "tags": [
+      "Windows"
+    ]
   },
   {
     "slug": "oo-appbuster",
     "title": "O&O AppBuster: Windows'un Gereksiz Uygulamalarından (Bloatware) Kurtulun",
     "date": "2026-04-29",
-    "excerpt": "Windows ile ön yüklü gelen ve normal yollarla kaldırılmayan gereksiz uygulamaları (bloatware) tek tıkla temizleyin, gizliliğinizi koruyun ve disk alanı kazanın."
+    "excerpt": "Windows ile ön yüklü gelen ve normal yollarla kaldırılmayan gereksiz uygulamaları (bloatware) tek tıkla temizleyin, gizliliğinizi koruyun ve disk alanı kazanın.",
+    "category": "Windows",
+    "tags": [
+      "Windows"
+    ]
   },
   {
     "slug": "bcuninstaller",
     "title": "Bulk Crap Uninstaller (BCU): Windows İçin En Güçlü Yazılım Kaldırma ve Temizlik Aracı",
     "date": "2026-04-29",
-    "excerpt": "Sisteminizi şişiren gereksiz yazılımları (bloatware) toplu halde, kalıntısız ve sessizce kaldırmak için geliştirilmiş, açık kaynaklı ve profesyonel bir program kaldırma aracı."
+    "excerpt": "Sisteminizi şişiren gereksiz yazılımları (bloatware) toplu halde, kalıntısız ve sessizce kaldırmak için geliştirilmiş, açık kaynaklı ve profesyonel bir program kaldırma aracı.",
+    "category": "Windows",
+    "tags": [
+      "Windows",
+      "Açık Kaynak"
+    ]
   },
   {
     "slug": "windows11-download",
     "title": "Windows 11 İndirme Rehberi: ISO, USB ve Yükseltme Seçenekleri",
     "date": "2026-04-29",
-    "excerpt": "Microsoft'un resmi kanalları üzerinden Windows 11 25H2 sürümünü indirmenin tüm yolları. Yükleme Yardımcısı, Medya Oluşturma Aracı ve ISO dosyası indirme seçeneklerinin detaylı incelemesi."
+    "excerpt": "Microsoft'un resmi kanalları üzerinden Windows 11 25H2 sürümünü indirmenin tüm yolları. Yükleme Yardımcısı, Medya Oluşturma Aracı ve ISO dosyası indirme seçeneklerinin detaylı incelemesi.",
+    "category": "İnternet",
+    "tags": [
+      "Windows",
+      "İndirme"
+    ]
   },
   {
     "slug": "hwinfo",
     "title": "HWiNFO: Kapsamlı Donanım Bilgisi ve Gerçek Zamanlı İzleme Aracı",
     "date": "2026-04-29",
-    "excerpt": "Windows ve DOS için profesyonel düzeyde donanım analizi, gerçek zamanlı sensör izleme ve v8.00+ ile gelen dahili OSD desteği sunan, en güncel donanım mimarilerini destekleyen güvenilir sistem aracı."
+    "excerpt": "Windows ve DOS için profesyonel düzeyde donanım analizi, gerçek zamanlı sensör izleme ve v8.00+ ile gelen dahili OSD desteği sunan, en güncel donanım mimarilerini destekleyen güvenilir sistem aracı.",
+    "category": "Windows",
+    "tags": [
+      "Windows"
+    ]
   },
   {
     "slug": "driverstore-explorer",
     "title": "DriverStore Explorer (RAPR): Windows Sürücü Mağazasını Yönetmenin En Kolay Yolu",
     "date": "2026-04-29",
-    "excerpt": "Windows DriverStore'daki eski ve kullanılmayan sürücüleri temizleyerek disk alanı kazanan, sürücüleri yedekleyen ve yöneten açık kaynaklı güçlü bir sistem aracı."
+    "excerpt": "Windows DriverStore'daki eski ve kullanılmayan sürücüleri temizleyerek disk alanı kazanan, sürücüleri yedekleyen ve yöneten açık kaynaklı güçlü bir sistem aracı.",
+    "category": "İnternet",
+    "tags": [
+      "Windows",
+      "Açık Kaynak"
+    ]
   },
   {
     "slug": "wiztree",
     "title": "WizTree: Dünyanın En Hızlı Disk Alanı Analiz Aracı",
     "date": "2026-04-29",
-    "excerpt": "NTFS MFT teknolojisini kullanarak diskinizdeki büyük dosya ve klasörleri saniyeler içinde bulan, görsel treemap desteği sunan dünyanın en hızlı disk analiz yazılımı."
+    "excerpt": "NTFS MFT teknolojisini kullanarak diskinizdeki büyük dosya ve klasörleri saniyeler içinde bulan, görsel treemap desteği sunan dünyanın en hızlı disk analiz yazılımı.",
+    "category": "Windows",
+    "tags": []
   },
   {
     "slug": "openhashtab",
     "title": "OpenHashTab: Windows İçin Açık Kaynaklı ve Hızlı Dosya Doğrulama Aracı",
     "date": "2026-04-29",
-    "excerpt": "Windows Dosya Gezgini'ne entegre olan, 28 farklı algoritma, VirusTotal sorgulama ve yüksek performanslı hash hesaplama desteği sunan açık kaynaklı dosya doğrulama aracı."
+    "excerpt": "Windows Dosya Gezgini'ne entegre olan, 28 farklı algoritma, VirusTotal sorgulama ve yüksek performanslı hash hesaplama desteği sunan açık kaynaklı dosya doğrulama aracı.",
+    "category": "Windows",
+    "tags": [
+      "Windows",
+      "Açık Kaynak"
+    ]
   },
   {
     "slug": "onecommander",
     "title": "OneCommander: Windows İçin Modern ve Güçlü Dosya Yöneticisi",
     "date": "2026-04-29",
-    "excerpt": "Windows Explorer'a yüksek performanslı, DirectX hızlandırmalı ve Miller sütunları destekli modern bir alternatif. Profesyonel dosya yönetimi için hepsi bir arada çözüm."
+    "excerpt": "Windows Explorer'a yüksek performanslı, DirectX hızlandırmalı ve Miller sütunları destekli modern bir alternatif. Profesyonel dosya yönetimi için hepsi bir arada çözüm.",
+    "category": "Windows",
+    "tags": [
+      "Windows"
+    ]
   },
   {
     "slug": "idm",
     "title": "Internet Download Manager: Hızlı ve Akıllı Dosya İndirme Yöneticisi",
     "date": "2026-04-29",
-    "excerpt": "İnternet üzerinden dosya indirme hızınızı 5 kata kadar artıran, indirmeleri duraklatıp devam ettirebilen ve tarayıcı entegrasyonu ile indirme yönetimini kolaylaştıran dünyanın en popüler indirme yöneticisi."
+    "excerpt": "İnternet üzerinden dosya indirme hızınızı 5 kata kadar artıran, indirmeleri duraklatıp devam ettirebilen ve tarayıcı entegrasyonu ile indirme yönetimini kolaylaştıran dünyanın en popüler indirme yöneticisi.",
+    "category": "İnternet",
+    "tags": [
+      "İndirme",
+      "Tarayıcı"
+    ]
   },
   {
     "slug": "anydesk",
     "title": "AnyDesk: Hızlı ve Güvenli Uzaktan Masaüstü Yazılımı",
     "date": "2026-04-29",
-    "excerpt": "Düşük gecikme süresi, yüksek kare hızı ve askeri düzeyde şifreleme ile her yerden her cihaza anında erişim sağlayan dünyanın en hızlı uzaktan masaüstü kontrol yazılımı."
+    "excerpt": "Düşük gecikme süresi, yüksek kare hızı ve askeri düzeyde şifreleme ile her yerden her cihaza anında erişim sağlayan dünyanın en hızlı uzaktan masaüstü kontrol yazılımı.",
+    "category": "Güvenlik",
+    "tags": []
   },
   {
     "slug": "emsisoft-emergency-kit",
     "title": "Emsisoft Emergency Kit: Ücretsiz ve Taşınabilir Zararlı Yazılım Temizleyici",
     "date": "2026-04-29",
-    "excerpt": "Kurulum gerektirmeyen, USB üzerinden çalışabilen ve çift tarama motoruyla bilgisayarınızdaki virüsleri, truva atlarını ve casus yazılımları temizleyen güçlü bir acil durum güvenlik aracı."
+    "excerpt": "Kurulum gerektirmeyen, USB üzerinden çalışabilen ve çift tarama motoruyla bilgisayarınızdaki virüsleri, truva atlarını ve casus yazılımları temizleyen güçlü bir acil durum güvenlik aracı.",
+    "category": "Güvenlik",
+    "tags": [
+      "Güvenlik"
+    ]
   },
   {
     "slug": "sandboxie-plus",
     "title": "Sandboxie-Plus: Gelişmiş Sandbox ve Sistem İzole Etme Yazılımı",
     "date": "2026-04-29",
-    "excerpt": "Windows için açık kaynaklı, güvenli ve izole bir çalışma ortamı sunan, sisteminizi istenmeyen değişikliklerden koruyan güçlü bir sandbox aracı."
+    "excerpt": "Windows için açık kaynaklı, güvenli ve izole bir çalışma ortamı sunan, sisteminizi istenmeyen değişikliklerden koruyan güçlü bir sandbox aracı.",
+    "category": "Güvenlik",
+    "tags": [
+      "Windows",
+      "Açık Kaynak"
+    ]
   },
   {
     "slug": "zen-adblocker",
     "title": "Zen Adblocker: Sistem Genelinde Reklam ve Takipçi Engelleme",
     "date": "2026-04-29",
-    "excerpt": "Windows, macOS ve Linux için geliştirilmiş, ağ seviyesinde çalışan ücretsiz ve açık kaynaklı bir reklam engelleyici ve gizlilik koruması."
+    "excerpt": "Windows, macOS ve Linux için geliştirilmiş, ağ seviyesinde çalışan ücretsiz ve açık kaynaklı bir reklam engelleyici ve gizlilik koruması.",
+    "category": "Güvenlik",
+    "tags": [
+      "Windows",
+      "Açık Kaynak",
+      "Gizlilik"
+    ]
   },
   {
     "slug": "windows-defender-remover",
     "title": "Windows Defender Remover: Windows Güvenliğini Tamamen Kontrol Altına Alın",
     "date": "2026-04-29",
-    "excerpt": "Windows 8.x, 10 ve 11 sistemlerinden Windows Defender ve Windows Security bileşenlerini tamamen kaldırmak için geliştirilmiş açık kaynaklı ve güçlü bir araç."
+    "excerpt": "Windows 8.x, 10 ve 11 sistemlerinden Windows Defender ve Windows Security bileşenlerini tamamen kaldırmak için geliştirilmiş açık kaynaklı ve güçlü bir araç.",
+    "category": "Güvenlik",
+    "tags": [
+      "Windows",
+      "Açık Kaynak"
+    ]
   },
   {
     "slug": "shutup10",
     "title": "O&O ShutUp10++: Windows 10 ve 11 İçin En Popüler Gizlilik Aracı",
     "date": "2026-04-29",
-    "excerpt": "Windows'un veri toplama özelliklerini kontrol altına alın. Kurulum gerektirmeyen, kullanımı kolay ve etkili gizlilik aracı O&O ShutUp10++ ile sisteminizi optimize edin."
+    "excerpt": "Windows'un veri toplama özelliklerini kontrol altına alın. Kurulum gerektirmeyen, kullanımı kolay ve etkili gizlilik aracı O&O ShutUp10++ ile sisteminizi optimize edin.",
+    "category": "Güvenlik",
+    "tags": [
+      "Windows",
+      "Gizlilik"
+    ]
   },
   {
     "slug": "privacysexy",
     "title": "privacy.sexy: İşletim Sisteminizi Gizlilik ve Güvenlik İçin Optimize Edin",
     "date": "2026-04-29",
-    "excerpt": "Windows, macOS ve Linux sistemlerinizi gizlilik, güvenlik ve performans odaklı olarak optimize etmenize olanak tanıyan, açık kaynaklı ve güçlü bir araç."
+    "excerpt": "Windows, macOS ve Linux sistemlerinizi gizlilik, güvenlik ve performans odaklı olarak optimize etmenize olanak tanıyan, açık kaynaklı ve güçlü bir araç.",
+    "category": "Güvenlik",
+    "tags": [
+      "Windows",
+      "Açık Kaynak",
+      "Gizlilik",
+      "Güvenlik"
+    ]
   },
   {
     "slug": "goodbyedpi",
     "title": "GoodbyeDPI ve GoodbyeDPI UI: İnternet Engellerini Aşmanın En Hafif Yolu",
     "date": "2026-04-29",
-    "excerpt": "İnternet servis sağlayıcılarının uyguladığı DPI engellerini VPN veya proxy kullanmadan, paket manipülasyonu ile aşmanızı sağlayan açık kaynaklı araçlar."
+    "excerpt": "İnternet servis sağlayıcılarının uyguladığı DPI engellerini VPN veya proxy kullanmadan, paket manipülasyonu ile aşmanızı sağlayan açık kaynaklı araçlar.",
+    "category": "Güvenlik",
+    "tags": [
+      "Açık Kaynak"
+    ]
   },
   {
     "slug": "adguard",
     "title": "AdGuard: Reklamsız ve Güvenli İnternet İçin Hepsi Bir Arada Çözüm",
     "date": "2026-04-29",
-    "excerpt": "İnternet deneyiminizi reklamlar, takipçiler ve zararlı içeriklerden arındıran; tarayıcı eklentilerinin ötesinde, sistem genelinde koruma sağlayan dünyanın en gelişmiş içerik engelleme servisi."
+    "excerpt": "İnternet deneyiminizi reklamlar, takipçiler ve zararlı içeriklerden arındıran; tarayıcı eklentilerinin ötesinde, sistem genelinde koruma sağlayan dünyanın en gelişmiş içerik engelleme servisi.",
+    "category": "Güvenlik",
+    "tags": [
+      "Güvenlik",
+      "Tarayıcı"
+    ]
   },
   {
     "slug": "protonvpn",
     "title": "Proton VPN: Gizlilik ve Güvenlik Odaklı Yüksek Hızlı VPN",
     "date": "2026-04-29",
-    "excerpt": "Proton Mail ekibi tarafından İsviçre merkezli geliştirilen, açık kaynaklı ve denetlenebilir yapısıyla öne çıkan, gizlilik odaklı yüksek hızlı VPN hizmeti."
+    "excerpt": "Proton Mail ekibi tarafından İsviçre merkezli geliştirilen, açık kaynaklı ve denetlenebilir yapısıyla öne çıkan, gizlilik odaklı yüksek hızlı VPN hizmeti.",
+    "category": "Güvenlik",
+    "tags": [
+      "Açık Kaynak",
+      "Gizlilik",
+      "Güvenlik"
+    ]
   },
   {
     "slug": "softpedia",
     "title": "Softpedia: Güvenilir Yazılım Arşivi ve Teknoloji Portalı",
     "date": "2026-04-29",
-    "excerpt": "Dünyanın en büyük yazılım ve sürücü arşivlerinden biri. '100% Clean' sertifikası ile güvenli indirme, editör incelemeleri ve güncel teknoloji haberleri sunan platform."
+    "excerpt": "Dünyanın en büyük yazılım ve sürücü arşivlerinden biri. '100% Clean' sertifikası ile güvenli indirme, editör incelemeleri ve güncel teknoloji haberleri sunan platform.",
+    "category": "İnternet",
+    "tags": [
+      "İndirme"
+    ]
   },
   {
     "slug": "techspot",
     "title": "TechSpot: Teknoloji Tutkunları ve Donanım Meraklıları İçin Bilgi Kaynağı",
     "date": "2026-04-29",
-    "excerpt": "1998'den beri yayın hayatına devam eden, derinlemesine donanım incelemeleri, teknoloji haberleri ve yazılım rehberleri sunan güvenilir platform."
+    "excerpt": "1998'den beri yayın hayatına devam eden, derinlemesine donanım incelemeleri, teknoloji haberleri ve yazılım rehberleri sunan güvenilir platform.",
+    "category": "Windows",
+    "tags": []
   },
   {
     "slug": "extto",
     "title": "EXT.to: Modern ve Hızlı Torrent Arama Motoru",
     "date": "2026-04-29",
-    "excerpt": "Milyonlarca içeriğe tek bir noktadan erişin. Reklamsız, hızlı ve minimalist bir torrent arama deneyimi sunan EXT.to platformuna genel bakış."
+    "excerpt": "Milyonlarca içeriğe tek bir noktadan erişin. Reklamsız, hızlı ve minimalist bir torrent arama deneyimi sunan EXT.to platformuna genel bakış.",
+    "category": "İnternet",
+    "tags": []
   },
   {
     "slug": "monochrome",
     "title": "Monochrome.tf: Minimalist ve Gizlilik Odaklı Müzik Deneyimi",
     "date": "2026-04-29",
-    "excerpt": "Açık kaynaklı, reklamsız ve yüksek kaliteli müzik deneyimi sunan Monochrome platformuna genel bir bakış ve güncel durumu."
+    "excerpt": "Açık kaynaklı, reklamsız ve yüksek kaliteli müzik deneyimi sunan Monochrome platformuna genel bir bakış ve güncel durumu.",
+    "category": "Güvenlik",
+    "tags": [
+      "Açık Kaynak",
+      "Gizlilik",
+      "Medya"
+    ]
   },
   {
     "slug": "officetoolplus",
     "title": "Office Tool Plus: Office Dağıtımı İçin Güçlü ve Kullanışlı Bir Araç",
     "date": "2026-04-29",
-    "excerpt": "Microsoft Office kurulumlarını yönetmek, özelleştirmek ve etkinleştirmek için hepsi bir arada çözüm. Ücretsiz, reklamsız ve tamamen özelleştirilebilir."
+    "excerpt": "Microsoft Office kurulumlarını yönetmek, özelleştirmek ve etkinleştirmek için hepsi bir arada çözüm. Ücretsiz, reklamsız ve tamamen özelleştirilebilir.",
+    "category": "Windows",
+    "tags": []
   },
   {
     "slug": "win11debloat",
     "title": "Win11Debloat: Windows 10 ve 11 İçin Basit ve Etkili Debloat Aracı",
     "date": "2026-04-29",
-    "excerpt": "Windows'u temizlemek, telemetriyi kapatmak ve kişiselleştirmek için geliştirilmiş hafif PowerShell scripti. Basit menüsüyle her seviyeden kullanıcıya hitap eder."
+    "excerpt": "Windows'u temizlemek, telemetriyi kapatmak ve kişiselleştirmek için geliştirilmiş hafif PowerShell scripti. Basit menüsüyle her seviyeden kullanıcıya hitap eder.",
+    "category": "Windows",
+    "tags": [
+      "Windows",
+      "PowerShell"
+    ]
   },
   {
     "slug": "sophia-script",
     "title": "Sophia Script for Windows: Windows 10 & 11 İçin En Güçlü İnce Ayar Aracı",
     "date": "2026-04-29",
-    "excerpt": "Windows'u tamamen kontrol altına alın. Gizlilik, güvenlik ve performans için 150'den fazla fonksiyon sunan en popüler PowerShell tweaker aracı."
+    "excerpt": "Windows'u tamamen kontrol altına alın. Gizlilik, güvenlik ve performans için 150'den fazla fonksiyon sunan en popüler PowerShell tweaker aracı.",
+    "category": "Güvenlik",
+    "tags": [
+      "Windows",
+      "PowerShell",
+      "Gizlilik",
+      "Güvenlik"
+    ]
   },
   {
     "slug": "bibata-cursor-installer",
     "title": "Bibata Cursor Installer: Windows için Tek Tıkla Cursor Teması Kurulumu",
     "date": "2026-04-29",
-    "excerpt": "Windows'un standart imleçlerinden sıkılanlar için Bibata Modern Ice temasını tek bir komutla, otomatik olarak kuran ve uygulayan akıllı yükleyici."
+    "excerpt": "Windows'un standart imleçlerinden sıkılanlar için Bibata Modern Ice temasını tek bir komutla, otomatik olarak kuran ve uygulayan akıllı yükleyici.",
+    "category": "Windows",
+    "tags": [
+      "Windows"
+    ]
   },
   {
     "slug": "copyq",
     "title": "CopyQ: Gelişmiş Pano Yöneticisi ve Verimlilik Aracı",
     "date": "2026-04-29",
-    "excerpt": "Windows'un sınırlı panosundan kurtulun. CopyQ ile pano geçmişinizi yönetin, düzenleyin ve iş akışınızı scriptler ile otomatize edin."
+    "excerpt": "Windows'un sınırlı panosundan kurtulun. CopyQ ile pano geçmişinizi yönetin, düzenleyin ve iş akışınızı scriptler ile otomatize edin.",
+    "category": "Windows",
+    "tags": [
+      "Windows"
+    ]
   },
   {
     "slug": "vmware",
     "title": "VMware Workstation Pro: Sanallaştırmanın Zirvesi Artık Ücretsiz",
     "date": "2026-04-29",
-    "excerpt": "Sanallaştırma dünyasının lideri VMware Workstation Pro artık herkes için ücretsiz. Kurulumdan özelliklere, bu dev yazılımın sunduğu imkanları keşfedin."
+    "excerpt": "Sanallaştırma dünyasının lideri VMware Workstation Pro artık herkes için ücretsiz. Kurulumdan özelliklere, bu dev yazılımın sunduğu imkanları keşfedin.",
+    "category": "Windows",
+    "tags": []
   },
   {
     "slug": "ai-comparison",
     "title": "Google Gemini vs ChatGPT vs Claude: Yapay Zeka Devlerinin Karşılaştırması",
     "date": "2026-04-29",
-    "excerpt": "Yapay zeka dünyasının üç devi karşı karşıya. GPT-5.5, Claude 4.7 ve Gemini 3.1 Pro arasındaki farkları, güçlü yanlarını ve hangi kullanım senaryosu için hangisinin daha uygun olduğunu keşfedin."
+    "excerpt": "Yapay zeka dünyasının üç devi karşı karşıya. GPT-5.5, Claude 4.7 ve Gemini 3.1 Pro arasındaki farkları, güçlü yanlarını ve hangi kullanım senaryosu için hangisinin daha uygun olduğunu keşfedin.",
+    "category": "Yapay Zekâ",
+    "tags": []
   },
   {
     "slug": "wiresock-wgcf",
     "title": "Wiresock ve wgcf: Cloudflare WARP'ı Windows'ta Özgürleştirin",
     "date": "2026-04-29",
-    "excerpt": "Resmi WARP istemcisinin kısıtlamalarından kurtulun. Wiresock ve wgcf ile yüksek performanslı, uygulama bazlı tünelleme destekli VPN deneyimini keşfedin."
+    "excerpt": "Resmi WARP istemcisinin kısıtlamalarından kurtulun. Wiresock ve wgcf ile yüksek performanslı, uygulama bazlı tünelleme destekli VPN deneyimini keşfedin.",
+    "category": "Güvenlik",
+    "tags": [
+      "Windows"
+    ]
   },
   {
     "slug": "browser-extensions",
     "title": "İnternet Deneyiminizi Seviye Atlatacak En İyi Tarayıcı Eklentileri",
     "date": "2026-04-28",
-    "excerpt": "Tarayıcınızı sadece bir web aracı olmaktan çıkarıp güçlü bir asistan haline getirin. uBlock Origin'den Dark Reader'a, mutlaka kullanmanız gereken eklentiler."
+    "excerpt": "Tarayıcınızı sadece bir web aracı olmaktan çıkarıp güçlü bir asistan haline getirin. uBlock Origin'den Dark Reader'a, mutlaka kullanmanız gereken eklentiler.",
+    "category": "İnternet",
+    "tags": [
+      "Tarayıcı"
+    ]
   },
   {
     "slug": "googledrive",
     "title": "Google Drive: Bulut Depolama ve İş Birliğinin Adresi",
     "date": "2026-04-28",
-    "excerpt": "Dosyalarınızı her yerden erişilebilir kılın. Google Drive'ın depolama, senkronizasyon ve döküman yönetimi özelliklerine genel bir bakış."
+    "excerpt": "Dosyalarınızı her yerden erişilebilir kılın. Google Drive'ın depolama, senkronizasyon ve döküman yönetimi özelliklerine genel bir bakış.",
+    "category": "İnternet",
+    "tags": []
   },
   {
     "slug": "portableapps",
     "title": "PortableApps.com: Yazılımlarınızı Her Yere Yanınızda Taşıyın",
     "date": "2026-04-28",
-    "excerpt": "Bilgisayara kurulum yapmadan yüzlerce uygulamayı yanınızda taşıyın. PortableApps.com platformu ve taşınabilir yazılım ekosistemine genel bir bakış."
+    "excerpt": "Bilgisayara kurulum yapmadan yüzlerce uygulamayı yanınızda taşıyın. PortableApps.com platformu ve taşınabilir yazılım ekosistemine genel bir bakış.",
+    "category": "Windows",
+    "tags": []
   },
   {
     "slug": "cybermania",
     "title": "Cybermania: Geniş Yazılım ve Eklenti Arşivi",
     "date": "2026-04-28",
-    "excerpt": "Profesyonel yazılımlardan web eklentilerine kadar geniş bir yelpazede dijital içerik sunan Cybermania platformuna genel bir bakış."
+    "excerpt": "Profesyonel yazılımlardan web eklentilerine kadar geniş bir yelpazede dijital içerik sunan Cybermania platformuna genel bir bakış.",
+    "category": "İnternet",
+    "tags": []
   },
   {
     "slug": "katilimsiz-yazilim",
     "title": "Katılımsız Yazılım Dünyası: SolidShare ve SilentAll",
     "date": "2026-04-28",
-    "excerpt": "Windows kurulumu sonrası zaman kazandıran katılımsız (unattended) yazılım platformları SolidShare ve SilentAll'a genel bir bakış."
+    "excerpt": "Windows kurulumu sonrası zaman kazandıran katılımsız (unattended) yazılım platformları SolidShare ve SilentAll'a genel bir bakış.",
+    "category": "Windows",
+    "tags": [
+      "Windows"
+    ]
   },
   {
     "slug": "packagepicker",
     "title": "PackagePicker: Paket Yöneticileri ile Toplu Yazılım Kurulumu",
     "date": "2026-04-28",
-    "excerpt": "Ninite mantığını modern paket yöneticileriyle (Winget, Chocolatey, Scoop) birleştirin. Uygulamalarınızı seçin ve tek bir komutla hepsini kurun."
+    "excerpt": "Ninite mantığını modern paket yöneticileriyle (Winget, Chocolatey, Scoop) birleştirin. Uygulamalarınızı seçin ve tek bir komutla hepsini kurun.",
+    "category": "Windows",
+    "tags": []
   },
   {
     "slug": "ninite",
     "title": "Ninite: Windows Yazılımlarını Toplu ve Zahmetsizce Kurun",
     "date": "2026-04-28",
-    "excerpt": "Bilgisayarınızı yeni mi kurdunuz? Ninite ile en popüler uygulamaları tek bir tıklamayla, reklam yazılımları olmadan otomatik olarak yükleyin."
+    "excerpt": "Bilgisayarınızı yeni mi kurdunuz? Ninite ile en popüler uygulamaları tek bir tıklamayla, reklam yazılımları olmadan otomatik olarak yükleyin.",
+    "category": "Windows",
+    "tags": [
+      "Windows"
+    ]
   },
   {
     "slug": "winget",
     "title": "Winget (Windows Package Manager): Windows'ta Yazılım Yönetiminin Modern Yolu",
     "date": "2026-04-28",
-    "excerpt": "Windows'ta uygulama kurmanın, güncellemenin ve kaldırmanın en hızlı yolu. Komut satırı üzerinden binlerce yazılıma anında erişin."
+    "excerpt": "Windows'ta uygulama kurmanın, güncellemenin ve kaldırmanın en hızlı yolu. Komut satırı üzerinden binlerce yazılıma anında erişin.",
+    "category": "Windows",
+    "tags": [
+      "Windows"
+    ]
   },
   {
     "slug": "rottentomatoes",
     "title": "Rotten Tomatoes: Film ve Dizi Dünyasının Eleştiri Pusulası",
     "date": "2026-04-28",
-    "excerpt": "Hangi filmi izlemeli? Eleştirmenlerin ve izleyicilerin ortak noktada buluştuğu veya ayrıştığı yapımları keşfedin. Rotten Tomatoes'un Tomatometer ve Audience Score dünyasına giriş yapın."
+    "excerpt": "Hangi filmi izlemeli? Eleştirmenlerin ve izleyicilerin ortak noktada buluştuğu veya ayrıştığı yapımları keşfedin. Rotten Tomatoes'un Tomatometer ve Audience Score dünyasına giriş yapın.",
+    "category": "Medya",
+    "tags": [
+      "Medya"
+    ]
   },
   {
     "slug": "sordum",
     "title": "Sordum: Windows Kullanıcıları İçin Küçük Ama Dev Yazılımlar",
     "date": "2026-04-28",
-    "excerpt": "Bilgisayar deneyiminizi iyileştiren, Windows kısıtlamalarını kaldıran ve sistemi optimize eden taşınabilir ve ücretsiz Sordum araçlarını yakından tanıyın."
+    "excerpt": "Bilgisayar deneyiminizi iyileştiren, Windows kısıtlamalarını kaldıran ve sistemi optimize eden taşınabilir ve ücretsiz Sordum araçlarını yakından tanıyın.",
+    "category": "Windows",
+    "tags": [
+      "Windows"
+    ]
   },
   {
     "slug": "fotmob-vs-sofascore",
     "title": "FotMob vs SofaScore: Hangi Canlı Skor Uygulaması Daha İyi?",
     "date": "2026-04-28",
-    "excerpt": "Canlı skor dünyasının iki devi FotMob ve SofaScore'u karşılaştırdık. Hız mı, istatistik mi? İhtiyacınıza en uygun uygulamayı keşfedin."
+    "excerpt": "Canlı skor dünyasının iki devi FotMob ve SofaScore'u karşılaştırdık. Hız mı, istatistik mi? İhtiyacınıza en uygun uygulamayı keşfedin.",
+    "category": "Medya",
+    "tags": []
   },
   {
     "slug": "nextdns",
     "title": "NextDNS: İnternet Deneyiminizi DNS Seviyesinde Özelleştirin ve Güvenli Hale Getirin",
     "date": "2026-04-28",
-    "excerpt": "Reklamları, takipçileri ve zararlı içerikleri ağınızdan uzak tutun. NextDNS ile bulut tabanlı, kişiselleştirilebilir ve güvenli bir DNS deneyimi yaşayın."
+    "excerpt": "Reklamları, takipçileri ve zararlı içerikleri ağınızdan uzak tutun. NextDNS ile bulut tabanlı, kişiselleştirilebilir ve güvenli bir DNS deneyimi yaşayın.",
+    "category": "Güvenlik",
+    "tags": [
+      "Güvenlik"
+    ]
   },
   {
     "slug": "firefox-relay",
     "title": "Firefox Relay: Gerçek E-posta Adresinizi Maskeleyerek Gizliliğinizi Koruyun",
     "date": "2026-04-28",
-    "excerpt": "E-posta adresinizi gizli tutun ve spam'den kurtulun. Firefox Relay ile internet sitelerine maskelenmiş takma adlarla üye olun ve gizliliğinizi kontrol altına alın."
+    "excerpt": "E-posta adresinizi gizli tutun ve spam'den kurtulun. Firefox Relay ile internet sitelerine maskelenmiş takma adlarla üye olun ve gizliliğinizi kontrol altına alın.",
+    "category": "Güvenlik",
+    "tags": []
   },
   {
     "slug": "atlasos",
     "title": "AtlasOS: Oyun ve Performans Odaklı Açık Kaynaklı Windows Optimizasyonu",
     "date": "2026-04-28",
-    "excerpt": "Windows'u oyuncular ve güç kullanıcıları için optimize edin. AtlasOS ile sistem gecikmesini düşürün, gizliliğinizi artırın ve boşta kaynak kullanımını minimize edin."
+    "excerpt": "Windows'u oyuncular ve güç kullanıcıları için optimize edin. AtlasOS ile sistem gecikmesini düşürün, gizliliğinizi artırın ve boşta kaynak kullanımını minimize edin.",
+    "category": "Windows",
+    "tags": [
+      "Windows",
+      "Açık Kaynak"
+    ]
   },
   {
     "slug": "revi",
     "title": "ReviOS: Performans ve Gizlilik Odaklı Windows Modifikasyonu",
     "date": "2026-04-28",
-    "excerpt": "Windows'u oyun ve performans için optimize edin. ReviOS ile gereksiz servislerden kurtulun, gizliliğinizi artırın ve sistem gecikmesini minimize edin."
+    "excerpt": "Windows'u oyun ve performans için optimize edin. ReviOS ile gereksiz servislerden kurtulun, gizliliğinizi artırın ve sistem gecikmesini minimize edin.",
+    "category": "Güvenlik",
+    "tags": [
+      "Windows",
+      "Gizlilik"
+    ]
   },
   {
     "slug": "bufferbloat",
     "title": "Waveform Bufferbloat Test: İnternet Bağlantınızın Gerçek Kalitesini Ölçün",
     "date": "2026-04-28",
-    "excerpt": "Hızınız yüksek ama pinginiz mi fırlıyor? İnternet bağlantınızın yük altındaki performansını ölçün ve bufferbloat sorununu nasıl çözeceğinizi öğrenin."
+    "excerpt": "Hızınız yüksek ama pinginiz mi fırlıyor? İnternet bağlantınızın yük altındaki performansını ölçün ve bufferbloat sorununu nasıl çözeceğinizi öğrenin.",
+    "category": "Diğer",
+    "tags": []
   },
   {
     "slug": "winutil",
     "title": "Chris Titus Tech Windows Utility (Winutil): Windows'u Optimize Etmenin En Kolay Yolu",
     "date": "2026-04-28",
-    "excerpt": "Windows'u hızlandırmak, gereksiz uygulamalardan kurtulmak ve gizlilik ayarlarını tek tıkla yapmak için hepsi bir arada PowerShell aracı."
+    "excerpt": "Windows'u hızlandırmak, gereksiz uygulamalardan kurtulmak ve gizlilik ayarlarını tek tıkla yapmak için hepsi bir arada PowerShell aracı.",
+    "category": "Güvenlik",
+    "tags": [
+      "Windows",
+      "PowerShell",
+      "Gizlilik"
+    ]
   },
   {
     "slug": "beatstats",
     "title": "BeatStats: Beatport Analiz ve Sıralama Platformu",
     "date": "2026-04-28",
-    "excerpt": "Beatport üzerindeki en popüler sanatçıları, parçaları ve plak şirketlerini keşfedin. EDM dünyasının performans verilerini ve tür bazlı trendlerini takip etmenin en iyi yolu."
+    "excerpt": "Beatport üzerindeki en popüler sanatçıları, parçaları ve plak şirketlerini keşfedin. EDM dünyasının performans verilerini ve tür bazlı trendlerini takip etmenin en iyi yolu.",
+    "category": "Medya",
+    "tags": []
   },
   {
     "slug": "dns-speed-test",
     "title": "DNS Speed Test: Tarayıcınızdan En Hızlı DNS Sunucusunu Keşfedin",
     "date": "2026-04-28",
-    "excerpt": "Hiçbir uygulama yüklemeden, tarayıcınız üzerinden 28+ DNS-over-HTTPS sunucusunu test edin. Konumunuz için en hızlı ve güvenli DNS sağlayıcısını saniyeler içinde bulun."
+    "excerpt": "Hiçbir uygulama yüklemeden, tarayıcınız üzerinden 28+ DNS-over-HTTPS sunucusunu test edin. Konumunuz için en hızlı ve güvenli DNS sağlayıcısını saniyeler içinde bulun.",
+    "category": "Güvenlik",
+    "tags": [
+      "Tarayıcı"
+    ]
   },
   {
     "slug": "uupdump",
     "title": "UUP Dump: Microsoft Sunucularından Kendi Windows ISO'nuzu Oluşturun",
     "date": "2026-04-28",
-    "excerpt": "Resmi Windows Update sunucularından en güncel ISO dosyalarını, Insider yapılarını ve ARM64 sürümlerini indirip hazırlamanın en güvenilir yolu."
+    "excerpt": "Resmi Windows Update sunucularından en güncel ISO dosyalarını, Insider yapılarını ve ARM64 sürümlerini indirip hazırlamanın en güvenilir yolu.",
+    "category": "Windows",
+    "tags": [
+      "Windows",
+      "İndirme"
+    ]
   },
   {
     "slug": "subloader",
     "title": "Subloader: Video Dosyalarınız İçin En Hızlı Altyazı Bulucu",
     "date": "2026-04-28",
-    "excerpt": "Filmleriniz ve dizileriniz için altyazı arama derdine son. Subloader ile tek tıkla OpenSubtitles üzerinden en uyumlu altyazıları saniyeler içinde indirin."
+    "excerpt": "Filmleriniz ve dizileriniz için altyazı arama derdine son. Subloader ile tek tıkla OpenSubtitles üzerinden en uyumlu altyazıları saniyeler içinde indirin.",
+    "category": "Medya",
+    "tags": [
+      "İndirme",
+      "Medya"
+    ]
   },
   {
     "slug": "onepace-tr",
     "title": "One Pace Türkçe: One Piece Deneyimini Manga Tadında Yaşayın",
     "date": "2026-04-28",
-    "excerpt": "One Piece anime serisindeki gereksiz dolgu sahnelerini (filler) temizleyerek mangaya sadık kalan One Pace projesinin Türkçe altyazılı versiyonunu keşfedin."
+    "excerpt": "One Piece anime serisindeki gereksiz dolgu sahnelerini (filler) temizleyerek mangaya sadık kalan One Pace projesinin Türkçe altyazılı versiyonunu keşfedin.",
+    "category": "Medya",
+    "tags": [
+      "Medya"
+    ]
   },
   {
     "slug": "fmhy",
     "title": "FMHY: İnternetin En Büyük Ücretsiz Kaynak Arşivi",
     "date": "2026-04-28",
-    "excerpt": "Her türlü dijital içerik, yazılım, oyun ve yapay zeka aracı için devasa bir topluluk rehberi. İnternetin en büyük 'ücretsiz her şey' arşivini keşfedin."
+    "excerpt": "Her türlü dijital içerik, yazılım, oyun ve yapay zeka aracı için devasa bir topluluk rehberi. İnternetin en büyük 'ücretsiz her şey' arşivini keşfedin.",
+    "category": "Yapay Zekâ",
+    "tags": []
   },
   {
     "slug": "arena-ai",
     "title": "Arena AI Leaderboard: Yapay Zeka Modellerinin Şeffaf ve Tarafsız Sıralaması",
     "date": "2026-04-28",
-    "excerpt": "En iyi yapay zeka modelleri hangileri? Chatbot Arena üzerinden gerçek kullanıcı oylarıyla belirlenen tarafsız liderlik tablolarını ve Elo sıralamalarını keşfedin."
+    "excerpt": "En iyi yapay zeka modelleri hangileri? Chatbot Arena üzerinden gerçek kullanıcı oylarıyla belirlenen tarafsız liderlik tablolarını ve Elo sıralamalarını keşfedin.",
+    "category": "Yapay Zekâ",
+    "tags": []
   },
   {
     "slug": "streamed-pk",
     "title": "Streamed.pk: Canlı Spor Karşılaşmalarına Hızlı ve Kolay Erişim",
     "date": "2026-04-28",
-    "excerpt": "Dünyanın dört bir yanından canlı spor yayınlarını ve güncel maç takvimlerini keşfedin. Futboldan basketbola, tüm heyecan tek bir platformda."
+    "excerpt": "Dünyanın dört bir yanından canlı spor yayınlarını ve güncel maç takvimlerini keşfedin. Futboldan basketbola, tüm heyecan tek bir platformda.",
+    "category": "Medya",
+    "tags": []
   },
   {
     "slug": "seriesgraph",
     "title": "SeriesGraph: Dizilerin ve Filmlerin IMDb Puanlarını Görselleştirin",
     "date": "2026-04-28",
-    "excerpt": "Dizilerin ve film serilerinin IMDb puanlarını etkileyici grafiklerle görselleştirin. Hangi sezonun daha iyi olduğunu veya dizinin nerede düşüşe geçtiğini saniyeler içinde keşfedin."
+    "excerpt": "Dizilerin ve film serilerinin IMDb puanlarını etkileyici grafiklerle görselleştirin. Hangi sezonun daha iyi olduğunu veya dizinin nerede düşüşe geçtiğini saniyeler içinde keşfedin.",
+    "category": "Medya",
+    "tags": [
+      "Medya"
+    ]
   },
   {
     "slug": "yts",
     "title": "YTS.MX (YIFY): Küçük Boyut, Yüksek Kalite Film Deneyimi",
     "date": "2026-04-28",
-    "excerpt": "Düşük dosya boyutlarında bile 720p, 1080p ve 4K kalitesinden ödün vermeyen YTS'nin resmi adresini ve neden tercih edildiğini keşfedin."
+    "excerpt": "Düşük dosya boyutlarında bile 720p, 1080p ve 4K kalitesinden ödün vermeyen YTS'nin resmi adresini ve neden tercih edildiğini keşfedin.",
+    "category": "Medya",
+    "tags": [
+      "Medya"
+    ]
   },
   {
     "slug": "hattrick-abc-tactics",
     "title": "Hattrick: Taktiklerin ABC'si - Maç Motorunu Anlamak",
     "date": "2026-04-28",
-    "excerpt": "Hattrick'te sadece iyi oyunculara sahip olmak yetmez. Kontratak, Pres ve Hücum yönlendirmeleri gibi temel taktiklerin mantığını kavrayarak galibiyete ulaşın."
+    "excerpt": "Hattrick'te sadece iyi oyunculara sahip olmak yetmez. Kontratak, Pres ve Hücum yönlendirmeleri gibi temel taktiklerin mantığını kavrayarak galibiyete ulaşın.",
+    "category": "Medya",
+    "tags": []
   },
   {
     "slug": "apple-mobile-drivers-installer",
     "title": "Apple Mobile Drivers Installer: iTunes Olmadan iOS Sürücülerini Yüklemenin En Hafif Yolu",
     "date": "2026-04-28",
-    "excerpt": "Bilgisayarınıza iTunes kurmadan iPhone veya iPad'inizi tanıyacak sürücüleri yüklemek ister misiniz? Bu PowerShell betiği ile sadece gerekli sürücüleri saniyeler içinde kurun."
+    "excerpt": "Bilgisayarınıza iTunes kurmadan iPhone veya iPad'inizi tanıyacak sürücüleri yüklemek ister misiniz? Bu PowerShell betiği ile sadece gerekli sürücüleri saniyeler içinde kurun.",
+    "category": "İnternet",
+    "tags": [
+      "PowerShell"
+    ]
   },
   {
     "slug": "impactor",
     "title": "Impactor: iOS Sideloading Uygulamalarının Yeni Nesil ve Açık Kaynaklı Yüzü",
     "date": "2026-04-28",
-    "excerpt": "iOS cihazınıza uygulama yüklemek hiç bu kadar kolay ve güvenli olmamıştı. Impactor ile açık kaynaklı, hızlı ve modern bir sideloading deneyimine hazır olun."
+    "excerpt": "iOS cihazınıza uygulama yüklemek hiç bu kadar kolay ve güvenli olmamıştı. Impactor ile açık kaynaklı, hızlı ve modern bir sideloading deneyimine hazır olun.",
+    "category": "Diğer",
+    "tags": [
+      "Açık Kaynak"
+    ]
   },
   {
     "slug": "neofreebird",
     "title": "NeoFreeBird: iOS İçin Gelişmiş Twitter Deneyimi",
     "date": "2026-04-28",
-    "excerpt": "X logosundan kurtulun ve klasik Twitter kuşuna geri dönün. NeoFreeBird ile iOS'ta reklamsız, gizlilik odaklı ve özelleştirilebilir bir Twitter deneyimi yaşayın."
+    "excerpt": "X logosundan kurtulun ve klasik Twitter kuşuna geri dönün. NeoFreeBird ile iOS'ta reklamsız, gizlilik odaklı ve özelleştirilebilir bir Twitter deneyimi yaşayın.",
+    "category": "Güvenlik",
+    "tags": [
+      "Gizlilik"
+    ]
   },
   {
     "slug": "regram",
     "title": "Regram: Instagram Deneyiminizi Özgürleştiren Hepsi Bir Arada Mod",
     "date": "2026-04-28",
-    "excerpt": "Instagram uygulamasını daha güçlü ve gizli hale getirin. Hikayeleri gizlice izleme, medya indirme ve gelişmiş analiz özellikleriyle tanışın."
+    "excerpt": "Instagram uygulamasını daha güçlü ve gizli hale getirin. Hikayeleri gizlice izleme, medya indirme ve gelişmiş analiz özellikleriyle tanışın.",
+    "category": "İnternet",
+    "tags": [
+      "İndirme"
+    ]
   },
   {
     "slug": "fitgirl",
     "title": "FitGirl Repacks: Oyun Dünyasının Sıkıştırma Sanatçısı",
     "date": "2026-04-28",
-    "excerpt": "İnternet kotanız ve depolama alanınız kıymetliyse, FitGirl'ün sıkıştırma sihrine göz atmalısınız. Neden resmi siteden şaşmamanız gerektiğini anlatıyorum."
+    "excerpt": "İnternet kotanız ve depolama alanınız kıymetliyse, FitGirl'ün sıkıştırma sihrine göz atmalısınız. Neden resmi siteden şaşmamanız gerektiğini anlatıyorum.",
+    "category": "İnternet",
+    "tags": []
   },
   {
     "slug": "hattrick",
     "title": "Hattrick: Futbol Menajerliğinin Yaşayan Efsanesi",
     "date": "2026-04-28",
-    "excerpt": "Dünyanın en eski ve en derinlikli futbol menajerlik simülasyonuna genel bir bakış. Sabır, strateji ve gerçek bir topluluk deneyimi."
+    "excerpt": "Dünyanın en eski ve en derinlikli futbol menajerlik simülasyonuna genel bir bakış. Sabır, strateji ve gerçek bir topluluk deneyimi.",
+    "category": "Medya",
+    "tags": []
   },
   {
     "slug": "ventoy",
     "title": "Ventoy: ISO Dosyalarını Doğrudan USB'den Boot Etmenin En Modern Yolu",
     "date": "2026-04-28",
-    "excerpt": "Her format için USB'yi sıfırlamaya son. Ventoy ile ISO dosyalarını sürükle-bırak yöntemiyle USB'ye atın ve doğrudan boot edin."
+    "excerpt": "Her format için USB'yi sıfırlamaya son. Ventoy ile ISO dosyalarını sürükle-bırak yöntemiyle USB'ye atın ve doğrudan boot edin.",
+    "category": "Windows",
+    "tags": []
   },
   {
     "slug": "pwa",
     "title": "Progressive Web App (PWA): Web Deneyimini Uygulama Konforuyla Birleştirin",
     "date": "2026-04-28",
-    "excerpt": "Web sitelerini uygulama gibi kullanmanın en modern yolu. PWA teknolojisinin avantajlarını ve kurulum adımlarını bu dökümanda bulabilirsiniz."
+    "excerpt": "Web sitelerini uygulama gibi kullanmanın en modern yolu. PWA teknolojisinin avantajlarını ve kurulum adımlarını bu dökümanda bulabilirsiniz.",
+    "category": "İnternet",
+    "tags": []
   },
   {
     "slug": "rufus",
     "title": "Rufus: Önyüklenebilir USB Sürücüler Oluşturmanın En Güvenilir ve Hızlı Yolu",
     "date": "2026-04-28",
-    "excerpt": "Format atmak veya yeni sistem kurmak hiç bu kadar kolay olmamıştı. Rufus ile Windows 11 kısıtlamalarını aşın ve saniyeler içinde bootable USB hazırlayın."
+    "excerpt": "Format atmak veya yeni sistem kurmak hiç bu kadar kolay olmamıştı. Rufus ile Windows 11 kısıtlamalarını aşın ve saniyeler içinde bootable USB hazırlayın.",
+    "category": "Windows",
+    "tags": [
+      "Windows"
+    ]
   },
   {
     "slug": "microsoft-activation-scripts",
     "title": "Microsoft Activation Scripts (MAS): Windows ve Office Etkinleştirmenin En Temiz Yolu",
     "date": "2026-04-28",
-    "excerpt": "Windows ve Office aktivasyonu için en güvenilir ve açık kaynaklı yöntem. MAS ile saniyeler içinde kalıcı aktivasyon sağlayın."
+    "excerpt": "Windows ve Office aktivasyonu için en güvenilir ve açık kaynaklı yöntem. MAS ile saniyeler içinde kalıcı aktivasyon sağlayın.",
+    "category": "Windows",
+    "tags": [
+      "Windows",
+      "Açık Kaynak"
+    ]
   },
   {
     "slug": "flowlauncher",
     "title": "Flow Launcher: Windows İçin En Güçlü ve Hızlı Uygulama Başlatıcı",
     "date": "2026-04-28",
-    "excerpt": "Windows arama çubuğundan sıkıldınız mı? Flow Launcher ile uygulamalara, dosyalara ve internete saniyeler içinde erişin."
+    "excerpt": "Windows arama çubuğundan sıkıldınız mı? Flow Launcher ile uygulamalara, dosyalara ve internete saniyeler içinde erişin.",
+    "category": "İnternet",
+    "tags": [
+      "Windows"
+    ]
   },
   {
     "slug": "qbittorrent",
     "title": "qBittorrent: Reklamsız ve Açık Kaynaklı Torrent Deneyimi",
     "date": "2026-04-28",
-    "excerpt": "uTorrent reklamlarından bıktınız mı? qBittorrent ile hafif, hızlı ve tamamen açık kaynaklı torrent deneyimine geçiş yapın."
+    "excerpt": "uTorrent reklamlarından bıktınız mı? qBittorrent ile hafif, hızlı ve tamamen açık kaynaklı torrent deneyimine geçiş yapın.",
+    "category": "İnternet",
+    "tags": [
+      "Açık Kaynak"
+    ]
   },
   {
     "slug": "bitwarden",
     "title": "Bitwarden: Şifrelerinizi Güvende Tutmanın En Akıllı Yolu",
     "date": "2026-04-28",
-    "excerpt": "Açık kaynaklı, ücretsiz ve uçtan uca şifreli — Bitwarden ile tüm şifrelerinizi güvenle yönetin."
+    "excerpt": "Açık kaynaklı, ücretsiz ve uçtan uca şifreli — Bitwarden ile tüm şifrelerinizi güvenle yönetin.",
+    "category": "Güvenlik",
+    "tags": [
+      "Açık Kaynak"
+    ]
   },
   {
     "slug": "sharex",
     "title": "ShareX: Ekran Görüntüsü Almanın En İyi Yolu",
     "date": "2026-04-28",
-    "excerpt": "Windows'un dahili araçları yetmiyorsa, ShareX ile ekran görüntüsü alma, kayıt ve paylaşım deneyiminizi tamamen değiştirin."
+    "excerpt": "Windows'un dahili araçları yetmiyorsa, ShareX ile ekran görüntüsü alma, kayıt ve paylaşım deneyiminizi tamamen değiştirin.",
+    "category": "Windows",
+    "tags": [
+      "Windows"
+    ]
   },
   {
     "slug": "unigetui",
     "title": "UniGetUI: Windows Paket Yöneticisi İçin Harika Bir Arayüz",
     "date": "2026-04-28",
-    "excerpt": "Windows'ta yazılım kurmak ve güncellemek için neden komut satırı paket yöneticilerini modern bir arayüzle buluşturan UniGetUI'ı kullanmalısınız?"
+    "excerpt": "Windows'ta yazılım kurmak ve güncellemek için neden komut satırı paket yöneticilerini modern bir arayüzle buluşturan UniGetUI'ı kullanmalısınız?",
+    "category": "Windows",
+    "tags": [
+      "Windows"
+    ]
   },
   {
     "slug": "jellyfin",
     "title": "Jellyfin: Kendi Medya Evreninizi Yaratın",
     "date": "2026-04-28",
-    "excerpt": "Abonelik ücretlerine ve veri gizliliği sorunlarına son. Neden herkesin kendi Jellyfin sunucusunu kurması gerektiğini açıklıyorum."
+    "excerpt": "Abonelik ücretlerine ve veri gizliliği sorunlarına son. Neden herkesin kendi Jellyfin sunucusunu kurması gerektiğini açıklıyorum.",
+    "category": "Medya",
+    "tags": []
   },
   {
     "slug": "jdownloader",
     "title": "JDownloader: İndirme İşlerinin Tartışmasız Kralı",
     "date": "2026-04-20",
-    "excerpt": "İnternetten dosya indirmek hiç bu kadar kolay olmamıştı. JDownloader'ı neden herkesin kullanması gerektiğini anlatıyorum."
+    "excerpt": "İnternetten dosya indirmek hiç bu kadar kolay olmamıştı. JDownloader'ı neden herkesin kullanması gerektiğini anlatıyorum.",
+    "category": "İnternet",
+    "tags": [
+      "İndirme"
+    ]
   },
   {
     "slug": "zen-browser",
     "title": "Zen Browser: Tarayıcı Böyle Olmalı",
     "date": "2026-04-14",
-    "excerpt": "Yıllarca farklı tarayıcılar denedim. Zen'i keşfedene kadar."
+    "excerpt": "Yıllarca farklı tarayıcılar denedim. Zen'i keşfedene kadar.",
+    "category": "İnternet",
+    "tags": [
+      "Tarayıcı"
+    ]
   },
   {
     "slug": "windows-temizligi",
     "title": "Windows'u Hızlandırmanın Kolay Yolları",
     "date": "2026-04-14",
-    "excerpt": "Üçüncü parti yazılım olmadan, Windows'un kendi araçlarıyla sistem temizliği ve hız artırımı."
+    "excerpt": "Üçüncü parti yazılım olmadan, Windows'un kendi araçlarıyla sistem temizliği ve hız artırımı.",
+    "category": "Windows",
+    "tags": [
+      "Windows"
+    ]
   },
   {
     "slug": "merhaba-dunya",
     "title": "Merhaba, Dünya",
     "date": "2026-04-14",
-    "excerpt": "Bu siteyi sıfırdan yazmak güzel bir deneyimdi. Temel kararlar ve öğrendiklerim."
+    "excerpt": "Bu siteyi sıfırdan yazmak güzel bir deneyimdi. Temel kararlar ve öğrendiklerim.",
+    "category": "İnternet",
+    "tags": []
   }
 ]

@@ -1,4 +1,4 @@
-const CACHE = 'bygog-v18';
+const CACHE = 'bygog-v19';
 const STATIC = [
   '/',
   '/style.css',
@@ -7,12 +7,17 @@ const STATIC = [
   '/profil.webp',
   '/profil-opt.jpg',
   '/manifest.json',
+  '/en/',
+  '/vendor/marked.min.js',
   '/onder-gog.vcf',
 ];
 
 self.addEventListener('install', e => {
-  self.skipWaiting();
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(STATIC)));
+});
+
+self.addEventListener('message', e => {
+  if (e.data && e.data.type === 'SKIP_WAITING') self.skipWaiting();
 });
 
 self.addEventListener('activate', e => {
