@@ -1,4 +1,4 @@
-const CACHE = 'bygog-v3';
+const CACHE = 'bygog-v17';
 const STATIC = [
   '/',
   '/style.css',
@@ -7,6 +7,7 @@ const STATIC = [
   '/profil.webp',
   '/profil-opt.jpg',
   '/manifest.json',
+  '/onder-gog.vcf',
 ];
 
 self.addEventListener('install', e => {

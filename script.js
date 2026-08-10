@@ -1,8 +1,8 @@
 const GITHUB_USERNAME = "byGOG";
-const MAX_REPOS = 6;
+const MAX_REPOS = 5;
 const REPO_API_BASE = `https://api.github.com/repos/${GITHUB_USERNAME}`;
 
-const CACHE_KEY = "bygog_gh_cache_v2";
+const CACHE_KEY = "bygog_gh_cache_v3";
 const CACHE_TTL = 3600 * 1000; // 1 saat
 
 function getCache() {
@@ -22,11 +22,19 @@ function setCache(data) {
 }
 
 const PROJECT_OVERRIDES = {
-  "StashZero": {
-    displayName: "StashZero",
-    description: "Modern ve hızlı uygulama kütüphanesi. Tauri, React 19 ve Rust kullanılarak geliştirilmiştir.",
-    topics: ["Tauri", "React", "Rust", "Desktop"],
-    language: "Rust",
+  "Tamga": {
+    displayName: "Tamga",
+    description: "Windows uygulamalarını tek yerden keşfetmeyi, topluca kurmayı, kaldırmayı ve güncellemeyi kolaylaştıran açık kaynak masaüstü aracı.",
+    homepage: "https://bygog.github.io/Tamga/",
+    topics: ["Windows", "PowerShell", "WinGet", "Uygulama Yöneticisi"],
+    language: "PowerShell",
+  },
+  "Windows-Desktop-Icons-Installer": {
+    displayName: "Masaüstü Simgeleri",
+    description: "Bu Bilgisayar, Kullanıcı Dosyaları, Ağ, Geri Dönüşüm Kutusu ve Denetim Masası simgelerini tek komutla masaüstüne ekler.",
+    homepage: "https://bygog.github.io/Windows-Desktop-Icons-Installer/",
+    topics: ["Windows", "PowerShell", "Masaüstü", "Tek Komut"],
+    language: "PowerShell",
   },
   "Bibata-Cursor-Installer": {
     displayName: "Bibata Cursor Installer",
@@ -41,22 +49,11 @@ const PROJECT_OVERRIDES = {
     topics: ["GitHub Pages", "Portföy", "HTML", "CSS"],
     language: "CSS",
   },
-  "byGOG-Lab": {
-    displayName: "byGOG Lab",
-    description: "Windows ve yazılım araçları için güvenilir bağlantıları tek sayfada sunan PWA; arama ve çevrimdışı destekli.",
-    homepage: "https://bygog.github.io/byGOG-Lab/",
-    topics: ["PWA", "Windows", "Bağlantı Koleksiyonu"],
-  },
   "ZTE-H3601P": {
     displayName: "ZTE H3601P Otomasyonu",
     description: "ZTE H3601P modemini belirli aralıklarla yeniden başlatıp IP değişimini kontrol eden Python uygulaması.",
     topics: ["Python", "Ağ", "Otomasyon"],
     language: "Python",
-  },
-  "GOGon": {
-    displayName: "GOGon Yükleyici",
-    description: "PySide6 arayüzüyle yazılım kategorilerini listeler, tek tıklamayla indirme ve kurulum akışı sunar.",
-    topics: ["PySide6", "Masaüstü Uygulaması", "Yükleyici"],
   },
 };
 
@@ -78,11 +75,10 @@ function createFallbackProject(name, url, language) {
 }
 
 const FALLBACK_PROJECTS = [
-  createFallbackProject("StashZero", "https://github.com/byGOG/StashZero", "Rust"),
+  createFallbackProject("Tamga", "https://github.com/byGOG/Tamga", "PowerShell"),
+  createFallbackProject("Windows-Desktop-Icons-Installer", "https://github.com/byGOG/Windows-Desktop-Icons-Installer", "PowerShell"),
   createFallbackProject("Bibata-Cursor-Installer", "https://github.com/byGOG/Bibata-Cursor-Installer", "PowerShell"),
-  createFallbackProject("byGOG-Lab", "https://github.com/byGOG/byGOG-Lab", "JavaScript"),
   createFallbackProject("ZTE-H3601P", "https://github.com/byGOG/ZTE-H3601P", "Python"),
-  createFallbackProject("GOGon", "https://github.com/byGOG/GOGon", "Python"),
   createFallbackProject("bygog.github.io", "https://github.com/byGOG/bygog.github.io", "CSS"),
 ];
 
@@ -357,9 +353,12 @@ function formatAbsoluteDate(dateString) {
 }
 
 function renderProjects(projects, list) {
-  list.innerHTML = "";
+  const filters = document.querySelector("[data-project-filters]");
+  const result = document.querySelector("[data-project-filter-result]");
+  let activeTechnology = "Tümü";
 
   if (!projects.length) {
+    list.innerHTML = "";
     const emptyItem = document.createElement("li");
     emptyItem.className = "github-item github-item--empty";
     emptyItem.textContent = "Şu anda listelenecek proje bulunmuyor.";
@@ -367,11 +366,60 @@ function renderProjects(projects, list) {
     return;
   }
 
-  projects.forEach((project, index) => {
-    const item = buildProjectItem(project);
-    item.style.setProperty("--i", index);
-    list.appendChild(item);
-  });
+  const preferredTechnologies = ["PowerShell", "Windows", "Python", "WinGet", "HTML", "CSS"];
+  const availableTechnologies = preferredTechnologies.filter((technology) =>
+    projects.some((project) => projectTechnologies(project).includes(technology.toLocaleLowerCase("tr-TR")))
+  );
+
+  function drawProjects() {
+    const visibleProjects = activeTechnology === "Tümü"
+      ? projects
+      : projects.filter((project) =>
+          projectTechnologies(project).includes(activeTechnology.toLocaleLowerCase("tr-TR"))
+        );
+
+    list.innerHTML = "";
+    visibleProjects.forEach((project, index) => {
+      const item = buildProjectItem(project);
+      item.style.setProperty("--i", index);
+      list.appendChild(item);
+    });
+
+    if (result) {
+      const countText = window.siteText ? window.siteText("projects.count", "{count} proje gösteriliyor") : "{count} proje gösteriliyor";
+      result.textContent = countText.replace("{count}", visibleProjects.length);
+    }
+  }
+
+  if (filters) {
+    filters.innerHTML = "";
+    ["Tümü", ...availableTechnologies].forEach((technology) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.dataset.technology = technology;
+      button.className = `project-filter${technology === "Tümü" ? " is-active" : ""}`;
+      button.textContent = technology === "Tümü" && window.siteText ? window.siteText("projects.all", technology) : technology;
+      button.setAttribute("aria-pressed", technology === "Tümü" ? "true" : "false");
+      button.addEventListener("click", () => {
+        activeTechnology = technology;
+        filters.querySelectorAll(".project-filter").forEach((item) => {
+          const selected = item === button;
+          item.classList.toggle("is-active", selected);
+          item.setAttribute("aria-pressed", selected ? "true" : "false");
+        });
+        drawProjects();
+      });
+      filters.appendChild(button);
+    });
+  }
+
+  drawProjects();
+}
+
+function projectTechnologies(project) {
+  return Array.from(new Set([project.language, ...(project.topics || [])]
+    .filter(Boolean)
+    .map((technology) => technology.toLocaleLowerCase("tr-TR"))));
 }
 
 function buildProjectItem(project) {
@@ -391,16 +439,6 @@ function buildProjectItem(project) {
   title.textContent = displayName;
   title.setAttribute("aria-label", `${displayName} GitHub deposunu yeni sekmede aç`);
   titleRow.appendChild(title);
-
-  if (project.homepage) {
-    const demoLink = document.createElement("a");
-    demoLink.className = "github-item__demo";
-    demoLink.href = project.homepage;
-    demoLink.target = "_blank";
-    demoLink.rel = "noopener";
-    demoLink.textContent = "Canlı demo";
-    titleRow.appendChild(demoLink);
-  }
 
   item.appendChild(titleRow);
 
@@ -475,8 +513,49 @@ function buildProjectItem(project) {
     item.appendChild(metaList);
   }
 
+  const detailsButton = document.createElement("button");
+  detailsButton.className = "github-item__details";
+  detailsButton.type = "button";
+  detailsButton.textContent = window.siteText ? window.siteText("projects.details", "Ayrıntılar") : "Ayrıntılar";
+  detailsButton.setAttribute("aria-label", `${displayName} proje ayrıntılarını göster`);
+  detailsButton.addEventListener("click", () => openProjectDialog(project));
+  item.appendChild(detailsButton);
+
   return item;
 }
+
+function openProjectDialog(project) {
+  const dialog = document.querySelector("[data-project-dialog]");
+  if (!dialog) return;
+  const displayName = project.displayName || project.name;
+  const image = dialog.querySelector("[data-project-dialog-image]");
+  image.src = project.image || `https://opengraph.githubassets.com/bygog-site/${GITHUB_USERNAME}/${project.name}`;
+  image.alt = `${displayName} proje önizlemesi`;
+  dialog.querySelector("[data-project-dialog-title]").textContent = displayName;
+  dialog.querySelector("[data-project-dialog-description]").textContent = project.description || "Bu proje için ayrıntılı açıklama henüz eklenmedi.";
+
+  const topics = dialog.querySelector("[data-project-dialog-topics]");
+  topics.innerHTML = "";
+  Array.from(new Set([project.language, ...(project.topics || [])].filter(Boolean))).forEach((topic) => {
+    const item = document.createElement("li");
+    item.textContent = topic;
+    topics.appendChild(item);
+  });
+
+  dialog.querySelector("[data-project-dialog-github]").href = project.url;
+  dialog.showModal();
+}
+
+function initProjectDialog() {
+  const dialog = document.querySelector("[data-project-dialog]");
+  if (!dialog) return;
+  dialog.querySelector("[data-project-dialog-close]").addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+}
+
+initProjectDialog();
 
 function createMetaItem({ icon, label, srLabel, title }) {
   const item = document.createElement("li");
@@ -506,6 +585,74 @@ function createMetaItem({ icon, label, srLabel, title }) {
 
   return item;
 }
+
+async function loadLatestNotes() {
+  const list = document.querySelector("[data-latest-notes]");
+  if (!list) return;
+
+  try {
+    const response = await fetch("posts/index.json");
+    if (!response.ok) throw new Error("Not listesi alınamadı");
+    const posts = await response.json();
+    const latest = [...posts]
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .slice(0, 3);
+
+    list.innerHTML = "";
+    latest.forEach((post) => {
+      const item = document.createElement("li");
+      item.className = "latest-note";
+
+      const link = document.createElement("a");
+      link.className = "latest-note__link";
+      link.href = `/notlar.html?p=${encodeURIComponent(post.slug)}`;
+
+      const date = document.createElement("time");
+      date.className = "latest-note__date";
+      date.dateTime = post.date;
+      date.textContent = new Date(`${post.date}T12:00:00`).toLocaleDateString("tr-TR", {
+        day: "numeric", month: "long", year: "numeric",
+      });
+
+      const title = document.createElement("h3");
+      title.className = "latest-note__title";
+      title.textContent = post.title;
+
+      const excerpt = document.createElement("p");
+      excerpt.className = "latest-note__excerpt";
+      excerpt.textContent = truncateText(post.excerpt || "", 150);
+
+      const action = document.createElement("span");
+      action.className = "latest-note__action";
+      action.textContent = window.siteText ? window.siteText("latest.read", "Notu oku →") : "Notu oku →";
+
+      link.append(date, title, excerpt, action);
+      item.appendChild(link);
+      list.appendChild(item);
+    });
+  } catch (error) {
+    list.innerHTML = '<li class="latest-note latest-note--empty">Son notlar şu anda yüklenemedi.</li>';
+  }
+}
+
+loadLatestNotes();
+
+document.addEventListener("site-language-change", () => {
+  document.querySelectorAll(".project-filter").forEach((button) => {
+    if (button.dataset.technology === "Tümü") button.textContent = window.siteText("projects.all", "Tümü");
+  });
+  document.querySelectorAll(".github-item__details").forEach((button) => {
+    button.textContent = window.siteText("projects.details", "Ayrıntılar");
+  });
+  document.querySelectorAll(".latest-note__action").forEach((action) => {
+    action.textContent = window.siteText("latest.read", "Notu oku →");
+  });
+  const result = document.querySelector("[data-project-filter-result]");
+  if (result) {
+    result.textContent = window.siteText("projects.count", "{count} proje gösteriliyor")
+      .replace("{count}", document.querySelectorAll("[data-github-projects] .github-item").length);
+  }
+});
 
 
 
