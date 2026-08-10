@@ -44,7 +44,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Tektur:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=1.1" />
+  <link rel="stylesheet" href="style.css?v=2.2" />
 </head>
 
 <body>
@@ -114,11 +114,17 @@
         </picture>
         <div class="hero__photo-ring" aria-hidden="true"></div>
         <div class="hero__photo-glow" aria-hidden="true"></div>
+        <div class="hero__photo-depth" aria-hidden="true"></div>
+        <div class="hero__orbit hero__orbit--outer" aria-hidden="true"><i></i><span>40°N</span></div>
+        <div class="hero__orbit hero__orbit--inner" aria-hidden="true"><i></i><span>29°E</span></div>
       </div>
 
       <div class="hero__content">
+        <div class="hero__telemetry" aria-label="Konum ve bağlantı durumu">
+          <span class="hero__telemetry-status"><i aria-hidden="true"></i>ÇEVRİMİÇİ</span><span>BURSA / TR</span><span>40.1950° N</span><span>29.0600° E</span><time data-telemetry-time>--:-- TRT</time>
+        </div>
         <p class="hero__eyebrow" data-i18n="hero.eyebrow">Merhaba, ben</p>
-        <h1 class="hero__name">Önder<br><span class="hero__name--accent">GÖG</span></h1>
+        <h1 class="hero__name"><span class="hero__name-main" data-text="Önder">Önder</span><br><span class="hero__name--accent" data-text="GÖG">GÖG</span></h1>
 
         <p class="hero__bio" data-i18n="hero.bio">
           Bursa'da yaşayan, teknoloji ve yazılımla ilgilenen; doğayı, snowboard'u ve motosiklet sürmeyi seven biri. Techno ve Anadolu rock dinler, dijital araçlar ve internet kültürüyle uğraşır.
@@ -291,7 +297,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=1.8"></script>
+  <script src="script.js?v=2.2"></script>
   <script src="app.js?v=1.5" defer></script>
 
   <script type="application/ld+json">

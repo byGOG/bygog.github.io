@@ -1,4 +1,4 @@
-const CACHE = 'bygog-v19';
+const CACHE = 'bygog-v27';
 const STATIC = [
   '/',
   '/style.css',
@@ -62,6 +62,22 @@ self.addEventListener('fetch', e => {
           return cached || networked;
         })
       )
+    );
+    return;
+  }
+
+  // Sayfa gezinmelerinde güncel HTML'i tercih et; çevrimdışıyken önbelleğe dön.
+  if (e.request.mode === 'navigate') {
+    e.respondWith(
+      fetch(e.request)
+        .then(res => {
+          if (res && res.ok) {
+            const copy = res.clone();
+            caches.open(CACHE).then(cache => cache.put(e.request, copy));
+          }
+          return res;
+        })
+        .catch(() => caches.match(e.request).then(cached => cached || caches.match('/')))
     );
     return;
   }

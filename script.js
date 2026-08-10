@@ -694,16 +694,85 @@ function initNavToggle() {
   });
 }
 
+function initCursorLight() {
+  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  var light = document.createElement("div");
+  light.className = "cursor-light";
+  light.setAttribute("aria-hidden", "true");
+  document.body.appendChild(light);
+  var kineticType = document.querySelector(".hero__name");
+
+  var frame = 0;
+  document.addEventListener("pointermove", function (event) {
+    if (frame) return;
+    frame = requestAnimationFrame(function () {
+      light.style.setProperty("--cursor-x", event.clientX + "px");
+      light.style.setProperty("--cursor-y", event.clientY + "px");
+      light.classList.add("is-visible");
+      if (kineticType) {
+        kineticType.style.setProperty("--type-x", ((event.clientX / window.innerWidth - .5) * 5).toFixed(2));
+        kineticType.style.setProperty("--type-y", ((event.clientY / window.innerHeight - .5) * 4).toFixed(2));
+      }
+      frame = 0;
+    });
+  }, { passive: true });
+
+  document.documentElement.addEventListener("mouseleave", function () {
+    light.classList.remove("is-visible");
+  });
+}
+
+function initSignalSystem() {
+  var channels = [
+    ["#simdi", "CH / NOW — 01"],
+    ["#son-notlar", "CH / NOTES — 02"],
+    ["#projeler", "CH / WORK — 03"]
+  ];
+  channels.forEach(function (entry) {
+    var section = document.querySelector(entry[0]);
+    if (section) section.dataset.signalChannel = entry[1];
+  });
+
+  var hud = document.createElement("div");
+  hud.className = "signal-hud";
+  hud.setAttribute("aria-hidden", "true");
+  hud.innerHTML = '<span class="signal-hud__code">BYGOG / TX</span>' +
+    '<span class="signal-hud__line"></span>' +
+    '<span class="signal-hud__bars"><i style="--bar:1"></i><i style="--bar:2"></i><i style="--bar:3"></i><i style="--bar:4"></i></span>' +
+    '<time class="signal-hud__time"></time>';
+  document.body.appendChild(hud);
+
+  var clock = hud.querySelector("time");
+  function updateSignalClock() {
+    var time = new Intl.DateTimeFormat("tr-TR", {
+      timeZone: "Europe/Istanbul", hour: "2-digit", minute: "2-digit", hour12: false
+    }).format(new Date());
+    clock.textContent = time + " / TR";
+    document.querySelectorAll("[data-telemetry-time]").forEach(function (item) {
+      item.textContent = time + " TRT";
+      item.dateTime = new Date().toISOString();
+    });
+  }
+  updateSignalClock();
+  window.setInterval(updateSignalClock, 30000);
+}
+
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", function () {
     loadGitHubProjects();
 
 
     initNavToggle();
+    initCursorLight();
+    initSignalSystem();
   });
 } else {
   loadGitHubProjects();
 
 
   initNavToggle();
+  initCursorLight();
+  initSignalSystem();
 }
