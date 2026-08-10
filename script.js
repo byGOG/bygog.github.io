@@ -111,7 +111,7 @@ async function loadGitHubProjects() {
   }
 
   renderSkeletons(list, MAX_REPOS);
-  status.textContent = "GitHub projeleri yükleniyor...";
+  setProjectStatus(status, "projects.loading", "GitHub projeleri yükleniyor...");
 
   try {
     // Önce önbelleğe bak (1 saatlik TTL)
@@ -137,19 +137,24 @@ async function loadGitHubProjects() {
     }
 
     if (!repos.length) {
-      status.textContent = "Öne çıkan projeler:";
+      setProjectStatus(status, "projects.fallback", "Öne çıkan projeler:");
       renderProjects(FALLBACK_PROJECTS, list);
       return;
     }
 
     const enriched = await Promise.all(repos.map(enrichRepository));
-    status.textContent = "GitHub'dan güncel projeler:";
+    setProjectStatus(status, "projects.current", "GitHub'dan güncel projeler:");
     renderProjects(enriched, list);
   } catch (error) {
     console.error(error);
-    status.textContent = "GitHub projeleri alınamadı. Öne çıkan çalışmalar:";
+    setProjectStatus(status, "projects.error", "GitHub projeleri alınamadı. Öne çıkan çalışmalar:");
     renderProjects(FALLBACK_PROJECTS, list);
   }
+}
+
+function setProjectStatus(element, key, fallback) {
+  element.dataset.i18nKey = key;
+  element.textContent = window.siteText ? window.siteText(key, fallback) : fallback;
 }
 
 async function enrichRepository(repo) {
@@ -638,6 +643,9 @@ async function loadLatestNotes() {
 loadLatestNotes();
 
 document.addEventListener("site-language-change", () => {
+  document.querySelectorAll("[data-github-status][data-i18n-key]").forEach((status) => {
+    status.textContent = window.siteText(status.dataset.i18nKey, status.textContent);
+  });
   document.querySelectorAll(".project-filter").forEach((button) => {
     if (button.dataset.technology === "Tümü") button.textContent = window.siteText("projects.all", "Tümü");
   });

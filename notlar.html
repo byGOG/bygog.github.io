@@ -110,7 +110,7 @@
   <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"
           crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
   <script src="script.js"></script>
-  <script src="app.js?v=1.3" defer></script>
+  <script src="app.js?v=1.4" defer></script>
   <script>
     (function () {
       function setMeta(selector, value) {
@@ -220,6 +220,17 @@
           return (text || '').toLocaleLowerCase('tr-TR');
         }
 
+        var categoryKeys = {
+          'Tümü': 'notes.all', 'Güvenlik': 'notes.security', 'İnternet': 'notes.internet',
+          'Diğer': 'notes.other', 'Yapay Zekâ': 'notes.ai', 'Medya': 'notes.media'
+        };
+        function uiText(key, fallback) {
+          return window.siteText ? window.siteText(key, fallback) : fallback;
+        }
+        function categoryLabel(category) {
+          return categoryKeys[category] ? uiText(categoryKeys[category], category) : category;
+        }
+
         fetch('posts/index.json')
           .then(function (r) { return r.json(); })
           .then(function (posts) {
@@ -242,7 +253,8 @@
               var button = document.createElement('button');
               button.type = 'button';
               button.className = 'notes-filter' + (category === 'Tümü' ? ' is-active' : '');
-              button.textContent = category;
+              button.dataset.category = category;
+              button.textContent = categoryLabel(category);
               button.setAttribute('aria-pressed', category === 'Tümü' ? 'true' : 'false');
               button.addEventListener('click', function () {
                 activeCategory = category;
@@ -265,12 +277,12 @@
               });
 
               list.innerHTML = '';
-              results.textContent = visible.length + ' not gösteriliyor';
+              results.textContent = uiText('notes.count', '{count} not gösteriliyor').replace('{count}', visible.length);
 
               if (!visible.length) {
                 var noResult = document.createElement('li');
                 noResult.className = 'note-item note-item--empty';
-                noResult.textContent = 'Aramana uygun bir not bulunamadı.';
+                noResult.textContent = uiText('notes.empty', 'Aramana uygun bir not bulunamadı.');
                 list.appendChild(noResult);
                 return;
               }
@@ -316,6 +328,12 @@
             }
 
             search.addEventListener('input', renderPosts);
+            document.addEventListener('site-language-change', function () {
+              filters.querySelectorAll('.notes-filter').forEach(function (button) {
+                button.textContent = categoryLabel(button.dataset.category);
+              });
+              renderPosts();
+            });
             document.addEventListener('keydown', function (event) {
               if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
                 event.preventDefault();

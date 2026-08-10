@@ -12,7 +12,8 @@
       'now.three': 'Kullanmadığım ürünlere yeni bir sahip bulmak için anlaşılır ilanlar hazırlıyorum. Bu sırada elimde neler olduğunu düzenliyor ve dijital envanterimi adım adım güncelliyorum.',
       'now.updated': 'Son güncelleme', 'latest.title': 'Son Eklenen Notlar', 'latest.all': 'Tüm notlar →',
       'projects.title': 'Projeler', 'projects.all': 'Tümü', 'projects.details': 'Ayrıntılar',
-      'projects.count': '{count} proje gösteriliyor', 'projects.github': "GitHub'da aç", 'latest.read': 'Notu oku →', 'notes.search': 'Notlarda ara…'
+      'projects.count': '{count} proje gösteriliyor', 'projects.github': "GitHub'da aç", 'projects.loading': 'GitHub projeleri yükleniyor…', 'projects.current': "GitHub'dan güncel projeler:", 'projects.fallback': 'Öne çıkan projeler:', 'projects.error': 'GitHub projeleri alınamadı. Öne çıkan çalışmalar:', 'latest.read': 'Notu oku →',
+      'notes.search': 'Notlarda ara…', 'notes.all': 'Tümü', 'notes.security': 'Güvenlik', 'notes.internet': 'İnternet', 'notes.other': 'Diğer', 'notes.ai': 'Yapay Zekâ', 'notes.media': 'Medya', 'notes.count': '{count} not gösteriliyor', 'notes.empty': 'Aramana uygun bir not bulunamadı.'
     },
     en: {
       'nav.projects': 'Projects', 'nav.notes': 'Notes',
@@ -25,7 +26,8 @@
       'now.three': 'I prepare clear listings to help unused products find new owners. Along the way, I organize what I have and keep my digital inventory up to date.',
       'now.updated': 'Last updated', 'latest.title': 'Latest Notes', 'latest.all': 'View all notes →',
       'projects.title': 'Projects', 'projects.all': 'All', 'projects.details': 'Details',
-      'projects.count': '{count} projects shown', 'projects.github': 'Open on GitHub', 'latest.read': 'Read note →', 'notes.search': 'Search notes…'
+      'projects.count': '{count} projects shown', 'projects.github': 'Open on GitHub', 'projects.loading': 'Loading GitHub projects…', 'projects.current': 'Latest projects from GitHub:', 'projects.fallback': 'Featured projects:', 'projects.error': 'GitHub projects could not be loaded. Featured work:', 'latest.read': 'Read note →',
+      'notes.search': 'Search notes…', 'notes.all': 'All', 'notes.security': 'Security', 'notes.internet': 'Internet', 'notes.other': 'Other', 'notes.ai': 'Artificial Intelligence', 'notes.media': 'Media', 'notes.count': '{count} notes shown', 'notes.empty': 'No notes match your search.'
     }
   };
 
