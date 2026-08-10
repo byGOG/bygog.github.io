@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:3.0
+N:GÖG;Önder;;;
+FN:Önder GÖG
+TEL;TYPE=CELL:+905385076848
+EMAIL;TYPE=INTERNET;TYPE=PREF:ondergog@yahoo.com
+EMAIL;TYPE=INTERNET:ond3rkor@gmail.com
+URL:https://bygog.github.io
+X-SOCIALPROFILE;TYPE=github:https://github.com/byGOG
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/ondergog/
+X-SOCIALPROFILE;TYPE=twitter:https://x.com/ondergog
+X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/onder.gog/
+NOTE:Teknoloji ve yazılımla ilgilenir. Windows, PowerShell, Python ve web projeleri geliştirir.
+REV:20260810T000000Z
+END:VCARD

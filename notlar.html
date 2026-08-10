@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Tektur:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=1.2" />
 </head>
 
 <body>
@@ -51,11 +51,13 @@
   <nav class="site-nav site-nav--scrolled" aria-label="Ana gezinme">
     <a class="site-nav__logo" href="/">byGOG</a>
     <div class="site-nav__links">
-      <a class="site-nav__link" href="/#projeler">Projeler</a>
-      <a class="site-nav__link" href="/notlar.html">Notlar</a>
+      <a class="site-nav__link" href="/#projeler" data-i18n="nav.projects">Projeler</a>
+      <a class="site-nav__link" href="/notlar.html" data-i18n="nav.notes">Notlar</a>
 
     </div>
     <div class="site-nav__controls">
+
+      <button class="language-toggle" type="button" aria-label="Switch to English" data-language-toggle>EN</button>
 
       <button class="theme-toggle" type="button" aria-label="Temayı değiştir">
         <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
@@ -80,11 +82,22 @@
     <div class="section__inner">
       <header class="section__header">
         <span class="section__num" aria-hidden="true">03</span>
-        <h1 class="section__title">Notlar</h1>
+        <h1 class="section__title" data-i18n="nav.notes">Notlar</h1>
         <span class="section__line" aria-hidden="true"></span>
       </header>
 
-      <ul class="notes-list" id="notes-list" aria-live="polite"></ul>
+      <section class="notes-tools" id="notes-tools" aria-label="Notlarda ara ve filtrele">
+        <label class="notes-search">
+          <span class="sr-only">Notlarda ara</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+          <input id="notes-search" type="search" placeholder="Notlarda ara…" data-i18n-placeholder="notes.search" autocomplete="off" />
+          <kbd>Ctrl K</kbd>
+        </label>
+        <div class="notes-filters" id="notes-filters" role="group" aria-label="Kategoriler"></div>
+        <p class="notes-results" id="notes-results" aria-live="polite"></p>
+      </section>
+
+      <ul class="notes-list" id="notes-list"></ul>
 
       <article class="note-reader" id="note-reader" hidden>
         <a class="note-reader__back" href="/notlar.html">← Tüm notlar</a>
@@ -97,7 +110,7 @@
   <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"
           crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
   <script src="script.js"></script>
-  <script src="app.js" defer></script>
+  <script src="app.js?v=1.3" defer></script>
   <script>
     (function () {
       function setMeta(selector, value) {
@@ -148,6 +161,7 @@
       }
 
       if (param) {
+        document.getElementById('notes-tools').hidden = true;
         document.getElementById('notes-list').hidden = true;
         var reader = document.getElementById('note-reader');
         reader.hidden = false;
@@ -186,6 +200,26 @@
               'Yüklenirken hata oluştu.';
           });
       } else {
+        var categoryRules = [
+          ['Güvenlik', /güvenlik|gizlilik|virüs|zararlı|defender|sandbox|vpn|dns|adblock|bitwarden|relay/i],
+          ['Medya', /video|film|dizi|müzik|altyazı|jellyfin|stream|youtube|fotmob|rottentomatoes|one pace/i],
+          ['İnternet', /tarayıcı|browser|internet|indirme|download|uzaktan|anydesk|drive|web|site/i],
+          ['Yapay Zekâ', /yapay zek|\bai\b|chatgpt|arena/i],
+          ['Windows', /windows|winget|powershell|sysinternals|powertoys|driver|bloatware|dosya|disk|donanım|temiz/i]
+        ];
+
+        function categoryFor(post) {
+          var text = post.title + ' ' + (post.excerpt || '');
+          for (var i = 0; i < categoryRules.length; i++) {
+            if (categoryRules[i][1].test(text)) return categoryRules[i][0];
+          }
+          return 'Diğer';
+        }
+
+        function normalized(text) {
+          return (text || '').toLocaleLowerCase('tr-TR');
+        }
+
         fetch('posts/index.json')
           .then(function (r) { return r.json(); })
           .then(function (posts) {
@@ -197,7 +231,51 @@
               list.appendChild(empty);
               return;
             }
-            posts.forEach(function (post) {
+            posts.forEach(function (post) { post.category = categoryFor(post); });
+            var search = document.getElementById('notes-search');
+            var filters = document.getElementById('notes-filters');
+            var results = document.getElementById('notes-results');
+            var activeCategory = 'Tümü';
+            var categories = ['Tümü'].concat(Array.from(new Set(posts.map(function (post) { return post.category; }))));
+
+            categories.forEach(function (category) {
+              var button = document.createElement('button');
+              button.type = 'button';
+              button.className = 'notes-filter' + (category === 'Tümü' ? ' is-active' : '');
+              button.textContent = category;
+              button.setAttribute('aria-pressed', category === 'Tümü' ? 'true' : 'false');
+              button.addEventListener('click', function () {
+                activeCategory = category;
+                filters.querySelectorAll('.notes-filter').forEach(function (item) {
+                  var selected = item === button;
+                  item.classList.toggle('is-active', selected);
+                  item.setAttribute('aria-pressed', selected ? 'true' : 'false');
+                });
+                renderPosts();
+              });
+              filters.appendChild(button);
+            });
+
+            function renderPosts() {
+              var query = normalized(search.value.trim());
+              var visible = posts.filter(function (post) {
+                var categoryMatch = activeCategory === 'Tümü' || post.category === activeCategory;
+                var text = normalized(post.title + ' ' + (post.excerpt || '') + ' ' + post.category);
+                return categoryMatch && (!query || text.includes(query));
+              });
+
+              list.innerHTML = '';
+              results.textContent = visible.length + ' not gösteriliyor';
+
+              if (!visible.length) {
+                var noResult = document.createElement('li');
+                noResult.className = 'note-item note-item--empty';
+                noResult.textContent = 'Aramana uygun bir not bulunamadı.';
+                list.appendChild(noResult);
+                return;
+              }
+
+              visible.forEach(function (post) {
               var li = document.createElement('li');
               li.className = 'note-item';
 
@@ -208,6 +286,10 @@
               var titleEl = document.createElement('span');
               titleEl.className = 'note-item__title';
               titleEl.textContent = post.title;
+
+              var categoryEl = document.createElement('span');
+              categoryEl.className = 'note-item__category';
+              categoryEl.textContent = post.category;
 
               var dateEl = document.createElement('time');
               dateEl.className = 'note-item__date';
@@ -220,6 +302,7 @@
               a.appendChild(titleEl);
               a.appendChild(dateEl);
               li.appendChild(a);
+              li.appendChild(categoryEl);
 
               if (post.excerpt) {
                 var excerpt = document.createElement('p');
@@ -229,7 +312,17 @@
               }
 
               list.appendChild(li);
+              });
+            }
+
+            search.addEventListener('input', renderPosts);
+            document.addEventListener('keydown', function (event) {
+              if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+                event.preventDefault();
+                search.focus();
+              }
             });
+            renderPosts();
           })
           .catch(function () {
             var list = document.getElementById('notes-list');
