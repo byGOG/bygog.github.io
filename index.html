@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Tektur:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=1.1" />
 </head>
 
 <body>
@@ -70,11 +70,13 @@
   <nav class="site-nav" aria-label="Ana gezinme">
     <a class="site-nav__logo" href="#hero">byGOG</a>
     <div class="site-nav__links">
-      <a class="site-nav__link" href="#projeler">Projeler</a>
-      <a class="site-nav__link" href="/notlar.html">Notlar</a>
+      <a class="site-nav__link" href="#projeler" data-i18n="nav.projects">Projeler</a>
+      <a class="site-nav__link" href="/notlar.html" data-i18n="nav.notes">Notlar</a>
 
     </div>
     <div class="site-nav__controls">
+
+      <button class="language-toggle" type="button" aria-label="Switch to English" data-language-toggle>EN</button>
 
       <button class="theme-toggle" type="button" aria-label="Temayı değiştir">
         <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
@@ -111,23 +113,23 @@
       </div>
 
       <div class="hero__content">
-        <p class="hero__eyebrow">Merhaba, ben</p>
+        <p class="hero__eyebrow" data-i18n="hero.eyebrow">Merhaba, ben</p>
         <h1 class="hero__name">Önder<br><span class="hero__name--accent">GÖG</span></h1>
 
-        <p class="hero__bio">
+        <p class="hero__bio" data-i18n="hero.bio">
           Bursa'da yaşayan, teknoloji ve yazılımla ilgilenen; doğayı, snowboard'u ve motosiklet sürmeyi seven biri. Techno ve Anadolu rock dinler, dijital araçlar ve internet kültürüyle uğraşır.
         </p>
 
         <div class="hero__tag-groups" aria-label="Teknolojiler">
           <div class="hero__tag-group">
-            <span class="hero__tag-label">Platform</span>
+            <span class="hero__tag-label" data-i18n="hero.platform">Platform</span>
             <ul class="hero__tags">
               <li>iOS</li>
               <li>Windows</li>
             </ul>
           </div>
           <div class="hero__tag-group">
-            <span class="hero__tag-label">Araçlar</span>
+            <span class="hero__tag-label" data-i18n="hero.tools">Araçlar</span>
             <ul class="hero__tags">
               <li>CMD</li>
               <li>Python</li>
@@ -135,6 +137,20 @@
               <li>HTML / CSS</li>
               <li>Git</li>
             </ul>
+          </div>
+        </div>
+
+        <div class="hero__cta-row">
+          <div class="contact-profile-card">
+            <img class="contact-profile-card__photo" src="profil.webp" alt="" width="52" height="52" />
+            <div class="contact-profile-card__info">
+              <span class="contact-profile-card__name"><i aria-hidden="true"></i>Önder GÖG</span>
+              <a class="contact-profile-card__phone" href="tel:+905385076848">+90 538 507 68 48</a>
+            </div>
+            <a class="contact-profile-card__save" href="/onder-gog.vcf" download="Onder-GOG.vcf" aria-label="Önder GÖG iletişim kartını kaydet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14"/></svg>
+              <span data-i18n="contact.save">Rehbere ekle</span>
+            </a>
           </div>
         </div>
 
@@ -171,7 +187,7 @@
 
     <a class="hero__scroll" href="#simdi" aria-label="Aşağı kaydır">
       <span class="hero__scroll-line" aria-hidden="true"></span>
-      <span class="hero__scroll-text">Kaydır</span>
+      <span class="hero__scroll-text" data-i18n="hero.scroll">Kaydır</span>
     </a>
   </section>
 
@@ -180,33 +196,50 @@
     <div class="section__inner">
       <header class="section__header" data-reveal>
         <span class="section__num" aria-hidden="true">01</span>
-        <h2 class="section__title" id="now-heading">Şu Sıra</h2>
+        <h2 class="section__title" id="now-heading" data-i18n="now.title">Şu Sıra</h2>
         <span class="section__line" aria-hidden="true"></span>
       </header>
       <ul class="now-list" data-reveal>
         <li class="now-item">
           <span class="now-item__dot" aria-hidden="true"></span>
-          <p>
-            StashZero projesini geliştiriyorum — Tauri ve Rust kullanarak modern bir uygulama kütüphanesi üzerine çalışıyorum.
+          <p data-i18n="now.one">
+            Son günlerde aklıma gelen fikirleri ChatGPT ve Codex ile konuşup küçük, işe yarayan dijital araçlara dönüştürüyorum. Bazen kişisel sitemi yeniliyor, bazen günlük işlerimi kolaylaştıracak çözümler hazırlıyorum.
           </p>
         </li>
         <li class="now-item">
           <span class="now-item__dot" aria-hidden="true"></span>
-          <p>
-            Kişisel web sitemi güncelliyorum — içerikleri tazeliyor ve projelerimi senkronize ediyorum.
+          <p data-i18n="now.two">
+            Yeni bir cihaz ya da bilgisayar parçası ilgimi çektiğinde ayrıntılarını araştırmadan duramıyorum. Şimdilerde mobil cihazlardan bilgisayar sağlığına kadar öğrendiğim faydalı bilgileri bir araya getiriyorum.
           </p>
         </li>
         <li class="now-item">
           <span class="now-item__dot" aria-hidden="true"></span>
-          <p>
-            Windows için küçük otomasyon betikleri ve PowerShell araçları yazıyorum.
+          <p data-i18n="now.three">
+            Kullanmadığım ürünlere yeni bir sahip bulmak için anlaşılır ilanlar hazırlıyorum. Bu sırada elimde neler olduğunu düzenliyor ve dijital envanterimi adım adım güncelliyorum.
           </p>
         </li>
       </ul>
       <p class="now-updated" data-reveal>
-        <span>Son güncelleme</span>:
-        <time datetime="2026-04-20">20.04.2026</time>
+        <span data-i18n="now.updated">Son güncelleme</span>:
+        <time datetime="2026-08-10">10.08.2026</time>
       </p>
+    </div>
+  </section>
+
+  <!-- Latest Notes -->
+  <section class="section-latest-notes" id="son-notlar" aria-labelledby="latest-notes-heading">
+    <div class="section__inner">
+      <header class="section__header" data-reveal>
+        <span class="section__num" aria-hidden="true">02</span>
+        <h2 class="section__title" id="latest-notes-heading" data-i18n="latest.title">Son Eklenen Notlar</h2>
+        <span class="section__line" aria-hidden="true"></span>
+        <a class="latest-notes__all" href="/notlar.html" data-i18n="latest.all">Tüm notlar →</a>
+      </header>
+      <ul class="latest-notes-grid" data-latest-notes aria-live="polite">
+        <li class="latest-note latest-note--loading" aria-hidden="true"></li>
+        <li class="latest-note latest-note--loading" aria-hidden="true"></li>
+        <li class="latest-note latest-note--loading" aria-hidden="true"></li>
+      </ul>
     </div>
   </section>
 
@@ -214,11 +247,13 @@
   <section class="section-projects" id="projeler" aria-labelledby="projects-heading">
     <div class="section__inner">
       <header class="section__header" data-reveal>
-        <span class="section__num" aria-hidden="true">02</span>
-        <h2 class="section__title" id="projects-heading">Projeler</h2>
+        <span class="section__num" aria-hidden="true">03</span>
+        <h2 class="section__title" id="projects-heading" data-i18n="projects.title">Projeler</h2>
         <span class="section__line" aria-hidden="true"></span>
         <p class="projects__status" data-github-status aria-live="polite"></p>
       </header>
+      <div class="project-filters" data-project-filters role="group" aria-label="Projeleri teknolojiye göre filtrele"></div>
+      <p class="project-filter__result" data-project-filter-result aria-live="polite"></p>
       <ul class="projects-grid" data-github-projects></ul>
     </div>
   </section>
@@ -226,6 +261,20 @@
 
 
   </main>
+
+  <dialog class="project-dialog" data-project-dialog aria-labelledby="project-dialog-title">
+    <button class="project-dialog__close" type="button" data-project-dialog-close aria-label="Pencereyi kapat">×</button>
+    <img class="project-dialog__image" data-project-dialog-image src="" alt="" />
+    <div class="project-dialog__body">
+      <p class="project-dialog__eyebrow">Proje ayrıntıları</p>
+      <h2 class="project-dialog__title" id="project-dialog-title" data-project-dialog-title></h2>
+      <p class="project-dialog__description" data-project-dialog-description></p>
+      <ul class="project-dialog__topics" data-project-dialog-topics></ul>
+      <div class="project-dialog__actions">
+        <a class="btn btn--primary" data-project-dialog-github data-i18n="projects.github" target="_blank" rel="noopener">GitHub'da aç</a>
+      </div>
+    </div>
+  </dialog>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -238,8 +287,8 @@
     </div>
   </footer>
 
-  <script src="script.js?v=1.1"></script>
-  <script src="app.js" defer></script>
+  <script src="script.js?v=1.6"></script>
+  <script src="app.js?v=1.3" defer></script>
 
   <script type="application/ld+json">
   {
