@@ -1584,6 +1584,16 @@ body {
     margin-right: auto;
   }
 
+  .hero__telemetry {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-profile-card__info {
+    align-items: flex-start;
+    text-align: left;
+  }
+
   .hero__tag-groups { align-items: center; }
   .hero__tag-group  { justify-content: center; }
   .hero__tag-label  { min-width: 0; }

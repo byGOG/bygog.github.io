@@ -1,4 +1,4 @@
-const CACHE = 'bygog-v28';
+const CACHE = 'bygog-v29';
 const STATIC = [
   '/',
   '/style.css',
